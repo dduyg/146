@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>LiminalLoop</title>
+    <style>
+      .container {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+.horizontal-section {
+	display: flex !important;
+	flex-direction: row !important;
+	overflow-y: hidden !important;
+	scroll-behavior: smooth;
+	width: 100%;
+	gap: 0.6rem;
+}
+.horizontal-section::-webkit-scrollbar {
+	display: none;
+}
+
+.card {
+	/* setting a width a important, otherwise */
+	/* the section won't be overflowed */
+	min-width: 250px !important;
+	height: 356px;
+	background-color: #fff;
+	padding: 20px;
+}
+/* =================extra bit of styling================== */
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	line-height: 1.75;
+	color: #000000;
+	background-color: aquamarine;
+	min-height: 200vh;
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+h4 {
+	margin: 3rem 0 1.38rem;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	line-height: 1.3;
+	font-size: 1.777rem;
+}
+    </style>
+	</head>
+	<body>
+		<main class="container">
+			<section class="horizontal-section">
+				<section class="horizontal-section">
+					<div class="card">
+						<h4>Lorem ipsum</h4>
+						<p>
+							Sustainable pok pok pabst, pug cardigan chambray man bun big mood cold-pressed. Lo-fi
+							gastropub photo booth plaid af jean shorts you probably haven't heard of them enamel
+							pin.
+						</p>
+					</div>
+					<div class="card">
+						<h4>Lorem ipsum 2</h4>
+						<p>Edison bulb etsy vaporware, aesthetic praxis hashtag 3 wolf moon letterpress.</p>
+					</div>
+					<div class="card">
+						<h4>Lorem ipsum 3</h4>
+						<p>
+							DSA thundercats vinyl semiotics, adaptogen copper mug affogato big mood normcore craft
+							beer. Hexagon 8-bit whatever tote bag wolf messenger bag.
+						</p>
+					</div>
+					<div class="card">
+						<h4>Lorem ipsum 4</h4>
+						<p>Thundercats wolf lomo praxis, tofu direct trade bodega boys four loko semiotics.</p>
+					</div>
+					<div class="card">
+						<h4>Lorem ipsum 5</h4>
+						<p>
+							Paleo farm-to-table forage praxis small batch. Kitsch af woke, narwhal crucifix
+							tumeric organic pitchfork single-origin coffee microdosing. .
+						</p>
+					</div>
+					<div class="card">
+						<h4>Lorem ipsum 6</h4>
+						<p>
+							+1 tonx subway tile, fam vaporware normcore migas cronut direct trade heirloom four
+							dollar toast. Copper mug lomo hexagon glossier. Cred cornhole hammock, PBR&B kogi
+							craft beer edison bulb pinterest bushwick gatekeep cardigan enamel pin keytar
+							succulents
+						</p>
+					</div>
+					<div class="card">
+						<h4>Lorem ipsum</h4>
+						<p>Lorem ipsum this is a text</p>
+					</div>
+				</section>
+			</section>
+		</main>
+	</body>
+	<script>
+const hSections = document.querySelectorAll('.horizontal-section');
+hSections.forEach((hSection) => {
+	const scrollAmount = hSection.clientWidth;
+	hSection.addEventListener('wheel', function (e) {
+		e.preventDefault();
+		if (e.deltaY > 0) hSection.scrollLeft += scrollAmount;
+		else hSection.scrollLeft -= scrollAmount;
+	});
+});
+  </script>
+</html>
