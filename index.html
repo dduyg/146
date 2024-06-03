@@ -1,71 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 404 - Page Not Found</title>
-    <style>
-        body {
-            background-color: #0e0e12;
-            color: #ff6ac1;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-            padding: 50px;
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        p {
-            font-size: 1.2em;
-        }
-
-        a {
-            color: #ff6ac1;
-            text-decoration: none;
-            border-bottom: 1px dashed #ff6ac1;
-        }
-
-        a:hover {
-            border-bottom: 1px solid #ff6ac1;
-        }
-
-        .glitch {
-            font-size: 10em;
-            animation: glitch 1s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch {
-            0% {
-                transform: translate(0);
-            }
-            20% {
-                transform: translate(-5px, -5px);
-            }
-            40% {
-                transform: translate(5px, 5px);
-            }
-            60% {
-                transform: translate(-5px, 5px);
-            }
-            80% {
-                transform: translate(5px, -5px);
-            }
-            100% {
-                transform: translate(0);
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error 404 - Not Found</title>
+  <style>
+    body {
+      background-color: #440154;
+      color: #f0f0f0;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
+    h1 {
+      font-size: 5em;
+      margin-bottom: 20px;
+      font-family: 'Arial', sans-serif;
+    }
+    p {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+    .glitch {
+      color: #f0f0f0;
+      position: relative;
+      font-family: 'Courier New', monospace;
+    }
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      clip: rect(0, auto, auto, 0);
+    }
+    .glitch::before {
+      left: 2px;
+      text-shadow: -2px 0 magenta;
+      animation: glitch-animation 2s infinite linear alternate-reverse;
+    }
+    .glitch::after {
+      left: -2px;
+      text-shadow: -2px 0 cyan;
+      animation: glitch-animation 3s infinite linear alternate-reverse;
+    }
+    @keyframes glitch-animation {
+      0% {
+        clip: rect(87px, auto, 19px, 0);
+      }
+      5% {
+        clip: rect(10px, auto, 89px, 0);
+      }
+      10% {
+        clip: rect(84px, auto, 68px, 0);
+      }
+      15% {
+        clip: rect(77px, auto, 94px, 0);
+      }
+      20% {
+        clip: rect(11px, auto, 79px, 0);
+      }
+      25% {
+        clip: rect(86px, auto, 12px, 0);
+      }
+      30% {
+        clip: rect(59px, auto, 72px, 0);
+      }
+      35% {
+        clip: rect(39px, auto, 1px, 0);
+      }
+      40% {
+        clip: rect(21px, auto, 69px, 0);
+      }
+      45% {
+        clip: rect(9px, auto, 67px, 0);
+      }
+      50% {
+        clip: rect(15px, auto, 34px, 0);
+      }
+      55% {
+        clip: rect(90px, auto, 16px, 0);
+      }
+      60% {
+        clip: rect(97px, auto, 80px, 0);
+      }
+      65% {
+        clip: rect(38px, auto, 69px, 0);
+      }
+      70% {
+        clip: rect(82px, auto, 66px, 0);
+      }
+      75% {
+        clip: rect(61px, auto, 2px, 0);
+      }
+      80% {
+        clip: rect(56px, auto, 15px, 0);
+      }
+      85% {
+        clip: rect(49px, auto, 21px, 0);
+      }
+      90% {
+        clip: rect(25px, auto, 43px, 0);
+      }
+      95% {
+        clip: rect(61px, auto, 35px, 0);
+      }
+      100% {
+        clip: rect(79px, auto, 85px, 0);
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="glitch">404</div>
-    <h1>Error 404 - Page Not Found</h1>
-    <p>Sorry, the page you're looking for doesn't exist in this digital realm.</p>
-    <p>Maybe it's been lost in cyberspace.</p>
-    <p>Return <a href="/">home</a> or contact the cyber admin for assistance.</p>
+  <h1 class="glitch" data-text="ERROR 404">ERROR 404</h1>
+  <p>The requested page cannot be found.</p>
+  <p>Sorry, it seems like you've stumbled into the void.</p>
+  <p>Try going <a href="/">back to safety</a>.</p>
 </body>
 </html>
