@@ -3,76 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error - Not Found</title>
+    <title>404 Error - Page Not Found</title>
     <style>
         body {
             background-color: #000;
             color: #fff;
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
+            margin: 0;
             padding: 50px;
         }
+
         h1 {
-            font-size: 5em;
+            font-size: 4em;
             margin-bottom: 20px;
             text-transform: uppercase;
+            letter-spacing: 5px;
         }
+
         p {
             font-size: 1.5em;
             margin-bottom: 30px;
         }
+
         .glitch {
-            font-size: 2em;
-            color: #ff00ff;
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
-            animation: glitch 1s linear infinite;
+            color: #00ff00;
+            text-shadow: -1px 0 #ff00e0, 0 1px #00ffe6, 1px 0 #fffb00, 0 -1px #00ff6e;
+            animation: glitch 1s infinite;
         }
+
         @keyframes glitch {
-            2%, 64% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            4%, 60% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            62% {
-                transform: translate(0, 0) skew(5deg);
-            }
+            0% { transform: none; }
+            20% { transform: skew(-5deg); }
+            40% { transform: skew(5deg); }
+            60% { transform: skew(-5deg); }
+            80% { transform: skew(5deg); }
+            100% { transform: none; }
         }
-        form {
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
             margin-top: 50px;
         }
-        input[type="text"], textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #fff;
-            background-color: transparent;
+
+        .nav-links a {
             color: #fff;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        input[type="submit"] {
-            background-color: #ff00ff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
+            text-decoration: none;
+            margin: 0 20px;
             font-size: 1.2em;
-            transition: background-color 0.3s ease;
         }
-        input[type="submit"]:hover {
-            background-color: #f0f;
+
+        .nav-links a:hover {
+            color: #00ff00;
         }
     </style>
 </head>
 <body>
-    <h1 class="glitch" data-text="404">404</h1>
-    <p>The page you are looking for cannot be found.</p>
-    <p>Please check the URL or go <a href="/">back to the homepage</a>.</p>
-    <form action="#" method="post">
-        <input type="text" name="name" placeholder="Your Name" required><br>
-        <input type="email" name="email" placeholder="Your Email" required><br>
-        <textarea name="message" rows="4" placeholder="Your Message" required></textarea><br>
-        <input type="submit" value="Send Message">
-    </form>
+    <h1 class="glitch">404 ERROR</h1>
+    <p class="glitch">Page Not Found</p>
+    <p>Sorry, the page you are looking for does not exist in the cyber realm.</p>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
 </body>
 </html>
