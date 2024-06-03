@@ -3,102 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 Error - Not Found</title>
+  <title>404 Error - Page Not Found</title>
   <style>
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Courier New', monospace;
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
       text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      font-size: 8em;
-      margin: 0;
-      color: #ff00ff;
-    }
-    p {
-      font-size: 2em;
     }
     .glitch {
-      font-family: 'Courier New', monospace;
+      font-size: 100px;
       color: #ff00ff;
-      position: relative;
-      display: inline-block;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
+      animation: glitch-animation 2s infinite linear alternate-reverse;
     }
-    .glitch::before,
-    .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .glitch::before {
-      left: 2px;
-      text-shadow: -2px 0 blue;
-      clip: rect(44px, 450px, 56px, 0);
-      animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
-    }
-    .glitch::after {
-      left: -2px;
-      text-shadow: -2px 0 red;
-      clip: rect(24px, 350px, 56px, 0);
-      animation: glitch-anim-2 3s infinite linear alternate-reverse;
-    }
-    @keyframes glitch-anim-1 {
+    @keyframes glitch-animation {
       0% {
-        transform: skewX(0deg) scale(1);
+        transform: translate(0);
       }
-      20% {
-        transform: skewX(-10deg) scale(1.1);
+      25% {
+        transform: translate(-5px, 5px);
       }
-      40% {
-        transform: skewX(5deg) scale(0.9);
+      50% {
+        transform: translate(-5px, -5px);
       }
-      60% {
-        transform: skewX(0deg) scale(1);
+      75% {
+        transform: translate(5px, 5px);
       }
       100% {
-        transform: skewX(0deg) scale(1);
-      }
-    }
-    @keyframes glitch-anim-2 {
-      0% {
-        transform: skewX(0deg) scale(1);
-      }
-      20% {
-        transform: skewX(10deg) scale(1.1);
-      }
-      40% {
-        transform: skewX(-5deg) scale(0.9);
-      }
-      60% {
-        transform: skewX(0deg) scale(1);
-      }
-      100% {
-        transform: skewX(0deg) scale(1);
+        transform: translate(5px, -5px);
       }
     }
     nav {
-      margin-top: 30px;
+      margin-top: 20px;
     }
     nav a {
-      color: #ff00ff;
+      color: #ffffff;
       text-decoration: none;
       margin: 0 10px;
-      font-size: 1.5em;
-    }
-    nav a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1 class="glitch" data-text="404">404</h1>
-  <p class="glitch" data-text="Error - Not Found">Error - Not Found</p>
-  <p>Oops! It seems like you've stumbled upon a glitch in the matrix.</p>
+  <h1 class="glitch">404</h1>
+  <h2>Page Not Found</h2>
+  <p>Sorry, the page you are looking for might have been removed or its name changed or is temporarily unavailable.</p>
   <nav>
     <a href="/">Home</a>
     <a href="/about">About</a>
