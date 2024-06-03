@@ -3,41 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error - Not Found</title>
+    <title>404 Error - Page Not Found</title>
     <style>
         body {
             background-color: #000;
             color: #fff;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Courier New', Courier, monospace;
             text-align: center;
             padding: 50px;
         }
         h1 {
             font-size: 5em;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            color: #ff6c00;
+            text-transform: uppercase;
+            letter-spacing: 5px;
         }
         p {
             font-size: 1.5em;
             margin-bottom: 30px;
         }
         .glitch {
-            font-size: 7em;
-            color: #ff00ff;
-            text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff, 0 0 15px #00ffff, 0 0 20px #ff00ff, 0 0 25px #00ffff;
+            animation: glitch 1s infinite linear alternate-reverse;
         }
-        a {
+        @keyframes glitch {
+            0% {
+                transform: translate(-2px, -2px);
+            }
+            25% {
+                transform: translate(2px, 2px);
+            }
+            50% {
+                transform: translate(-2px, -2px);
+            }
+            75% {
+                transform: translate(2px, 2px);
+            }
+            100% {
+                transform: translate(-2px, -2px);
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #222;
+            min-width: 200px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
             color: #fff;
+            padding: 12px 16px;
             text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #ff6c00;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <h1 class="glitch">404 ERROR</h1>
-    <p>Sorry, the page you're looking for cannot be found.</p>
-    <nav>
-        <a href="/">Home</a> | 
-        <a href="/about">About</a> | 
-        <a href="/contact">Contact</a>
-    </nav>
+    <h1 class="glitch">404</h1>
+    <p>Oops! Looks like something went wrong...</p>
+    <div class="dropdown">
+        <button class="glitch">Menu</button>
+        <div class="dropdown-content">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
 </body>
 </html>
