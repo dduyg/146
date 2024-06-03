@@ -1,68 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 404 - Page Not Found</title>
+    <title>404 Error - Page Not Found</title>
     <style>
         body {
             background-color: #000;
             color: #fff;
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
-            margin: 0;
-            padding: 0;
+            padding: 50px;
         }
+
+        h1 {
+            font-size: 5em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
         .glitch {
-            font-size: 80px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #ff00ff;
-            text-shadow: 0 0 10px #ff00ff;
-            animation: glitch-animation 1s infinite linear alternate-reverse;
+            position: relative;
+            display: inline-block;
+            animation: glitch-animation 2s infinite;
         }
+
         @keyframes glitch-animation {
             0% {
-                transform: translate(-50%, -50%) translateZ(0);
+                transform: translate(0);
             }
-            25% {
-                transform: translate(-50%, -50%) translateZ(0.5rem);
+
+            20% {
+                transform: translate(-5px, 5px);
             }
-            50% {
-                transform: translate(-50%, -50%) translateZ(0);
+
+            40% {
+                transform: translate(-5px, -5px);
             }
-            75% {
-                transform: translate(-50%, -50%) translateZ(0.5rem);
+
+            60% {
+                transform: translate(5px, 5px);
             }
+
+            80% {
+                transform: translate(5px, -5px);
+            }
+
             100% {
-                transform: translate(-50%, -50%) translateZ(0);
+                transform: translate(0);
             }
-        }
-        .image-container {
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        img {
-            width: 400px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 20px #ff00ff;
-        }
-        p {
-            margin-top: 20px;
-            font-size: 24px;
         }
     </style>
 </head>
+
 <body>
-    <div class="glitch">404 ERROR</div>
-    <div class="image-container">
-        <img src="your_image_url_here" alt="Error 404 Image">
+    <div class="glitch">
+        <h1>404</h1>
     </div>
-    <p>Page Not Found</p>
+    <p>Oops! Something went wrong.</p>
+    <p>This page seems to have been deleted or doesn't exist.</p>
+    <p><a href="/">Go back to the home page</a></p>
 </body>
+
 </html>
