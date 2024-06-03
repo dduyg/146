@@ -3,79 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
+    <title>404 Error - Not Found</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background: #0f0c29;
-            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            background-color: #000;
+            color: #fff;
             font-family: 'Courier New', Courier, monospace;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .container {
             text-align: center;
-            animation: glitch 1s infinite;
+            padding: 50px;
         }
         h1 {
-            font-size: 6em;
-            margin: 0;
+            font-size: 5em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
         p {
             font-size: 1.5em;
+            margin-bottom: 30px;
         }
-        .contact-form {
-            margin-top: 20px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #ff6ec7;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #d94b9a;
+        .glitch {
+            font-size: 2em;
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+            animation: glitch 1s linear infinite;
         }
         @keyframes glitch {
-            0% { transform: skew(0deg); }
-            20% { transform: skew(10deg); }
-            40% { transform: skew(-10deg); }
-            60% { transform: skew(10deg); }
-            80% { transform: skew(-10deg); }
-            100% { transform: skew(0deg); }
+            2%, 64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+            4%, 60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+        form {
+            margin-top: 50px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #fff;
+            background-color: transparent;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        input[type="submit"] {
+            background-color: #ff00ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #f0f;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>404</h1>
-        <p>Page Not Found</p>
-        <p>The page you're looking for doesn't exist or has been moved.</p>
-        <div class="contact-form">
-            <h2>Contact Us</h2>
-            <form action="/submit_form" method="post">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </div>
+    <h1 class="glitch" data-text="404">404</h1>
+    <p>The page you are looking for cannot be found.</p>
+    <p>Please check the URL or go <a href="/">back to the homepage</a>.</p>
+    <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required><br>
+        <input type="email" name="email" placeholder="Your Email" required><br>
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea><br>
+        <input type="submit" value="Send Message">
+    </form>
 </body>
 </html>
