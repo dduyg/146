@@ -1,57 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 404 - Not Found</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .glitch {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3em;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff, 0 0 30px #ffff00, 0 0 40px #ff00ff, 0 0 70px #00ffff, 0 0 80px #ffff00, 0 0 100px #ff00ff, 0 0 150px #00ffff;
-            animation: glitch-animation 2s infinite linear alternate-reverse;
-        }
-        @keyframes glitch-animation {
-            0% {
-                transform: translate(-50%, -50%) skewY(0);
-            }
-            20% {
-                transform: translate(-50%, -50%) skewY(0.5deg);
-            }
-            40% {
-                transform: translate(-50%, -50%) skewY(-1deg);
-            }
-            60% {
-                transform: translate(-50%, -50%) skewY(0.5deg);
-            }
-            80% {
-                transform: translate(-50%, -50%) skewY(0);
-            }
-            100% {
-                transform: translate(-50%, -50%) skewY(0);
-            }
-        }
-        .text {
-            margin-top: 20px;
-            font-size: 1.2em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Error - Page Not Found</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      font-size: 6rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    .glitch {
+      color: #fff;
+      position: relative;
+      font-size: 10rem;
+      text-transform: uppercase;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      2% {
+        transform: translateY(2px);
+      }
+      4% {
+        transform: translateY(-2px);
+      }
+      6%, 60%, 100% {
+        transform: translateY(0);
+      }
+      70% {
+        transform: translateY(-2px);
+      }
+      80% {
+        transform: translateY(2px);
+      }
+      90% {
+        transform: translateY(-1px);
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="glitch">404</div>
-    <div class="text">Not Found - The Matrix Has Glitched</div>
+  <div class="glitch">404</div>
+  <h1>Error: Page Not Found</h1>
+  <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
 </body>
 </html>
