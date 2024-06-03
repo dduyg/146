@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Error 404 - Not Found</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Courier New', Courier, monospace;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      font-size: 5rem;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.5rem;
-    }
-    .glitch {
-      color: #00FF00;
-      font-size: 6rem;
-      position: relative;
-      animation: glitch-animation 2s infinite linear alternate-reverse;
-    }
-    @keyframes glitch-animation {
-      0% {
-        top: -2px;
-        left: -2px;
-        text-shadow: -0.5rem 0 #00FF00;
-      }
-      25% {
-        top: -2px;
-        left: 2px;
-        text-shadow: -0.5rem 0 #00FF00;
-      }
-      50% {
-        top: 2px;
-        left: -2px;
-        text-shadow: -0.5rem 0 #00FF00;
-      }
-      75% {
-        top: 2px;
-        left: 2px;
-        text-shadow: -0.5rem 0 #00FF00;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404 - Page Not Found</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 4em;
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .glitch {
+            color: #0ff;
+            text-shadow: 
+                0 0 10px #0ff,
+                0 0 20px #0ff,
+                0 0 40px #0ff,
+                0 0 80px #0ff,
+                0 0 120px #0ff;
+            animation: glitch-animation 2s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-animation {
+            0% {
+                clip-path: inset(0 0 0 0);
+            }
+            25% {
+                clip-path: inset(0 0 0 25%);
+            }
+            50% {
+                clip-path: inset(0 0 0 50%);
+            }
+            75% {
+                clip-path: inset(0 0 0 75%);
+            }
+            100% {
+                clip-path: inset(0 0 0 100%);
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1 class="glitch">404</h1>
-  <p>ERROR - File not found in the cyber dimension.</p>
-  <p>Oops! It seems like you've wandered into uncharted territory.</p>
-  <p>Don't worry, you're still connected. Let's get you back on track.</p>
+    <h1 class="glitch">Error 404</h1>
+    <p>The page you are looking for could not be found.</p>
+    <p>But hey, here's a <a href="/">link</a> to go back to safety.</p>
 </body>
 </html>
