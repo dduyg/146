@@ -3,197 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 Error - Page Not Found</title>
+  <title>404 Error - Not Found</title>
   <style>
     body {
-      background-color: #000000;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Courier New', monospace;
       text-align: center;
       padding: 50px;
     }
     h1 {
-      font-size: 4em;
-      margin-bottom: 20px;
-      color: #ff6ec7; /* Vaporwave Pink */
+      font-size: 8em;
+      margin: 0;
+      color: #ff00ff;
     }
     p {
-      font-size: 1.5em;
-      margin-bottom: 30px;
-    }
-    a {
-      color: #64ffda; /* Cyber Green */
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #cc00ff; /* Neon Purple */
+      font-size: 2em;
     }
     .glitch {
-      color: #ff6ec7; /* Vaporwave Pink */
-      font-size: 2em;
+      font-family: 'Courier New', monospace;
+      color: #ff00ff;
       position: relative;
       display: inline-block;
-      animation: glitch 1s infinite linear alternate-reverse;
     }
-    @keyframes glitch {
-      2% {
-        transform: translate(2px, -3px);
-      }
-      4% {
-        transform: translate(-3px, 2px);
-      }
-      6% {
-        transform: translate(-1px, -1px);
-      }
-      8% {
-        transform: translate(2px, -3px);
-      }
-      10% {
-        transform: translate(3px, 2px);
-      }
-      12% {
-        transform: translate(-1px, -1px);
-      }
-      14% {
-        transform: translate(2px, -3px);
-      }
-      16% {
-        transform: translate(-3px, 2px);
-      }
-      18% {
-        transform: translate(-1px, 2px);
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .glitch::before {
+      left: 2px;
+      text-shadow: -2px 0 blue;
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
+    }
+    .glitch::after {
+      left: -2px;
+      text-shadow: -2px 0 red;
+      clip: rect(24px, 350px, 56px, 0);
+      animation: glitch-anim-2 3s infinite linear alternate-reverse;
+    }
+    @keyframes glitch-anim-1 {
+      0% {
+        transform: skewX(0deg) scale(1);
       }
       20% {
-        transform: translate(2px, -1px);
-      }
-      22% {
-        transform: translate(2px, 2px);
-      }
-      24% {
-        transform: translate(2px, -3px);
-      }
-      26% {
-        transform: translate(-3px, 2px);
-      }
-      28% {
-        transform: translate(-1px, -1px);
-      }
-      30% {
-        transform: translate(2px, -3px);
-      }
-      32% {
-        transform: translate(3px, 2px);
-      }
-      34% {
-        transform: translate(-1px, -1px);
-      }
-      36% {
-        transform: translate(2px, -3px);
-      }
-      38% {
-        transform: translate(-3px, 2px);
+        transform: skewX(-10deg) scale(1.1);
       }
       40% {
-        transform: translate(-1px, 2px);
-      }
-      42% {
-        transform: translate(2px, -1px);
-      }
-      44% {
-        transform: translate(2px, 2px);
-      }
-      46% {
-        transform: translate(2px, -3px);
-      }
-      48% {
-        transform: translate(-3px, 2px);
-      }
-      50% {
-        transform: translate(-1px, -1px);
-      }
-      52% {
-        transform: translate(2px, -3px);
-      }
-      54% {
-        transform: translate(3px, 2px);
-      }
-      56% {
-        transform: translate(-1px, -1px);
-      }
-      58% {
-        transform: translate(2px, -3px);
+        transform: skewX(5deg) scale(0.9);
       }
       60% {
-        transform: translate(-3px, 2px);
-      }
-      62% {
-        transform: translate(-1px, 2px);
-      }
-      64% {
-        transform: translate(2px, -1px);
-      }
-      66% {
-        transform: translate(2px, 2px);
-      }
-      68% {
-        transform: translate(2px, -3px);
-      }
-      70% {
-        transform: translate(-3px, 2px);
-      }
-      72% {
-        transform: translate(-1px, -1px);
-      }
-      74% {
-        transform: translate(2px, -3px);
-      }
-      76% {
-        transform: translate(3px, 2px);
-      }
-      78% {
-        transform: translate(-1px, -1px);
-      }
-      80% {
-        transform: translate(2px, -3px);
-      }
-      82% {
-        transform: translate(-3px, 2px);
-      }
-      84% {
-        transform: translate(-1px, 2px);
-      }
-      86% {
-        transform: translate(2px, -1px);
-      }
-      88% {
-        transform: translate(2px, 2px);
-      }
-      90% {
-        transform: translate(2px, -3px);
-      }
-      92% {
-        transform: translate(-3px, 2px);
-      }
-      94% {
-        transform: translate(-1px, -1px);
-      }
-      96% {
-        transform: translate(2px, -3px);
-      }
-      98% {
-        transform: translate(3px, 2px);
+        transform: skewX(0deg) scale(1);
       }
       100% {
-        transform: translate(-1px, -1px);
+        transform: skewX(0deg) scale(1);
       }
+    }
+    @keyframes glitch-anim-2 {
+      0% {
+        transform: skewX(0deg) scale(1);
+      }
+      20% {
+        transform: skewX(10deg) scale(1.1);
+      }
+      40% {
+        transform: skewX(-5deg) scale(0.9);
+      }
+      60% {
+        transform: skewX(0deg) scale(1);
+      }
+      100% {
+        transform: skewX(0deg) scale(1);
+      }
+    }
+    nav {
+      margin-top: 30px;
+    }
+    nav a {
+      color: #ff00ff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.5em;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1 class="glitch">404 Error</h1>
-  <p>Page not found in the matrix.</p>
-  <p>Sorry, the page you are looking for might have been deleted or never existed in cyberspace.</p>
-  <p>Return to <a href="/">Home</a> or explore other <a href="/pages">Pages</a>.</p>
+  <h1 class="glitch" data-text="404">404</h1>
+  <p class="glitch" data-text="Error - Not Found">Error - Not Found</p>
+  <p>Oops! It seems like you've stumbled upon a glitch in the matrix.</p>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
 </body>
 </html>
