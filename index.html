@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Not Found</title>
+    <title>404 Error - Page Not Found</title>
     <style>
         body {
             background-color: #000;
@@ -13,49 +13,67 @@
             padding: 50px;
         }
         h1 {
-            font-size: 72px;
+            font-size: 5em;
             margin-bottom: 20px;
             text-transform: uppercase;
+            letter-spacing: 10px;
+            color: #ff80b3;
         }
         p {
-            font-size: 24px;
-            margin-bottom: 40px;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #ff80b3;
         }
         .glitch {
-            color: #ff00ff;
-            font-weight: bold;
+            font-size: 1.5em;
+            color: #ff80b3;
             position: relative;
             display: inline-block;
-            animation: glitch 1s infinite linear alternate-reverse;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            mix-blend-mode: difference;
+            animation: glitch 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #00ff00;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #ff0000;
         }
         @keyframes glitch {
             0% {
-                top: 0;
-                left: 0;
+                transform: translate(0);
             }
-            25% {
-                top: -5px;
-                left: 5px;
+            20% {
+                transform: translate(-5px, -5px);
             }
-            50% {
-                top: 5px;
-                left: -5px;
+            40% {
+                transform: translate(5px, 5px);
             }
-            75% {
-                top: -5px;
-                left: 5px;
+            60% {
+                transform: translate(-5px, -5px);
+            }
+            80% {
+                transform: translate(5px, 5px);
             }
             100% {
-                top: 0;
-                left: 0;
+                transform: translate(0);
             }
         }
     </style>
 </head>
 <body>
-    <h1>404</h1>
-    <p><span class="glitch">Error:</span> File not found</p>
-    <p>Sorry, the page you are looking for might have been removed or doesn't exist.</p>
-    <p>Go <a href="/">home</a> or contact the <a href="/contact">administrator</a>.</p>
+    <h1 class="glitch" data-text="404">404</h1>
+    <p class="glitch" data-text="Page Not Found">Page Not Found</p>
+    <p>We couldn't find the page you're looking for.</p>
+    <p>Maybe it got lost in the cyber space.</p>
+    <p>Return <a href="/">home</a> or contact the cyber admin.</p>
 </body>
 </html>
