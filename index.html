@@ -1,64 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 Error - Cyber Creations</title>
-  <style>
-    body {
-      background-color: #0d0d0d;
-      color: #b7b7b7;
-      font-family: 'Courier New', Courier, monospace;
-      text-align: center;
-      padding: 50px;
-    }
-
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-
-    .glitch {
-      color: #ff80ed;
-      font-size: 5em;
-      font-weight: bold;
-      text-transform: uppercase;
-      animation: glitch-animation 2s infinite linear alternate-reverse;
-    }
-
-    @keyframes glitch-animation {
-      0% {
-        transform: translate(0);
-        filter: none;
-      }
-      25% {
-        transform: translate(-5px, 5px);
-        filter: blur(5px) brightness(0.5) contrast(200%);
-      }
-      50% {
-        transform: translate(5px, -5px);
-        filter: blur(5px) brightness(0.5) contrast(200%);
-      }
-      75% {
-        transform: translate(-5px, 5px);
-        filter: blur(5px) brightness(0.5) contrast(200%);
-      }
-      100% {
-        transform: translate(5px, -5px);
-        filter: blur(5px) brightness(0.5) contrast(200%);
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error - Cyber Creations</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .glitch {
+            color: #00ffea;
+            text-shadow: -1px 0 #00ffea, 0 1px #00ffea, 1px 0 #00ffea, 0 -1px #00ffea;
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            25% {
+                transform: translate(-2px, 2px);
+            }
+            50% {
+                transform: translate(-2px, -2px);
+            }
+            75% {
+                transform: translate(2px, 2px);
+            }
+            100% {
+                transform: translate(2px, -2px);
+            }
+        }
+        .code {
+            font-size: 1.5em;
+            margin-top: 20px;
+            border: 1px solid #00ffea;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-  <h1><span class="glitch">404</span> Error</h1>
-  <p>Sorry, the page you're looking for could not be found.</p>
-  <p>It seems like something went <span class="glitch">glitchy</span> in cyberspace.</p>
-  <p>Don't worry, our cyber coders are on the case.</p>
+    <h1><span class="glitch">404</span> Error</h1>
+    <p>Sorry, the page you're looking for cannot be found.</p>
+    <p>But hey, why not explore the digital abyss?</p>
+    <p>Or try to <a href="javascript:history.back()">go back</a> to where you came from.</p>
+    <p class="code">Error code: 404</p>
 </body>
 </html>
