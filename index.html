@@ -3,65 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error - Page Not Found</title>
+    <title>Error 404 - Page Not Found</title>
     <style>
         body {
-            background-color: #2b1d45;
-            color: #ffffff;
-            font-family: 'Courier New', Courier, monospace;
+            background-color: #2a003e;
+            color: #ff00ff;
+            font-family: 'Courier New', monospace;
             text-align: center;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 50px;
         }
         h1 {
-            font-size: 6rem;
-            margin-bottom: 20px;
-            font-weight: normal;
-            color: #ff80ed;
-            text-shadow: 0 0 10px #ff80ed;
+            font-size: 4em;
+            margin-bottom: 30px;
         }
         p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            opacity: 0.8;
-        }
-        a {
-            color: #ffffff;
-            text-decoration: none;
-            border-bottom: 2px dashed #ff80ed;
-            transition: border-color 0.3s ease-in-out;
-        }
-        a:hover {
-            border-color: #ffffff;
+            font-size: 1.5em;
+            margin-bottom: 20px;
         }
         .glitch {
-            font-size: 5rem;
-            color: #ff80ed;
-            text-shadow: 0 0 10px #ff80ed;
-            animation: glitch 1s linear infinite;
+            font-size: 2em;
+            animation: glitch 1s infinite;
         }
         @keyframes glitch {
-            2%, 64% {
-                transform: translate(2px,0) skew(0deg);
-            }
-            4%, 60% {
-                transform: translate(-2px,0) skew(0deg);
-            }
-            62% {
-                transform: translate(0,0) skew(5deg);
-            }
+            0% { transform: none; }
+            25% { transform: skewX(10deg) scaleY(1.1); }
+            50% { transform: skewX(-5deg) scaleY(0.9); }
+            75% { transform: skewX(5deg) scaleY(1.1); }
+            100% { transform: skewX(0deg) scaleY(1.0); }
         }
     </style>
 </head>
 <body>
-    <h1>404 <span class="glitch">Error</span></h1>
-    <p>Oops! It seems like you've stumbled upon a glitch in the matrix.</p>
-    <p>Don't worry, our cyber coders are on it. Meanwhile, why not <a href="/">return to safety</a>?</p>
-    <img src="https://media.giphy.com/media/3oz8xBUlpNRiKziSXC/giphy.gif" alt="Surprise!">
+    <h1 class="glitch">404 ERROR</h1>
+    <p>The matrix cannot locate the requested page.</p>
+    <p>It seems the code has encountered a <span class="glitch">glitch</span>.</p>
+    <p>Please try again later or <a href="/">return to the matrix</a>.</p>
+    <img src="https://media.giphy.com/media/xTiN0L7EW5trfOvEk0/giphy.gif" alt="Glitching code" style="width: 300px;">
 </body>
 </html>
