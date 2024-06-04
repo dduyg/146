@@ -8,138 +8,135 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0f0f0f;
-            color: #00ff00;
+            background: #0f0c29;
+            background: -webkit-linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
             font-family: 'Courier New', Courier, monospace;
-            overflow: hidden;
+            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
         }
         .container {
             text-align: center;
-            position: relative;
+            max-width: 600px;
         }
-        .glitch {
-            font-size: 50px;
+        h1 {
+            font-size: 6em;
+            margin: 0;
             position: relative;
-            color: #00ff00;
             animation: glitch 1s infinite;
         }
-        .glitch::before,
-        .glitch::after {
-            content: "404";
+        h1::before, h1::after {
+            content: '404';
             position: absolute;
-            top: 0;
             left: 0;
+            top: 0;
             width: 100%;
             height: 100%;
             background: transparent;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
         }
-        .glitch::before {
+        h1::before {
             left: 2px;
             text-shadow: -2px 0 cyan;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim-2 2s infinite linear alternate-reverse;
+            animation: glitch 1s infinite reverse;
         }
-        .glitch::after {
+        h1::after {
             left: -2px;
-            text-shadow: -2px 0 lime;
-            clip: rect(55px, 550px, 56px, 0);
-            animation: glitch-anim-3 1s infinite linear alternate-reverse;
+            text-shadow: -2px 0 red;
+            animation: glitch 1.5s infinite;
         }
         @keyframes glitch {
             0% {
-                transform: translate(0);
+                clip: rect(12px, 9999px, 101px, 0);
+                transform: skew(0.3deg);
+            }
+            10% {
+                clip: rect(83px, 9999px, 113px, 0);
+                transform: skew(0.6deg);
             }
             20% {
-                transform: translate(-2px, 2px);
+                clip: rect(39px, 9999px, 82px, 0);
+                transform: skew(0.4deg);
+            }
+            30% {
+                clip: rect(13px, 9999px, 84px, 0);
+                transform: skew(0.8deg);
             }
             40% {
-                transform: translate(-2px, -2px);
+                clip: rect(82px, 9999px, 45px, 0);
+                transform: skew(0.3deg);
+            }
+            50% {
+                clip: rect(43px, 9999px, 75px, 0);
+                transform: skew(0.6deg);
             }
             60% {
-                transform: translate(2px, 2px);
+                clip: rect(65px, 9999px, 120px, 0);
+                transform: skew(0.4deg);
+            }
+            70% {
+                clip: rect(57px, 9999px, 96px, 0);
+                transform: skew(0.8deg);
             }
             80% {
-                transform: translate(2px, -2px);
+                clip: rect(45px, 9999px, 78px, 0);
+                transform: skew(0.3deg);
+            }
+            90% {
+                clip: rect(36px, 9999px, 57px, 0);
+                transform: skew(0.6deg);
             }
             100% {
-                transform: translate(0);
+                clip: rect(89px, 9999px, 100px, 0);
+                transform: skew(0.4deg);
             }
         }
-        @keyframes glitch-anim-2 {
+        p {
+            font-size: 1.2em;
+            margin-top: 20px;
+            animation: glitchText 2s infinite;
+        }
+        @keyframes glitchText {
             0% {
-                clip: rect(44px, 450px, 56px, 0);
+                text-shadow: 2px 2px 0 red, -2px -2px 0 cyan;
             }
             50% {
-                clip: rect(10px, 9999px, 77px, 0);
+                text-shadow: -2px -2px 0 red, 2px 2px 0 cyan;
             }
             100% {
-                clip: rect(44px, 450px, 56px, 0);
+                text-shadow: 2px 2px 0 red, -2px -2px 0 cyan;
             }
         }
-        @keyframes glitch-anim-3 {
-            0% {
-                clip: rect(100px, 9999px, 100px, 0);
-            }
-            50% {
-                clip: rect(50px, 9999px, 90px, 0);
-            }
-            100% {
-                clip: rect(20px, 9999px, 50px, 0);
-            }
+        nav {
+            margin-top: 30px;
         }
-        .message {
-            font-size: 20px;
-            margin-top: 20px;
-        }
-        .dropdown {
-            margin-top: 20px;
-            background-color: #000;
-            border: 1px solid #00ff00;
-            color: #00ff00;
-            font-size: 16px;
-            padding: 10px;
-            cursor: pointer;
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #000;
-            border: 1px solid #00ff00;
-            min-width: 160px;
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: #00ff00;
-            padding: 12px 16px;
+        nav a {
+            color: #fff;
             text-decoration: none;
-            display: block;
+            margin: 0 15px;
+            font-size: 1.1em;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
         }
-        .dropdown-content a:hover {
-            background-color: #333;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
+        nav a:hover {
+            border-bottom: 2px solid cyan;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="glitch">404</div>
-        <div class="message">Page Not Found</div>
-        <div class="dropdown">
-            Menu
-            <div class="dropdown-content">
-                <a href="/">Home</a>
-                <a href="/contact">Contact</a>
-                <a href="/help">Help</a>
-            </div>
-        </div>
+        <h1>404</h1>
+        <p>Oops! The page you're looking for has been lost in cyberspace.</p>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </nav>
     </div>
 </body>
 </html>
