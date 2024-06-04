@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 404 - Page Not Found</title>
+    <title>404 Error - Page Not Found</title>
     <style>
         body {
             background-color: #000;
@@ -12,21 +11,70 @@
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
             padding: 50px;
+            margin: 0;
         }
 
         h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
+            font-size: 6em;
+            margin-bottom: 10px;
+            color: #ff00ff;
+            text-transform: uppercase;
+            letter-spacing: 10px;
         }
 
         p {
             font-size: 1.5em;
-            margin-bottom: 40px;
         }
 
         .glitch {
             color: #ff00ff;
-            text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff, 0 0 90px #ff00ff, 0 0 100px #ff00ff;
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(title);
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #00ff00;
+            animation: glitch-animation 3s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #ff0000;
+            animation: glitch-animation2 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-animation {
+            0% {
+                clip: rect(15px, 900px, 83px, 0);
+            }
+            10%, 30%, 50%, 70%, 90% {
+                clip: rect(54px, 900px, 77px, 0);
+            }
+            20%, 40%, 60%, 80%, 100% {
+                clip: rect(6px, 900px, 8px, 0);
+            }
+        }
+
+        @keyframes glitch-animation2 {
+            0% {
+                clip: rect(64px, 900px, 36px, 0);
+            }
+            10%, 30%, 50%, 70%, 90% {
+                clip: rect(60px, 900px, 50px, 0);
+            }
+            20%, 40%, 60%, 80%, 100% {
+                clip: rect(11px, 900px, 42px, 0);
+            }
         }
 
         .dropdown {
@@ -38,7 +86,7 @@
             display: none;
             position: absolute;
             background-color: #000;
-            min-width: 200px;
+            min-width: 160px;
             z-index: 1;
         }
 
@@ -54,14 +102,13 @@
         }
 
         .dropdown-content a:hover {
-            background-color: #ff00ff;
+            background-color: #333;
         }
     </style>
 </head>
-
 <body>
-    <h1 class="glitch">Error 404</h1>
-    <p>Page Not Found</p>
+    <h1 class="glitch" title="404">404</h1>
+    <p class="glitch" title="Error - Page Not Found">Error - Page Not Found</p>
     <div class="dropdown">
         <span>Navigation</span>
         <div class="dropdown-content">
@@ -71,6 +118,4 @@
         </div>
     </div>
 </body>
-
 </html>
-
