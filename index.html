@@ -1,67 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Webpage</title>
+    <title>GlitchMaster's Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             background-color: #000;
             color: #fff;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-        
-        .header {
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
             text-align: center;
-            padding: 50px 0;
         }
-        
-        .content {
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 36px;
+        }
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
-        
-        .work-item {
+        .section {
             margin-bottom: 40px;
         }
-        
-        .work-item img {
-            max-width: 100%;
+        .glitched-image {
+            animation: glitch 2s infinite;
         }
-        
-        .bio {
-            margin-top: 40px;
+        @keyframes glitch {
+            0% {
+                transform: rotate(0.5deg) skewY(-1deg);
+            }
+            25% {
+                transform: rotate(-0.5deg) skewY(1deg);
+            }
+            50% {
+                transform: rotate(0.5deg) skewY(-1deg);
+            }
+            75% {
+                transform: rotate(-0.5deg) skewY(1deg);
+            }
+            100% {
+                transform: rotate(0.5deg) skewY(-1deg);
+            }
         }
     </style>
 </head>
-
 <body>
-    <div class="header">
-        <h1>Your Name</h1>
-        <p>Data-Focused Developer | Glitched Corridors</p>
-    </div>
-
-    <div class="content">
-        <h2>Showcase</h2>
-        <div class="work-item">
-            <img src="work1.jpg" alt="Work 1">
-            <p>Description of Work 1</p>
-        </div>
-        <div class="work-item">
-            <img src="work2.jpg" alt="Work 2">
-            <p>Description of Work 2</p>
-        </div>
-        <!-- Add more work items as needed -->
-
-        <h2>Bio</h2>
-        <div class="bio">
-            <p>Insert your bio here. Talk about your passion for data, glitched corridors, and any other relevant information.</p>
-        </div>
+    <header>
+        <h1>Welcome to GlitchMaster's Portfolio</h1>
+    </header>
+    <div class="container">
+        <section class="section">
+            <h2>About Me</h2>
+            <p>Welcome to my glitched corridors of creativity! I'm GlitchMaster, a digital artist specializing in vaporwave glitch-themed designs. Dive into my world of distorted realities and pixelated dreams.</p>
+        </section>
+        <section class="section">
+            <h2>My Work</h2>
+            <p>Below are some examples of my glitched masterpieces:</p>
+            <!-- Insert images of your work here with glitched effect -->
+            <img src="image1.jpg" alt="Glitched Artwork 1" class="glitched-image">
+            <img src="image2.jpg" alt="Glitched Artwork 2" class="glitched-image">
+            <img src="image3.jpg" alt="Glitched Artwork 3" class="glitched-image">
+        </section>
     </div>
 </body>
-
 </html>
