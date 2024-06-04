@@ -6,8 +6,8 @@
     <title>404 Not Found</title>
     <style>
         body {
-            background: #000;
-            color: #00ff99;
+            background: linear-gradient(135deg, #ff00cc, #333399);
+            color: white;
             font-family: 'Courier New', Courier, monospace;
             display: flex;
             justify-content: center;
@@ -16,90 +16,111 @@
             margin: 0;
             overflow: hidden;
         }
-        .glitch-wrapper {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .glitch {
-            font-size: 5rem;
-            font-weight: bold;
-            position: relative;
+        .container {
+            text-align: center;
             animation: glitch 1s infinite;
         }
-        .glitch::before,
-        .glitch::after {
+        h1 {
+            font-size: 6em;
+            margin: 0;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 0.5em 0 1.5em;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid white;
+            display: inline-block;
+            transition: background 0.3s, color 0.3s;
+        }
+        a:hover {
+            background: white;
+            color: #333399;
+        }
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-5px, 5px);
+            }
+            40% {
+                transform: translate(-5px, -5px);
+            }
+            60% {
+                transform: translate(5px, 5px);
+            }
+            80% {
+                transform: translate(5px, -5px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+        .glitch::before, .glitch::after {
             content: attr(data-text);
             position: absolute;
             left: 0;
         }
         .glitch::before {
-            animation: glitchTop 1s infinite;
-            color: #ff66cc;
-            clip: rect(2px, 9999px, 42px, 0);
+            animation: glitch-1 0.3s infinite;
+            clip: rect(24px, 550px, 90px, 0);
         }
         .glitch::after {
-            animation: glitchBottom 1s infinite;
-            color: #33ccff;
-            clip: rect(84px, 9999px, 140px, 0);
+            animation: glitch-2 0.3s infinite;
+            clip: rect(85px, 550px, 140px, 0);
         }
-        @keyframes glitch {
-            0% { transform: translate(0); }
-            20% { transform: translate(-2px, -2px); }
-            40% { transform: translate(-2px, 2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-            100% { transform: translate(0); }
+        @keyframes glitch-1 {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, -2px);
+            }
+            40% {
+                transform: translate(-2px, 2px);
+            }
+            60% {
+                transform: translate(2px, -2px);
+            }
+            80% {
+                transform: translate(2px, 2px);
+            }
+            100% {
+                transform: translate(0);
+            }
         }
-        @keyframes glitchTop {
-            0% { transform: translate(0); }
-            20% { transform: translate(-2px, -2px); }
-            40% { transform: translate(-2px, 2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-            100% { transform: translate(0); }
-        }
-        @keyframes glitchBottom {
-            0% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, -2px); }
-            80% { transform: translate(2px, 2px); }
-            100% { transform: translate(0); }
-        }
-        .message {
-            font-size: 1.5rem;
-            text-align: center;
-            margin: 20px 0;
-        }
-        .nav-links {
-            display: flex;
-            gap: 15px;
-        }
-        .nav-links a {
-            padding: 10px 20px;
-            border: 2px solid #00ff99;
-            color: #00ff99;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        .nav-links a:hover {
-            background: #00ff99;
-            color: #000;
+        @keyframes glitch-2 {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(-2px, -2px);
+            }
+            60% {
+                transform: translate(2px, 2px);
+            }
+            80% {
+                transform: translate(2px, -2px);
+            }
+            100% {
+                transform: translate(0);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="glitch-wrapper">
-        <div class="glitch" data-text="404">404</div>
-        <div class="message">The page you're looking for does not exist.</div>
-        <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
-        </div>
+    <div class="container">
+        <h1 class="glitch" data-text="404">404</h1>
+        <p class="glitch" data-text="Page Not Found">Page Not Found</p>
+        <a href="/">Go Home</a>
+        <a href="/contact">Contact Us</a>
     </div>
 </body>
 </html>
