@@ -1,84 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 Error - Not Found</title>
-  <style>
-    body {
-      background-color: #0f0f0f;
-      color: #fff;
-      font-family: 'Courier New', Courier, monospace;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    .glitch {
-      font-size: 10rem;
-      font-weight: bold;
-      color: #ff6ac1;
-      text-shadow: 0 0 5px #ff6ac1;
-      animation: glitch-animation 2s infinite linear alternate-reverse;
-    }
-    @keyframes glitch-animation {
-      0% {
-        transform: translate(0);
-      }
-      20% {
-        transform: translate(-5px, 5px);
-      }
-      40% {
-        transform: translate(5px, -5px);
-      }
-      60% {
-        transform: translate(-5px, 5px);
-      }
-      80% {
-        transform: translate(5px, -5px);
-      }
-      100% {
-        transform: translate(0);
-      }
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    .menu {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-    .menu select {
-      padding: 10px;
-      border: none;
-      background-color: #ff6ac1;
-      color: #fff;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .menu select:hover {
-      background-color: #ff4a99;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404 - Page Not Found</title>
+    <style>
+        body {
+            background-color: #2a003e;
+            color: #ff00ff;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 4em;
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .glitch {
+            font-size: 2em;
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            0% { transform: none; }
+            25% { transform: skewX(10deg) scaleY(1.1); }
+            50% { transform: skewX(-5deg) scaleY(0.9); }
+            75% { transform: skewX(5deg) scaleY(1.1); }
+            100% { transform: skewX(0deg) scaleY(1.0); }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1 class="glitch">404</h1>
-    <p>Oops! Page not found.</p>
-  </div>
-  <div class="menu">
-    <select onchange="location = this.value;">
-      <option value="">Navigate</option>
-      <option value="/">Home</option>
-      <option value="/about">About</option>
-      <option value="/contact">Contact</option>
-    </select>
-  </div>
+    <h1 class="glitch">404 ERROR</h1>
+    <p>The matrix cannot locate the requested page.</p>
+    <p>It seems the code has encountered a <span class="glitch">glitch</span>.</p>
+    <p>Please try again later or <a href="/">return to the matrix</a>.</p>
+    <img src="https://media.giphy.com/media/xTiN0L7EW5trfOvEk0/giphy.gif" alt="Glitching code" style="width: 300px;">
 </body>
 </html>
