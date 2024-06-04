@@ -6,70 +6,81 @@
     <title>Glitched Corridors - Personal Blog</title>
     <style>
         body {
-            background-color: #0F0F0F;
-            color: #FFFFFF;
+            background-color: #000;
+            color: #fff;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-        .header {
-            background-image: url('glitched_corridors_background.jpg');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            padding: 100px 0;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.5;
-            margin-bottom: 30px;
-        }
-        .blog-section {
-            padding: 50px 20px;
-        }
-        .blog-post {
-            margin-bottom: 50px;
-        }
-        .blog-title {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        .blog-content {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        footer {
-            background-color: #333333;
-            color: #FFFFFF;
+        header {
             text-align: center;
             padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        }
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            color: #808080;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        .blog-post {
+            margin-bottom: 40px;
+        }
+        .blog-post h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .blog-post p {
+            font-size: 16px;
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Welcome to Glitched Corridors</h1>
-        <p>Your personal space in the digital world.</p>
-    </div>
-    <div class="blog-section">
+    <header>
+        <h1>Glitched Corridors - Personal Blog</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Welcome to Glitched Corridors! I'm [Your Name], and this is my personal blog where I explore all things related to vaporwave glitch themes and more. Stay tuned for updates!</p>
+    </section>
+
+    <section id="blog">
+        <h2>Latest Blog Posts</h2>
         <div class="blog-post">
-            <h2 class="blog-title">Exploring the World of Vaporwave Glitch</h2>
-            <p class="blog-content">In this post, I delve into the mesmerizing world of vaporwave glitch art and its influence on digital culture.</p>
+            <h3>Post Title 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis lectus quis nulla gravida, ut fermentum leo tempor.</p>
         </div>
         <div class="blog-post">
-            <h2 class="blog-title">Navigating through Glitched Corridors</h2>
-            <p class="blog-content">Join me on a journey through the glitched corridors of cyberspace as we uncover hidden gems and forgotten treasures.</p>
+            <h3>Post Title 2</h3>
+            <p>Integer nec diam enim. Duis non erat non quam interdum laoreet. Nullam ac risus ac est blandit venenatis.</p>
         </div>
-    </div>
-    <footer>
-        <p>&copy; 2024 Glitched Corridors. All rights reserved.</p>
-    </footer>
+        <!-- Add more blog posts here -->
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out to me via email at [your.email@example.com] or connect with me on social media:</p>
+        <!-- Add social media links or contact form here -->
+    </section>
 </body>
 </html>
