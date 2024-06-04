@@ -4,95 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Blog</title>
+    <title>Your Name - Personal Webpage</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             background-color: #000;
             color: #fff;
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 0 20px;
+        
+        .header {
             text-align: center;
+            padding: 50px 0;
         }
-
-        h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #ff6ec7;
-            text-transform: uppercase;
+        
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 20px;
+        
+        .work-item {
+            margin-bottom: 40px;
         }
-
-        .article {
-            border-bottom: 1px solid #444;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+        
+        .work-item img {
+            max-width: 100%;
         }
-
-        .article h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .article p {
-            font-size: 16px;
-            color: #999;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding: 20px 0;
-            background-color: #333;
-        }
-
-        footer p {
-            font-size: 14px;
-            color: #999;
+        
+        .bio {
+            margin-top: 40px;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Your Name</h1>
-            <p>Data-Focused Developer | Vaporwave Enthusiast</p>
-        </header>
-        <hr>
-        <section class="articles">
-            <div class="article">
-                <h2>Article Title 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel sapien et leo volutpat elementum eget
-                    ac nunc.</p>
-            </div>
-            <div class="article">
-                <h2>Article Title 2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel sapien et leo volutpat elementum eget
-                    ac nunc.</p>
-            </div>
-            <div class="article">
-                <h2>Article Title 3</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel sapien et leo volutpat elementum eget
-                    ac nunc.</p>
-            </div>
-        </section>
+    <div class="header">
+        <h1>Your Name</h1>
+        <p>Data-Focused Developer | Glitched Corridors</p>
     </div>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
+
+    <div class="content">
+        <h2>Showcase</h2>
+        <div class="work-item">
+            <img src="work1.jpg" alt="Work 1">
+            <p>Description of Work 1</p>
         </div>
-    </footer>
+        <div class="work-item">
+            <img src="work2.jpg" alt="Work 2">
+            <p>Description of Work 2</p>
+        </div>
+        <!-- Add more work items as needed -->
+
+        <h2>Bio</h2>
+        <div class="bio">
+            <p>Insert your bio here. Talk about your passion for data, glitched corridors, and any other relevant information.</p>
+        </div>
+    </div>
 </body>
 
 </html>
