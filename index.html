@@ -3,90 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glitched Corridors - Coding Showcase</title>
+    <title>Glitched Corridors</title>
     <style>
         body {
-            background-color: #2e2e2e;
+            background-color: #0f0f0f;
+            color: #ffffff;
             font-family: 'Courier New', Courier, monospace;
-            color: #f8f8f2;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
-        .header {
+        header {
+            background: linear-gradient(135deg, #ff00ff 0%, #00ffff 100%);
+            width: 100%;
             text-align: center;
-            padding: 50px;
-            background: linear-gradient(135deg, #ff6ec7, #8e44ad);
-            color: white;
-            text-shadow: 2px 2px 8px #000000;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 100;
         }
-        .header h1 {
-            font-size: 3em;
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
             animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 1px 1px #ff00ff, -1px -1px #00ffff; }
+            50% { text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff; }
+            100% { text-shadow: 1px 1px #ff00ff, -1px -1px #00ffff; }
         }
         .content {
             padding: 20px;
-        }
-        .project {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid #444;
-            border-radius: 10px;
-            margin: 20px 0;
-            padding: 20px;
-            box-shadow: 2px 2px 12px #000000;
-        }
-        .project h2 {
-            color: #ff6ec7;
-            text-shadow: 2px 2px 8px #000000;
-        }
-        .footer {
+            max-width: 800px;
+            width: 100%;
             text-align: center;
-            padding: 10px;
-            background: #1a1a1a;
-            color: #888888;
+            margin-top: 20px;
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 10px #ff00ff;
         }
-        @keyframes glitch {
-            0% {
-                text-shadow: 2px 2px 8px #000000;
-            }
-            25% {
-                text-shadow: 2px 2px 8px #ff6ec7, -2px -2px 8px #8e44ad;
-            }
-            50% {
-                text-shadow: 2px 2px 8px #000000;
-            }
-            75% {
-                text-shadow: 2px 2px 8px #8e44ad, -2px -2px 8px #ff6ec7;
-            }
-            100% {
-                text-shadow: 2px 2px 8px #000000;
-            }
+        .content h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .code-works {
+            list-style-type: none;
+            padding: 0;
+        }
+        .code-works li {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #00ffff;
+            box-shadow: 0 0 5px #ff00ff;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: #0f0f0f;
+            text-align: center;
+            color: #00ffff;
         }
     </style>
 </head>
 <body>
-    <div class="header">
+    <header>
         <h1>Glitched Corridors</h1>
-        <p>Exploring the intersection of code and art</p>
-    </div>
+    </header>
     <div class="content">
-        <div class="project">
-            <h2>Project 1: Retro Portfolio</h2>
-            <p>A portfolio website designed with a retro 80s vaporwave aesthetic. Utilizes HTML, CSS, and JavaScript for interactive elements.</p>
-            <a href="#">View Project</a>
-        </div>
-        <div class="project">
-            <h2>Project 2: Glitch Effect Gallery</h2>
-            <p>An image gallery featuring glitch effects using CSS animations and JavaScript. Highlights various glitch art techniques.</p>
-            <a href="#">View Project</a>
-        </div>
-        <div class="project">
-            <h2>Project 3: Code Visualizer</h2>
-            <p>A tool for visualizing code execution in real-time. Built with Python and D3.js to create dynamic visual representations of code flow.</p>
-            <a href="#">View Project</a>
-        </div>
+        <h2>Coding Works</h2>
+        <ul class="code-works">
+            <li><strong>Project 1:</strong> Description of the first coding project.</li>
+            <li><strong>Project 2:</strong> Description of the second coding project.</li>
+            <li><strong>Project 3:</strong> Description of the third coding project.</li>
+        </ul>
     </div>
-    <div class="footer">
-        <p>&copy; 2024 Glitched Corridors</p>
-    </div>
+    <footer>
+        &copy; 2024 Glitched Corridors
+    </footer>
 </body>
 </html>
