@@ -3,84 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glitched Corridors - Personal Blog</title>
+    <title>Your Name - Personal Webpage</title>
     <style>
         body {
-            background-color: #000;
-            color: #fff;
+            background-color: #0d0d0d; /* dark background */
+            color: #ffffff; /* white text */
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-        header {
-            text-align: center;
-            padding: 20px 0;
-        }
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-        nav {
-            text-align: center;
-            margin-top: 20px;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        nav a:hover {
-            color: #808080;
-        }
-        section {
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
-            text-align: center;
         }
-        .blog-post {
-            margin-bottom: 40px;
+        h1, h2, h3 {
+            color: #ff6ec7; /* pink headings */
         }
-        .blog-post h2 {
-            font-size: 24px;
-            margin: 10px 0;
+        .glitched-text {
+            font-size: 2rem;
+            color: #ff6ec7; /* pink text */
+            text-transform: uppercase;
+            animation: glitch 1s linear infinite;
         }
-        .blog-post p {
-            font-size: 16px;
-            margin: 0;
+        @keyframes glitch {
+            2% { transform: translate(2px, 0); }
+            4% { transform: translate(-2px, 0); }
+            6% { transform: translate(0, 2px); }
+            8% { transform: translate(0, -2px); }
+            10% { transform: translate(2px, 2px); }
+            12% { transform: translate(-2px, -2px); }
+            14% { transform: translate(2px, -2px); }
+            16% { transform: translate(-2px, 2px); }
+            18% { transform: translate(4px, 0); }
+            20% { transform: translate(-4px, 0); }
+            22% { transform: translate(0, 4px); }
+            24% { transform: translate(0, -4px); }
+            26% { transform: translate(4px, 4px); }
+            28% { transform: translate(-4px, -4px); }
+            30% { transform: translate(4px, -4px); }
+            32% { transform: translate(-4px, 4px); }
+            34% { transform: translate(8px, 0); }
+            36% { transform: translate(-8px, 0); }
+            38% { transform: translate(0, 8px); }
+            40% { transform: translate(0, -8px); }
+            42% { transform: translate(8px, 8px); }
+            44% { transform: translate(-8px, -8px); }
+            46% { transform: translate(8px, -8px); }
+            48% { transform: translate(-8px, 8px); }
+            50% { transform: translate(16px, 0); }
+            52% { transform: translate(-16px, 0); }
+            54% { transform: translate(0, 16px); }
+            56% { transform: translate(0, -16px); }
+            58% { transform: translate(16px, 16px); }
+            60% { transform: translate(-16px, -16px); }
+            62% { transform: translate(16px, -16px); }
+            64% { transform: translate(-16px, 16px); }
+            66% { transform: translate(32px, 0); }
+            68% { transform: translate(-32px, 0); }
+            70% { transform: translate(0, 32px); }
+            72% { transform: translate(0, -32px); }
+            74% { transform: translate(32px, 32px); }
+            76% { transform: translate(-32px, -32px); }
+            78% { transform: translate(32px, -32px); }
+            80% { transform: translate(-32px, 32px); }
+            82% { transform: translate(64px, 0); }
+            84% { transform: translate(-64px, 0); }
+            86% { transform: translate(0, 64px); }
+            88% { transform: translate(0, -64px); }
+            90% { transform: translate(64px, 64px); }
+            92% { transform: translate(-64px, -64px); }
+            94% { transform: translate(64px, -64px); }
+            96% { transform: translate(-64px, 64px); }
+            98% { transform: translate(128px, 0); }
+            100% { transform: translate(-128px, 0); }
+        }
+        .work {
+            margin-top: 40px;
+        }
+        .work img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Glitched Corridors - Personal Blog</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Welcome to Glitched Corridors! I'm [Your Name], and this is my personal blog where I explore all things related to vaporwave glitch themes and more. Stay tuned for updates!</p>
-    </section>
-
-    <section id="blog">
-        <h2>Latest Blog Posts</h2>
-        <div class="blog-post">
-            <h3>Post Title 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis lectus quis nulla gravida, ut fermentum leo tempor.</p>
+    <div class="container">
+        <h1 class="glitched-text">Your Name</h1>
+        <h2>Vaporwave Glitch Enthusiast</h2>
+        <p>Welcome to my glitched corridors of creativity! Here, I showcase my vaporwave glitch-themed designs and artwork.</p>
+        
+        <div class="work">
+            <h3>My Work</h3>
+            <!-- Add images of your work here -->
+            <img src="image1.jpg" alt="Work 1">
+            <img src="image2.jpg" alt="Work 2">
+            <img src="image3.jpg" alt="Work 3">
+            <!-- Add more images as needed -->
         </div>
-        <div class="blog-post">
-            <h3>Post Title 2</h3>
-            <p>Integer nec diam enim. Duis non erat non quam interdum laoreet. Nullam ac risus ac est blandit venenatis.</p>
-        </div>
-        <!-- Add more blog posts here -->
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out to me via email at [your.email@example.com] or connect with me on social media:</p>
-        <!-- Add social media links or contact form here -->
-    </section>
+    </div>
 </body>
 </html>
