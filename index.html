@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 404 - Page Not Found</title>
+    <title>404 Error - Page Not Found</title>
     <style>
         body {
-            background-color: #2a003e;
-            color: #ff00ff;
-            font-family: 'Courier New', monospace;
+            background-color: #0f0f0f;
+            color: #ff77ff;
+            font-family: 'Courier New', Courier, monospace;
             text-align: center;
             padding: 50px;
         }
@@ -18,26 +18,61 @@
         }
         p {
             font-size: 1.5em;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         .glitch {
-            font-size: 2em;
-            animation: glitch 1s infinite;
+            color: #00ff00;
+            font-size: 1.5em;
+            font-weight: bold;
+            animation: glitch-animation 2s infinite linear alternate-reverse;
         }
-        @keyframes glitch {
-            0% { transform: none; }
-            25% { transform: skewX(10deg) scaleY(1.1); }
-            50% { transform: skewX(-5deg) scaleY(0.9); }
-            75% { transform: skewX(5deg) scaleY(1.1); }
-            100% { transform: skewX(0deg) scaleY(1.0); }
+        @keyframes glitch-animation {
+            0% {
+                transform: translate(0);
+            }
+            25% {
+                transform: translate(-5px, 5px);
+            }
+            50% {
+                transform: translate(5px, -5px);
+            }
+            75% {
+                transform: translate(-5px, 5px);
+            }
+            100% {
+                transform: translate(5px, -5px);
+            }
+        }
+        .button-group {
+            margin-top: 50px;
+        }
+        .button {
+            background-color: #ff77ff;
+            color: #0f0f0f;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background-color: #00ff00;
+            color: #0f0f0f;
         }
     </style>
 </head>
 <body>
-    <h1 class="glitch">404 ERROR</h1>
-    <p>The matrix cannot locate the requested page.</p>
-    <p>It seems the code has encountered a <span class="glitch">glitch</span>.</p>
-    <p>Please try again later or <a href="/">return to the matrix</a>.</p>
-    <img src="https://media.giphy.com/media/xTiN0L7EW5trfOvEk0/giphy.gif" alt="Glitching code" style="width: 300px;">
+    <h1>404</h1>
+    <p class="glitch">Error - Page Not Found</p>
+    <p>Oops! It looks like you're lost in cyberspace.</p>
+    <p>But don't worry, you can navigate to one of these destinations:</p>
+    <div class="button-group">
+        <a href="#" class="button">Home</a>
+        <a href="#" class="button">About</a>
+        <a href="#" class="button">Services</a>
+        <a href="#" class="button">Contact</a>
+    </div>
 </body>
 </html>
