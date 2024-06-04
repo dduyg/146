@@ -8,70 +8,82 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #0d0d0d;
-            color: #00FF41;
+            height: 100vh;
+            background: #1a1a1d;
+            color: #fff;
             font-family: 'Courier New', Courier, monospace;
             overflow: hidden;
         }
-        
         .container {
             text-align: center;
-            z-index: 2;
         }
-
-        h1 {
-            font-size: 6em;
-            margin: 0;
+        .title {
+            font-size: 5rem;
+            color: #ff0066;
+            text-shadow: 0px 0px 10px #ff00ff;
             animation: glitch 1s infinite;
         }
-
-        p {
-            font-size: 1.5em;
-            animation: glitch 1.5s infinite;
+        .message {
+            font-size: 1.5rem;
+            color: #00ffcc;
+            animation: glitch 1s infinite;
         }
-
-        .background {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://media.giphy.com/media/l0Hlvmn9K1LZ46G7W/giphy.gif') center center / cover no-repeat;
-            opacity: 0.2;
-            z-index: 1;
-            filter: grayscale(1) blur(2px);
+        .surprise {
+            font-size: 1rem;
+            margin-top: 20px;
+            color: #ffffff;
+            animation: glitch 1s infinite;
         }
-
         @keyframes glitch {
             0% {
-                text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+                text-shadow: 2px 2px #ff0066, -2px -2px #00ffcc;
             }
-            20% {
-                text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
+            25% {
+                text-shadow: -2px 2px #ff0066, 2px -2px #00ffcc;
             }
-            40% {
-                text-shadow: 2px -2px #ff00ff, -2px 2px #00ffff;
+            50% {
+                text-shadow: 2px -2px #ff0066, -2px 2px #00ffcc;
             }
-            60% {
-                text-shadow: -2px 2px #ff00ff, 2px -2px #00ffff;
-            }
-            80% {
-                text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+            75% {
+                text-shadow: -2px -2px #ff0066, 2px 2px #00ffcc;
             }
             100% {
-                text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
+                text-shadow: 2px 2px #ff0066, -2px -2px #00ffcc;
             }
+        }
+        @keyframes background {
+            0% {
+                background: #1a1a1d;
+            }
+            50% {
+                background: #000000;
+            }
+            100% {
+                background: #1a1a1d;
+            }
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/4HJbzEq.jpg') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: -1;
+            animation: background 3s infinite;
         }
     </style>
 </head>
 <body>
-    <div class="background"></div>
     <div class="container">
-        <h1>404</h1>
-        <p>Page Not Found</p>
-        <p>You've ventured into the cyber void.</p>
+        <div class="title">404</div>
+        <div class="message">Page Not Found</div>
+        <div class="surprise">You've entered the glitch zone. Navigate back to <a href="/" style="color: #ff0066; text-decoration: none;">Home</a>.</div>
     </div>
 </body>
 </html>
