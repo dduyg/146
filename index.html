@@ -1,69 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Error 404 - Not Found</title>
-<style>
-  body {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    padding: 50px;
-  }
-  
-  h1 {
-    font-size: 4em;
-    margin-bottom: 30px;
-  }
-  
-  p {
-    font-size: 1.5em;
-  }
-  
-  .glitch {
-    position: relative;
-    display: inline-block;
-    font-size: 5em;
-    color: #ff00ff;
-  }
-  
-  .glitch::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    clip: rect(44px, 450px, 56px, 0);
-    color: #00ff00;
-    animation: glitch-animation 2s infinite linear alternate-reverse;
-  }
-  
-  @keyframes glitch-animation {
-    0% {
-      clip: rect(29px, 9999px, 33px, 0);
-    }
-    25% {
-      clip: rect(85px, 9999px, 77px, 0);
-    }
-    50% {
-      clip: rect(63px, 9999px, 3px, 0);
-    }
-    75% {
-      clip: rect(17px, 9999px, 78px, 0);
-    }
-    100% {
-      clip: rect(71px, 9999px, 47px, 0);
-    }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Not Found</title>
+    <style>
+        body {
+            background-color: #2a005a;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .glitch {
+            color: #fff;
+            position: relative;
+            font-size: 1em;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: inline-block;
+            animation: glitch-animation 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-animation {
+            0% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-2px, 2px);
+            }
+
+            40% {
+                transform: translate(-3px, -2px);
+            }
+
+            60% {
+                transform: translate(2px, 1px);
+            }
+
+            80% {
+                transform: translate(3px, -1px);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 3em;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Error 404</h1>
-  <p class="glitch" data-text="Not Found">Not Found</p>
-  <p>Sorry, the vaporwave corridors seem to have glitched out.</p>
-  <p>Return to <a href="/">homepage</a>.</p>
+    <h1>404</h1>
+    <p>Sorry, this page doesn't exist in the vaporwave glitched corridors.</p>
+    <p><span class="glitch">404</span> Not Found</p>
 </body>
+
 </html>
