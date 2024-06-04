@@ -1,121 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error - Page Not Found</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-            padding: 50px;
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 6em;
-            margin-bottom: 10px;
-            color: #ff00ff;
-            text-transform: uppercase;
-            letter-spacing: 10px;
-        }
-
-        p {
-            font-size: 1.5em;
-        }
-
-        .glitch {
-            color: #ff00ff;
-            position: relative;
-            display: inline-block;
-        }
-
-        .glitch::before, .glitch::after {
-            content: attr(title);
-            position: absolute;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            clip: rect(0, 900px, 0, 0);
-        }
-
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 #00ff00;
-            animation: glitch-animation 3s infinite linear alternate-reverse;
-        }
-
-        .glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 #ff0000;
-            animation: glitch-animation2 2s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch-animation {
-            0% {
-                clip: rect(15px, 900px, 83px, 0);
-            }
-            10%, 30%, 50%, 70%, 90% {
-                clip: rect(54px, 900px, 77px, 0);
-            }
-            20%, 40%, 60%, 80%, 100% {
-                clip: rect(6px, 900px, 8px, 0);
-            }
-        }
-
-        @keyframes glitch-animation2 {
-            0% {
-                clip: rect(64px, 900px, 36px, 0);
-            }
-            10%, 30%, 50%, 70%, 90% {
-                clip: rect(60px, 900px, 50px, 0);
-            }
-            20%, 40%, 60%, 80%, 100% {
-                clip: rect(11px, 900px, 42px, 0);
-            }
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #000;
-            min-width: 160px;
-            z-index: 1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a {
-            color: #fff;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #333;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Error - Page Not Found</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding-top: 50px;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    p {
+      font-size: 1.5em;
+    }
+    .glitch {
+      font-family: 'Courier New', monospace;
+      font-size: 5em;
+      color: #ff00ff;
+      text-shadow: 
+        0 0 2px #00ffff,
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #00ffff,
+        0 0 60px #00ffff,
+        0 0 80px #00ffff,
+        0 0 100px #00ffff,
+        0 0 150px #00ffff;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% {
+        transform: none;
+      }
+      5% {
+        transform: rotateX(20deg) rotateY(20deg);
+      }
+      10% {
+        transform: rotateX(-20deg) rotateY(-20deg);
+      }
+      15% {
+        transform: rotateX(10deg) rotateY(10deg);
+      }
+      20% {
+        transform: rotateX(-10deg) rotateY(-10deg);
+      }
+      25% {
+        transform: rotateX(5deg) rotateY(5deg);
+      }
+      30% {
+        transform: rotateX(-5deg) rotateY(-5deg);
+      }
+      35% {
+        transform: none;
+      }
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff00ff;
+      color: #000;
+      text-decoration: none;
+      font-size: 1.2em;
+      border: 2px solid #00ffff;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+    }
+    .btn:hover {
+      background-color: #00ffff;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-    <h1 class="glitch" title="404">404</h1>
-    <p class="glitch" title="Error - Page Not Found">Error - Page Not Found</p>
-    <div class="dropdown">
-        <span>Navigation</span>
-        <div class="dropdown-content">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
-        </div>
-    </div>
+  <h1 class="glitch" data-text="404">404</h1>
+  <p>Page Not Found</p>
+  <p>Oops! The page you are looking for might have been removed or is temporarily unavailable.</p>
+  <a href="/" class="btn">Go Home</a>
+  <a href="/contact" class="btn">Contact Us</a>
 </body>
 </html>
