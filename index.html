@@ -1,83 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Not Found</title>
+    <title>Error 404 - Not Found</title>
     <style>
         body {
-            background-color: #2a005a;
+            background-color: #000;
             color: #fff;
             font-family: 'Arial', sans-serif;
             text-align: center;
             padding: 50px;
-            margin: 0;
         }
-
         h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        p {
-            font-size: 1.5em;
+            font-size: 5em;
             margin-bottom: 30px;
         }
-
-        .glitch {
-            color: #fff;
-            position: relative;
-            font-size: 1em;
-            text-transform: uppercase;
-            font-weight: bold;
-            display: inline-block;
-            animation: glitch-animation 2s infinite linear alternate-reverse;
+        p {
+            font-size: 1.5em;
         }
-
+        .glitch {
+            color: #ff00ff;
+            text-shadow: 0 0 5px #ff00ff;
+            animation: glitch-animation 1s linear infinite alternate-reverse;
+        }
         @keyframes glitch-animation {
             0% {
-                transform: translate(0);
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff;
             }
-
             20% {
-                transform: translate(-2px, 2px);
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff;
             }
-
-            40% {
-                transform: translate(-3px, -2px);
+            25% {
+                text-shadow: none;
             }
-
-            60% {
-                transform: translate(2px, 1px);
+            26% {
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff;
             }
-
-            80% {
-                transform: translate(3px, -1px);
+            27% {
+                text-shadow: none;
             }
-
+            30% {
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff;
+            }
             100% {
-                transform: translate(0);
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            h1 {
-                font-size: 3em;
-            }
-
-            p {
-                font-size: 1.2em;
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff;
             }
         }
     </style>
 </head>
-
 <body>
-    <h1>404</h1>
-    <p>Sorry, this page doesn't exist in the vaporwave glitched corridors.</p>
-    <p><span class="glitch">404</span> Not Found</p>
+    <h1 class="glitch">404</h1>
+    <p>The vaporwave glitched corridors have vanished...</p>
+    <p>Sorry, the page you are looking for is not found.</p>
+    <p><a href="/">Return to Home</a></p>
 </body>
-
 </html>
