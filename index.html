@@ -3,214 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error - Page Not Found</title>
+    <title>Error 404 - Not Found</title>
     <style>
         body {
-            background-color: #000;
-            color: #fff;
+            background-color: #2a003e;
+            color: #ff6ac1;
             font-family: 'Courier New', monospace;
             text-align: center;
             padding: 50px;
+            margin: 0;
         }
-
         h1 {
             font-size: 3em;
-            margin-bottom: 30px;
-        }
-
-        p {
-            font-size: 1.2em;
             margin-bottom: 20px;
         }
-
-        .glitch {
-            color: #ff00ff;
-            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff;
-            animation: glitch-animation 2s infinite linear alternate-reverse;
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
         }
-
-        @keyframes glitch-animation {
-            2% {
+        .glitch {
+            font-size: 3em;
+            animation: glitch 1s linear infinite;
+        }
+        @keyframes glitch {
+            2%, 64% {
                 transform: translate(2px, 0) skew(0deg);
             }
-            4% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            6% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            8% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            10% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            12% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            14% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            16% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            18% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            20% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            22% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            24% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            26% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            28% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            30% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            32% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            34% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            36% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            38% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            40% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            42% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            44% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            46% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            48% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            50% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            52% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            54% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            56% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            58% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            60% {
+            4%, 60% {
                 transform: translate(-2px, 0) skew(0deg);
             }
             62% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            64% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            66% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            68% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            70% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            72% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            74% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            76% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            78% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            80% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            82% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            84% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            86% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            88% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            90% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            92% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            94% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            96% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            98% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            100% {
-                transform: translate(-2px, 0) skew(0deg);
+                transform: translate(0, 0) skew(5deg);
             }
         }
-
-        .btn-container {
-            margin-top: 30px;
-        }
-
-        .btn {
-            background-color: #ff00ff;
-            color: #000;
-            padding: 10px 20px;
+        button {
+            background-color: #ff6ac1;
+            color: #2a003e;
             border: none;
-            border-radius: 5px;
-            margin: 5px;
-            text-decoration: none;
+            padding: 10px 20px;
             font-size: 1.2em;
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
-        .btn:hover {
-            background-color: #800080;
+        button:hover {
+            background-color: #ff82d1;
         }
     </style>
 </head>
 <body>
-    <h1 class="glitch">404 Error - Page Not Found</h1>
-    <p>Oops! It seems like you've wandered into the void...</p>
-    <div class="btn-container">
-        <a href="/" class="btn">Home</a>
-        <a href="/contact" class="btn">Contact Us</a>
-        <a href="/about" class="btn">About Us</a>
-    </div>
+    <h1 class="glitch">Error 404</h1>
+    <p>Sorry, the page you are looking for cannot be found.</p>
+    <button onclick="goBack()">Go Back</button>
+    <button onclick="goHome()">Home</button>
+    
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        function goHome() {
+            window.location.href = "/";
+        }
+    </script>
 </body>
 </html>
