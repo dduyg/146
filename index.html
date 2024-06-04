@@ -6,97 +6,138 @@
     <title>404 Not Found</title>
     <style>
         body {
-            background-color: #0d0d0d;
-            color: #00ffcc;
-            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            background: #0d0d0d;
+            font-family: 'Courier New', Courier, monospace;
+            color: #fff;
             overflow: hidden;
         }
         .container {
             text-align: center;
-            animation: glitch 1s infinite;
-        }
-        h1 {
-            font-size: 5em;
-            margin: 0;
-        }
-        p {
-            font-size: 1.5em;
-        }
-        .glitch {
             position: relative;
         }
-        .glitch::before,
-        .glitch::after {
-            content: '404';
+        .glitch {
+            font-size: 4rem;
+            position: relative;
+            display: inline-block;
+            color: #00ffea;
+            animation: glitch-animation 1s infinite;
+        }
+        .glitch::before, .glitch::after {
+            content: "404";
             position: absolute;
+            top: 0;
             left: 0;
-            right: 0;
-            color: #ff00ff;
-            background: rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            width: 100%;
+            height: 100%;
         }
         .glitch::before {
-            top: -2px;
             left: 2px;
-            text-shadow: -2px 2px #ff00ff;
-            clip: rect(24px, 550px, 90px, 0);
-            animation: glitch 2s infinite linear alternate-reverse;
+            text-shadow: -2px 0 magenta;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-animation-before 2.5s infinite linear alternate-reverse;
         }
         .glitch::after {
-            top: 2px;
             left: -2px;
-            text-shadow: -2px -2px #00ffff;
-            clip: rect(85px, 550px, 140px, 0);
-            animation: glitch 3s infinite linear alternate-reverse;
+            text-shadow: -2px 0 blue;
+            clip: rect(85px, 450px, 140px, 0);
+            animation: glitch-animation-after 3s infinite linear alternate-reverse;
         }
-        @keyframes glitch {
+        @keyframes glitch-animation {
             0% {
-                transform: skew(0deg);
+                transform: translate(0);
             }
             20% {
-                transform: skew(5deg);
+                transform: translate(-2px, 2px);
             }
             40% {
-                transform: skew(-5deg);
+                transform: translate(-2px, -2px);
             }
             60% {
-                transform: skew(3deg);
+                transform: translate(2px, 2px);
             }
             80% {
-                transform: skew(-3deg);
+                transform: translate(2px, -2px);
             }
             100% {
-                transform: skew(0deg);
+                transform: translate(0);
             }
         }
-        .surprise {
+        @keyframes glitch-animation-before {
+            0% {
+                clip: rect(42px, 450px, 56px, 0);
+            }
+            50% {
+                clip: rect(20px, 450px, 50px, 0);
+            }
+            100% {
+                clip: rect(60px, 450px, 80px, 0);
+            }
+        }
+        @keyframes glitch-animation-after {
+            0% {
+                clip: rect(85px, 450px, 140px, 0);
+            }
+            50% {
+                clip: rect(40px, 450px, 120px, 0);
+            }
+            100% {
+                clip: rect(90px, 450px, 130px, 0);
+            }
+        }
+        .message {
+            font-size: 1.5rem;
             margin-top: 20px;
-            animation: blink 1s infinite;
+            color: #ff00ff;
         }
-        @keyframes blink {
-            0%, 50%, 100% {
-                opacity: 1;
+        .animation-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .glitch-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.1) 2px,
+                rgba(255, 255, 255, 0.1) 4px
+            );
+            animation: line-glitch 1.5s infinite;
+        }
+        @keyframes line-glitch {
+            0% {
+                transform: translateY(0);
             }
-            25%, 75% {
-                opacity: 0;
+            50% {
+                transform: translateY(10px);
+            }
+            100% {
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
+    <div class="animation-container">
+        <div class="glitch-lines"></div>
+    </div>
     <div class="container">
-        <div class="glitch">
-            <h1>404</h1>
-        </div>
-        <p>Page Not Found</p>
-        <div class="surprise">
-            <p>Try hacking the URL or return to <a href="/" style="color:#00ffff; text-decoration: none;">home</a>.</p>
-        </div>
+        <div class="glitch">404</div>
+        <div class="message">Page Not Found</div>
+        <div class="message">The cyber void has swallowed this page.</div>
     </div>
 </body>
 </html>
