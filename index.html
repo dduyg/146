@@ -1,74 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 Error - Page Not Found</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #141c30;
-      color: #ffffff;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      font-size: 60px;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-    a {
-      color: #ff0066;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .glitch {
-      font-size: 100px;
-      color: #ff0066;
-      position: relative;
-      animation: glitch-animation 2s infinite linear alternate-reverse;
-    }
-    @keyframes glitch-animation {
-      0% {
-        top: 0;
-        text-shadow: -5px 0 #ff0066;
-      }
-      20% {
-        top: -5px;
-        text-shadow: -5px 0 #ff0066, 5px 0 #00ccff;
-      }
-      40% {
-        top: 5px;
-        text-shadow: -5px 0 #ff0066, 5px 0 #00ccff;
-      }
-      60% {
-        top: -5px;
-        text-shadow: -5px 0 #ff0066, 5px 0 #00ccff;
-      }
-      80% {
-        top: 5px;
-        text-shadow: -5px 0 #ff0066, 5px 0 #00ccff;
-      }
-      100% {
-        top: 0;
-        text-shadow: -5px 0 #ff0066;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error - Page Not Found</title>
+    <style>
+        body {
+            background-color: #330033; /* Dark purple background */
+            color: #FF33FF; /* Pink text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 6em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        a {
+            color: #FF33FF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .grid-item {
+            padding: 10px;
+            border: 1px solid #FF33FF;
+            background-color: #660066; /* Purple background */
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
-  <h1 class="glitch">404</h1>
-  <p>Oops! The page you're looking for is not found.</p>
-  <p>Let's get you back on track:</p>
-  <nav>
-    <a href="/">Home</a> | 
-    <a href="/about">About</a> | 
-    <a href="/contact">Contact</a>
-  </nav>
+    <div class="container">
+        <div>
+            <h1>404</h1>
+            <p>Oops! The page you're looking for doesn't exist.</p>
+            <p>But hey, why not explore something else?</p>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item"><a href="/">Home</a></div>
+            <div class="grid-item"><a href="/about">About</a></div>
+            <div class="grid-item"><a href="/contact">Contact</a></div>
+        </div>
+    </div>
 </body>
 </html>
