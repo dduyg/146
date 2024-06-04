@@ -6,76 +6,95 @@
     <title>Glitched Corridors</title>
     <style>
         body {
-            background-color: #0D0221;
-            color: #A0A0A0;
-            font-family: 'Courier New', Courier, monospace;
             margin: 0;
-            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffffff;
+            background-color: #0d0d0d;
+            background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/glitch-noise.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
         header {
-            background: #00FFD0;
-            color: #0D0221;
+            background-color: rgba(0, 0, 0, 0.8);
             text-align: center;
-            padding: 20px;
-            text-shadow: 2px 2px #FF00FF;
+            padding: 2em 0;
         }
-        .glitch {
-            font-size: 4rem;
-            position: relative;
+        header h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff8eff;
             animation: glitch 1s infinite;
         }
         @keyframes glitch {
-            0% { transform: translate(0, 0); }
-            20% { transform: translate(-2px, -2px); }
-            40% { transform: translate(-2px, 2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-            100% { transform: translate(0, 0); }
+            0% {
+                text-shadow: 2px 2px #00ffe1, -2px -2px #ff8eff;
+            }
+            50% {
+                text-shadow: -2px -2px #00ffe1, 2px 2px #ff8eff;
+            }
+            100% {
+                text-shadow: 2px 2px #00ffe1, -2px -2px #ff8eff;
+            }
         }
-        .container {
-            padding: 20px;
-        }
-        .blog-post {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid #A0A0A0;
-            margin: 20px 0;
-            padding: 20px;
-        }
-        .blog-post h2 {
-            margin-top: 0;
-            color: #FF00FF;
-        }
-        .footer {
+        nav {
             text-align: center;
-            padding: 10px;
-            background: #00FFD0;
-            color: #0D0221;
-            text-shadow: 2px 2px #FF00FF;
+            padding: 1em 0;
+        }
+        nav a {
+            color: #00ffe1;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-shadow: 2px 2px #ff8eff;
+        }
+        .content {
+            padding: 2em;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        .content h2 {
+            color: #ff8eff;
+            font-size: 2em;
+        }
+        .content p {
+            color: #e0e0e0;
+            font-size: 1.1em;
+            line-height: 1.5em;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            color: #00ffe1;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1 class="glitch">Glitched Corridors</h1>
+        <h1>Glitched Corridors</h1>
     </header>
-    <div class="container">
-        <section>
-            <h2>Welcome to Glitched Corridors</h2>
-            <p>Immerse yourself in the world of vaporwave and glitch aesthetics. Explore my personal blog where I share thoughts, ideas, and experiences.</p>
-        </section>
-        <section>
-            <h2>Blog</h2>
-            <div class="blog-post">
-                <h2>Post Title 1</h2>
-                <p>This is a sample blog post. Replace this text with your own content.</p>
-            </div>
-            <div class="blog-post">
-                <h2>Post Title 2</h2>
-                <p>This is another sample blog post. Replace this text with your own content.</p>
-            </div>
-        </section>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#blog">Blog</a>
+    </nav>
+    <div class="content" id="about">
+        <h2>About Me</h2>
+        <p>
+            Welcome to Glitched Corridors! This is my personal space where I share thoughts, ideas, and musings. I am passionate about the vaporwave aesthetic and the fascinating world of glitch art. Join me on a journey through digital landscapes and nostalgic echoes.
+        </p>
     </div>
-    <footer class="footer">
+    <div class="content" id="blog">
+        <h2>Personal Blog</h2>
+        <p>
+            Here is where I will be posting my blog entries. Stay tuned for updates!
+        </p>
+    </div>
+    <footer>
         <p>&copy; 2024 Glitched Corridors</p>
     </footer>
 </body>
