@@ -3,140 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
+    <title>404 Not Found | Cyber Creations</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background: #0f0c29;
-            background: -webkit-linear-gradient(to right, #0f0c29, #302b63, #24243e);
-            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(135deg, #ff00ff, #00ffff);
             color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
             overflow: hidden;
         }
+
         .container {
             text-align: center;
-            max-width: 600px;
+            animation: glitch 1.5s infinite;
         }
+
         h1 {
             font-size: 6em;
             margin: 0;
             position: relative;
-            animation: glitch 1s infinite;
+            display: inline-block;
         }
-        h1::before, h1::after {
-            content: '404';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-        }
-        h1::before {
-            left: 2px;
-            text-shadow: -2px 0 cyan;
-            animation: glitch 1s infinite reverse;
-        }
-        h1::after {
-            left: -2px;
-            text-shadow: -2px 0 red;
-            animation: glitch 1.5s infinite;
-        }
-        @keyframes glitch {
-            0% {
-                clip: rect(12px, 9999px, 101px, 0);
-                transform: skew(0.3deg);
-            }
-            10% {
-                clip: rect(83px, 9999px, 113px, 0);
-                transform: skew(0.6deg);
-            }
-            20% {
-                clip: rect(39px, 9999px, 82px, 0);
-                transform: skew(0.4deg);
-            }
-            30% {
-                clip: rect(13px, 9999px, 84px, 0);
-                transform: skew(0.8deg);
-            }
-            40% {
-                clip: rect(82px, 9999px, 45px, 0);
-                transform: skew(0.3deg);
-            }
-            50% {
-                clip: rect(43px, 9999px, 75px, 0);
-                transform: skew(0.6deg);
-            }
-            60% {
-                clip: rect(65px, 9999px, 120px, 0);
-                transform: skew(0.4deg);
-            }
-            70% {
-                clip: rect(57px, 9999px, 96px, 0);
-                transform: skew(0.8deg);
-            }
-            80% {
-                clip: rect(45px, 9999px, 78px, 0);
-                transform: skew(0.3deg);
-            }
-            90% {
-                clip: rect(36px, 9999px, 57px, 0);
-                transform: skew(0.6deg);
-            }
-            100% {
-                clip: rect(89px, 9999px, 100px, 0);
-                transform: skew(0.4deg);
-            }
-        }
-        p {
-            font-size: 1.2em;
-            margin-top: 20px;
+
+        .glitch {
+            font-size: 1.5em;
             animation: glitchText 2s infinite;
         }
-        @keyframes glitchText {
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            border: 2px solid #ffffff;
+            padding: 10px 20px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        @keyframes glitch {
             0% {
-                text-shadow: 2px 2px 0 red, -2px -2px 0 cyan;
+                transform: skew(0deg);
             }
-            50% {
-                text-shadow: -2px -2px 0 red, 2px 2px 0 cyan;
+            20% {
+                transform: skew(5deg) translate(5px, 0);
+            }
+            40% {
+                transform: skew(-5deg) translate(-5px, 0);
+            }
+            60% {
+                transform: skew(5deg) translate(5px, 0);
+            }
+            80% {
+                transform: skew(-5deg) translate(-5px, 0);
             }
             100% {
-                text-shadow: 2px 2px 0 red, -2px -2px 0 cyan;
+                transform: skew(0deg);
             }
         }
-        nav {
-            margin-top: 30px;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1em;
-            border-bottom: 2px solid transparent;
-            transition: border-bottom 0.3s;
-        }
-        nav a:hover {
-            border-bottom: 2px solid cyan;
+
+        @keyframes glitchText {
+            0% {
+                text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
+            }
+            20% {
+                text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+            }
+            40% {
+                text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
+            }
+            60% {
+                text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+            }
+            80% {
+                text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
+            }
+            100% {
+                text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>404</h1>
-        <p>Oops! The page you're looking for has been lost in cyberspace.</p>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
-        </nav>
+        <p class="glitch">Page Not Found</p>
+        <p>Oops! It seems you've encountered a glitch in the matrix.</p>
+        <p>Let's get you <a href="/">back home</a> safely.</p>
     </div>
 </body>
 </html>
