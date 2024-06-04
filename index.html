@@ -3,68 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error - Not Found</title>
+    <title>404 Error - Page Not Found</title>
     <style>
         body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Arial', sans-serif;
+            background-color: #2b1d45;
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
             text-align: center;
             margin: 0;
             padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 6rem;
+            margin-bottom: 20px;
+            font-weight: normal;
+            color: #ff80ed;
+            text-shadow: 0 0 10px #ff80ed;
+        }
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 2px dashed #ff80ed;
+            transition: border-color 0.3s ease-in-out;
+        }
+        a:hover {
+            border-color: #ffffff;
         }
         .glitch {
-            font-size: 100px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-transform: uppercase;
-            animation: glitch-animation 1s infinite linear alternate-reverse;
+            font-size: 5rem;
+            color: #ff80ed;
+            text-shadow: 0 0 10px #ff80ed;
+            animation: glitch 1s linear infinite;
         }
-        @keyframes glitch-animation {
-            2% { transform: translate(-48%, -50%); }
-            4% { transform: translate(-52%, -50%); }
-            6% { transform: translate(-50%, -48%); }
-            8% { transform: translate(-50%, -52%); }
-            10% { transform: translate(-48%, -52%); }
-            12% { transform: translate(-52%, -48%); }
-            14% { transform: translate(-48%, -50%); }
-            16% { transform: translate(-52%, -50%); }
-            18% { transform: translate(-50%, -48%); }
-            20% { transform: translate(-50%, -52%); }
-            22% { transform: translate(-48%, -52%); }
-            24% { transform: translate(-52%, -48%); }
-            26% { transform: translate(-50%, -50%); }
-            100% { transform: translate(-50%, -50%); }
-        }
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 #ff00c8;
-            background: #00ffea;
-            clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
-        }
-        .glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 #00ffea;
-            background: #ff00c8;
-            clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+        @keyframes glitch {
+            2%, 64% {
+                transform: translate(2px,0) skew(0deg);
+            }
+            4%, 60% {
+                transform: translate(-2px,0) skew(0deg);
+            }
+            62% {
+                transform: translate(0,0) skew(5deg);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="glitch" data-text="404 Error">404 Error</div>
-    <p style="margin-top: 150px; font-size: 24px;">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
-    <p style="margin-top: 20px; font-size: 20px;">Let's return to <a href="/">home</a> and try from there.</p>
-    <p style="margin-top: 50px; font-size: 14px;">But before you go, here's a surprise: <span style="color: #ff00c8;">&#x1F4A9;</span></p>
+    <h1>404 <span class="glitch">Error</span></h1>
+    <p>Oops! It seems like you've stumbled upon a glitch in the matrix.</p>
+    <p>Don't worry, our cyber coders are on it. Meanwhile, why not <a href="/">return to safety</a>?</p>
+    <img src="https://media.giphy.com/media/3oz8xBUlpNRiKziSXC/giphy.gif" alt="Surprise!">
 </body>
 </html>
