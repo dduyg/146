@@ -1,86 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 Error - Page Not Found</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Courier New', monospace;
-      text-align: center;
-      padding-top: 50px;
-    }
-    h1 {
-      font-size: 3em;
-    }
-    p {
-      font-size: 1.5em;
-    }
-    .glitch {
-      font-family: 'Courier New', monospace;
-      font-size: 5em;
-      color: #ff00ff;
-      text-shadow: 
-        0 0 2px #00ffff,
-        0 0 10px #00ffff,
-        0 0 20px #00ffff,
-        0 0 40px #00ffff,
-        0 0 60px #00ffff,
-        0 0 80px #00ffff,
-        0 0 100px #00ffff,
-        0 0 150px #00ffff;
-      animation: glitch 1s infinite;
-    }
-    @keyframes glitch {
-      0% {
-        transform: none;
-      }
-      5% {
-        transform: rotateX(20deg) rotateY(20deg);
-      }
-      10% {
-        transform: rotateX(-20deg) rotateY(-20deg);
-      }
-      15% {
-        transform: rotateX(10deg) rotateY(10deg);
-      }
-      20% {
-        transform: rotateX(-10deg) rotateY(-10deg);
-      }
-      25% {
-        transform: rotateX(5deg) rotateY(5deg);
-      }
-      30% {
-        transform: rotateX(-5deg) rotateY(-5deg);
-      }
-      35% {
-        transform: none;
-      }
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #ff00ff;
-      color: #000;
-      text-decoration: none;
-      font-size: 1.2em;
-      border: 2px solid #00ffff;
-      border-radius: 5px;
-      transition: all 0.3s ease-in-out;
-    }
-    .btn:hover {
-      background-color: #00ffff;
-      color: #fff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error - Page Not Found</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        #glitch {
+            color: #ff00ff;
+            font-size: 2em;
+            animation: glitch 1s linear infinite;
+        }
+        @keyframes glitch {
+            2%,64% {
+                transform: translate(2px,0) skew(0deg);
+            }
+            4%,60% {
+                transform: translate(-2px,0) skew(0deg);
+            }
+            62% {
+                transform: translate(0,0) skew(5deg); 
+            }
+        }
+        .button {
+            display: inline-block;
+            background-color: #ff00ff;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #fff;
+            color: #ff00ff;
+        }
+    </style>
 </head>
 <body>
-  <h1 class="glitch" data-text="404">404</h1>
-  <p>Page Not Found</p>
-  <p>Oops! The page you are looking for might have been removed or is temporarily unavailable.</p>
-  <a href="/" class="btn">Go Home</a>
-  <a href="/contact" class="btn">Contact Us</a>
+    <h1>404 Error</h1>
+    <p>The page you're looking for has been lost in the digital ether.</p>
+    <p><span id="glitch">ERROR</span>: Page Not Found</p>
+    <a href="/" class="button">Go Home</a>
+    <a href="/contact" class="button">Contact Us</a>
 </body>
 </html>
