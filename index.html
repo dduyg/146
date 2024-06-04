@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <style>
+        body {
+            background-color: #2a003e;
+            color: #ff00ff;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 4em;
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .glitch {
+            font-size: 4em;
+            position: relative;
+            animation: glitch 1s infinite;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: '404';
+            position: absolute;
+            left: 0;
+            animation: glitch-skew 1s infinite;
+        }
+        .glitch::before {
+            color: #f00;
+            z-index: -1;
+            clip: rect(24px, 550px, 90px, 0);
+        }
+        .glitch::after {
+            color: #0ff;
+            z-index: -1;
+            clip: rect(85px, 550px, 140px, 0);
+        }
+        @keyframes glitch {
+            0% {
+                transform: none;
+            }
+            20% {
+                transform: skew(-0.5deg, -0.5deg);
+            }
+            40% {
+                transform: skew(0.5deg, 0.5deg);
+            }
+            60% {
+                transform: skew(-0.5deg, -0.5deg);
+            }
+            80% {
+                transform: skew(0.5deg, 0.5deg);
+            }
+            100% {
+                transform: none;
+            }
+        }
+        @keyframes glitch-skew {
+            0% {
+                clip: rect(24px, 550px, 90px, 0);
+            }
+            50% {
+                clip: rect(85px, 550px, 140px, 0);
+            }
+            100% {
+                clip: rect(24px, 550px, 90px, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="glitch">Glitching Code</h1>
+    <p>The matrix cannot locate the requested page. It seems the code has encountered a glitch.</p>
+</body>
+</html>
