@@ -3,63 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error - Page Not Found</title>
+    <title>Error 404 - Page Not Found</title>
     <style>
         body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Arial', sans-serif;
+            background-color: #0e0e0e;
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
             text-align: center;
-            padding: 50px;
             margin: 0;
+            padding: 0;
         }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-        #glitch {
+        .glitch {
+            font-size: 150px;
+            font-weight: bold;
             color: #ff00ff;
-            font-size: 2em;
-            animation: glitch 1s linear infinite;
+            text-shadow: -5px 0 #00ffff, 0 5px #00ffff, 5px 0 #00ffff, 0 -5px #00ffff;
+            animation: glitch-animation 2s infinite;
         }
-        @keyframes glitch {
-            2%,64% {
-                transform: translate(2px,0) skew(0deg);
+        @keyframes glitch-animation {
+            0% {
+                transform: translate(0);
             }
-            4%,60% {
-                transform: translate(-2px,0) skew(0deg);
+            25% {
+                transform: translate(-5px, 5px);
             }
-            62% {
-                transform: translate(0,0) skew(5deg); 
+            50% {
+                transform: translate(5px, -5px);
             }
+            75% {
+                transform: translate(-5px, 5px);
+            }
+            100% {
+                transform: translate(5px, -5px);
+            }
+        }
+        .container {
+            margin-top: 20vh;
         }
         .button {
-            display: inline-block;
             background-color: #ff00ff;
-            color: #000;
+            color: #ffffff;
+            border: none;
             padding: 10px 20px;
+            text-align: center;
             text-decoration: none;
-            font-size: 1.2em;
-            text-transform: uppercase;
-            border-radius: 5px;
-            margin-top: 20px;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 12px;
         }
         .button:hover {
-            background-color: #fff;
+            background-color: #ffffff;
             color: #ff00ff;
         }
     </style>
 </head>
 <body>
-    <h1>404 Error</h1>
-    <p>The page you're looking for has been lost in the digital ether.</p>
-    <p><span id="glitch">ERROR</span>: Page Not Found</p>
-    <a href="/" class="button">Go Home</a>
-    <a href="/contact" class="button">Contact Us</a>
+    <div class="container">
+        <h1 class="glitch">404</h1>
+        <h2>Page Not Found</h2>
+        <p>The page you're looking for doesn't exist or has been removed.</p>
+        <a href="/" class="button">Home</a>
+        <a href="/contact" class="button">Contact</a>
+    </div>
 </body>
 </html>
