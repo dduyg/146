@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
+    <title>404 - Page Not Found</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Courier New', Courier, monospace;
-            background: #0f0c29;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            background: #2b2b2b;
             color: #fff;
             display: flex;
             justify-content: center;
@@ -21,79 +19,171 @@
         }
         .container {
             text-align: center;
+            animation: glitch 1s linear infinite;
         }
-        .glitch {
-            font-size: 6rem;
+        h1 {
+            font-size: 8rem;
+            margin: 0;
             position: relative;
             color: #fff;
+            text-transform: uppercase;
         }
-        .glitch::before,
-        .glitch::after {
-            content: "404";
+        h1::before,
+        h1::after {
+            content: '404';
             position: absolute;
+            top: 0;
             left: 0;
-            right: 0;
+            width: 100%;
+            height: 100%;
+            background: #2b2b2b;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
         }
-        .glitch::before {
+        h1::before {
             left: 2px;
             text-shadow: -2px 0 cyan;
-            animation: glitch 1s infinite linear alternate-reverse;
+            animation: glitchTop 2s infinite;
         }
-        .glitch::after {
+        h1::after {
             left: -2px;
             text-shadow: -2px 0 magenta;
-            animation: glitch 1s infinite linear alternate-reverse;
+            animation: glitchBottom 1.5s infinite;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+        .nav-buttons {
+            margin-top: 20px;
+        }
+        .nav-buttons a {
+            text-decoration: none;
+            color: #fff;
+            background: #ff0080;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+        .nav-buttons a:hover {
+            background: #ff00bf;
         }
         @keyframes glitch {
             0% {
-                transform: translate(0);
+                transform: skew(0deg);
+            }
+            10% {
+                transform: skew(10deg);
             }
             20% {
-                transform: translate(-2px, 2px);
+                transform: skew(-10deg);
+            }
+            30% {
+                transform: skew(10deg);
             }
             40% {
-                transform: translate(-2px, -2px);
+                transform: skew(-10deg);
+            }
+            50% {
+                transform: skew(10deg);
             }
             60% {
-                transform: translate(2px, 2px);
+                transform: skew(-10deg);
+            }
+            70% {
+                transform: skew(10deg);
             }
             80% {
-                transform: translate(2px, -2px);
+                transform: skew(-10deg);
+            }
+            90% {
+                transform: skew(10deg);
             }
             100% {
-                transform: translate(0);
+                transform: skew(0deg);
             }
         }
-        .message {
-            margin: 20px 0;
-            font-size: 1.5rem;
+        @keyframes glitchTop {
+            0% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            10% {
+                clip: rect(10px, 900px, 50px, 0);
+            }
+            20% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            30% {
+                clip: rect(85px, 900px, 140px, 0);
+            }
+            40% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            50% {
+                clip: rect(45px, 900px, 100px, 0);
+            }
+            60% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            70% {
+                clip: rect(10px, 900px, 50px, 0);
+            }
+            80% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            90% {
+                clip: rect(85px, 900px, 140px, 0);
+            }
+            100% {
+                clip: rect(0, 900px, 0, 0);
+            }
         }
-        .nav-links {
-            margin-top: 20px;
-        }
-        .nav-links a {
-            color: #fff;
-            background-color: #302b63;
-            padding: 10px 20px;
-            margin: 5px;
-            text-decoration: none;
-            border: 2px solid #fff;
-            transition: all 0.3s ease;
-        }
-        .nav-links a:hover {
-            background-color: #ff0080;
-            border-color: #ff0080;
+        @keyframes glitchBottom {
+            0% {
+                clip: rect(85px, 900px, 140px, 0);
+            }
+            10% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            20% {
+                clip: rect(10px, 900px, 50px, 0);
+            }
+            30% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            40% {
+                clip: rect(45px, 900px, 100px, 0);
+            }
+            50% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            60% {
+                clip: rect(85px, 900px, 140px, 0);
+            }
+            70% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            80% {
+                clip: rect(10px, 900px, 50px, 0);
+            }
+            90% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            100% {
+                clip: rect(85px, 900px, 140px, 0);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="glitch">404</div>
-        <div class="message">Oops! The page you're looking for doesn't exist.</div>
-        <div class="nav-links">
+        <h1>404</h1>
+        <p>Page not found. Something went wrong in the matrix.</p>
+        <div class="nav-buttons">
             <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact Us</a>
         </div>
     </div>
 </body>
