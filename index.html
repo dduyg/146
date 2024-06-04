@@ -1,46 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error - Cyber Creations</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-        }
-        h1 {
-            font-size: 5em;
-            margin-top: 100px;
-        }
-        p {
-            font-size: 1.5em;
-            margin-top: 30px;
-        }
-        .glitch {
-            font-size: 3em;
-            color: #0f0;
-            animation: glitch-animation 2s infinite linear alternate-reverse;
-        }
-        @keyframes glitch-animation {
-            2%, 64% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            4%, 60% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            62% {
-                transform: translate(0, 0) skew(5deg);
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Error - Cyber Creations</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #b7b7b7;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .glitch {
+      color: #ff80ed;
+      font-size: 5em;
+      font-weight: bold;
+      text-transform: uppercase;
+      animation: glitch-animation 2s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-animation {
+      0% {
+        transform: translate(0);
+        filter: none;
+      }
+      25% {
+        transform: translate(-5px, 5px);
+        filter: blur(5px) brightness(0.5) contrast(200%);
+      }
+      50% {
+        transform: translate(5px, -5px);
+        filter: blur(5px) brightness(0.5) contrast(200%);
+      }
+      75% {
+        transform: translate(-5px, 5px);
+        filter: blur(5px) brightness(0.5) contrast(200%);
+      }
+      100% {
+        transform: translate(5px, -5px);
+        filter: blur(5px) brightness(0.5) contrast(200%);
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1 class="glitch">404 ERROR</h1>
-    <p>Sorry, the cyber dimension you're seeking seems to be glitching out.</p>
-    <p>Don't worry, our cyber technicians are working on it.</p>
-    <p>Meanwhile, feel free to explore the rest of the cyberverse.</p>
+  <h1><span class="glitch">404</span> Error</h1>
+  <p>Sorry, the page you're looking for could not be found.</p>
+  <p>It seems like something went <span class="glitch">glitchy</span> in cyberspace.</p>
+  <p>Don't worry, our cyber coders are on the case.</p>
 </body>
 </html>
