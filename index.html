@@ -3,99 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found | Cyber Creations</title>
+    <title>404 Error - Cyber Creations</title>
     <style>
         body {
-            background: linear-gradient(135deg, #ff00ff, #00ffff);
-            color: #ffffff;
+            background-color: #000;
+            color: #fff;
             font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        .container {
             text-align: center;
-            animation: glitch 1.5s infinite;
         }
-
         h1 {
-            font-size: 6em;
-            margin: 0;
-            position: relative;
-            display: inline-block;
+            font-size: 5em;
+            margin-top: 100px;
         }
-
-        .glitch {
+        p {
             font-size: 1.5em;
-            animation: glitchText 2s infinite;
+            margin-top: 30px;
         }
-
-        a {
-            color: #ffffff;
-            text-decoration: none;
-            border: 2px solid #ffffff;
-            padding: 10px 20px;
-            transition: 0.3s;
+        .glitch {
+            font-size: 3em;
+            color: #0f0;
+            animation: glitch-animation 2s infinite linear alternate-reverse;
         }
-
-        a:hover {
-            background: #ffffff;
-            color: #000000;
-        }
-
-        @keyframes glitch {
-            0% {
-                transform: skew(0deg);
+        @keyframes glitch-animation {
+            2%, 64% {
+                transform: translate(2px, 0) skew(0deg);
             }
-            20% {
-                transform: skew(5deg) translate(5px, 0);
+            4%, 60% {
+                transform: translate(-2px, 0) skew(0deg);
             }
-            40% {
-                transform: skew(-5deg) translate(-5px, 0);
-            }
-            60% {
-                transform: skew(5deg) translate(5px, 0);
-            }
-            80% {
-                transform: skew(-5deg) translate(-5px, 0);
-            }
-            100% {
-                transform: skew(0deg);
-            }
-        }
-
-        @keyframes glitchText {
-            0% {
-                text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
-            }
-            20% {
-                text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
-            }
-            40% {
-                text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
-            }
-            60% {
-                text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
-            }
-            80% {
-                text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
-            }
-            100% {
-                text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+            62% {
+                transform: translate(0, 0) skew(5deg);
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>404</h1>
-        <p class="glitch">Page Not Found</p>
-        <p>Oops! It seems you've encountered a glitch in the matrix.</p>
-        <p>Let's get you <a href="/">back home</a> safely.</p>
-    </div>
+    <h1 class="glitch">404 ERROR</h1>
+    <p>Sorry, the cyber dimension you're seeking seems to be glitching out.</p>
+    <p>Don't worry, our cyber technicians are working on it.</p>
+    <p>Meanwhile, feel free to explore the rest of the cyberverse.</p>
 </body>
 </html>
