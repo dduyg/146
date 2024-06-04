@@ -6,102 +6,97 @@
     <title>404 Not Found</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: #0e0b16;
-            color: #a239ca;
+            background-color: #0d0d0d;
+            color: #00ffcc;
             font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
             overflow: hidden;
         }
-
-        .glitch {
-            position: relative;
-            color: #fff;
-            font-size: 3em;
+        .container {
+            text-align: center;
             animation: glitch 1s infinite;
         }
-
-        .glitch:before,
-        .glitch:after {
-            content: '404 ERROR';
+        h1 {
+            font-size: 5em;
+            margin: 0;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .glitch {
+            position: relative;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: '404';
             position: absolute;
-            top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0e0b16;
+            right: 0;
+            color: #ff00ff;
+            background: rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-
-        .glitch:before {
-            left: -2px;
-            text-shadow: -1px 0 magenta;
-            animation: glitch-before 1s infinite;
-        }
-
-        .glitch:after {
+        .glitch::before {
+            top: -2px;
             left: 2px;
-            text-shadow: -1px 0 cyan;
-            animation: glitch-after 1s infinite;
+            text-shadow: -2px 2px #ff00ff;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch 2s infinite linear alternate-reverse;
         }
-
+        .glitch::after {
+            top: 2px;
+            left: -2px;
+            text-shadow: -2px -2px #00ffff;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch 3s infinite linear alternate-reverse;
+        }
         @keyframes glitch {
             0% {
-                transform: none;
+                transform: skew(0deg);
             }
             20% {
-                transform: skew(-0.5deg, -0.5deg);
+                transform: skew(5deg);
             }
             40% {
-                transform: skew(0.5deg, 0.5deg);
+                transform: skew(-5deg);
             }
             60% {
-                transform: skew(-0.5deg, -0.5deg);
+                transform: skew(3deg);
             }
             80% {
-                transform: skew(0.5deg, 0.5deg);
+                transform: skew(-3deg);
             }
             100% {
-                transform: none;
+                transform: skew(0deg);
             }
         }
-
-        @keyframes glitch-before {
-            0% {
-                clip: rect(44px, 450px, 56px, 0);
-                transform: skew(0.5deg, 0.5deg);
-            }
-            50% {
-                clip: rect(85px, 450px, 140px, 0);
-                transform: skew(-0.5deg, -0.5deg);
-            }
-            100% {
-                clip: rect(22px, 450px, 44px, 0);
-                transform: skew(0.5deg, 0.5deg);
-            }
+        .surprise {
+            margin-top: 20px;
+            animation: blink 1s infinite;
         }
-
-        @keyframes glitch-after {
-            0% {
-                clip: rect(24px, 450px, 80px, 0);
-                transform: skew(-0.5deg, -0.5deg);
+        @keyframes blink {
+            0%, 50%, 100% {
+                opacity: 1;
             }
-            50% {
-                clip: rect(0px, 450px, 20px, 0);
-                transform: skew(0.5deg, 0.5deg);
-            }
-            100% {
-                clip: rect(56px, 450px, 90px, 0);
-                transform: skew(-0.5deg, -0.5deg);
+            25%, 75% {
+                opacity: 0;
             }
         }
     </style>
 </head>
 <body>
-    <div class="glitch">404 ERROR</div>
+    <div class="container">
+        <div class="glitch">
+            <h1>404</h1>
+        </div>
+        <p>Page Not Found</p>
+        <div class="surprise">
+            <p>Try hacking the URL or return to <a href="/" style="color:#00ffff; text-decoration: none;">home</a>.</p>
+        </div>
+    </div>
 </body>
 </html>
