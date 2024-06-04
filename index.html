@@ -3,87 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
+    <title>404 Error - Not Found</title>
     <style>
         body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #1a1a1d;
-            color: #fff;
-            font-family: 'Courier New', Courier, monospace;
-            overflow: hidden;
         }
-        .container {
-            text-align: center;
+        .glitch {
+            font-size: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-transform: uppercase;
+            animation: glitch-animation 1s infinite linear alternate-reverse;
         }
-        .title {
-            font-size: 5rem;
-            color: #ff0066;
-            text-shadow: 0px 0px 10px #ff00ff;
-            animation: glitch 1s infinite;
+        @keyframes glitch-animation {
+            2% { transform: translate(-48%, -50%); }
+            4% { transform: translate(-52%, -50%); }
+            6% { transform: translate(-50%, -48%); }
+            8% { transform: translate(-50%, -52%); }
+            10% { transform: translate(-48%, -52%); }
+            12% { transform: translate(-52%, -48%); }
+            14% { transform: translate(-48%, -50%); }
+            16% { transform: translate(-52%, -50%); }
+            18% { transform: translate(-50%, -48%); }
+            20% { transform: translate(-50%, -52%); }
+            22% { transform: translate(-48%, -52%); }
+            24% { transform: translate(-52%, -48%); }
+            26% { transform: translate(-50%, -50%); }
+            100% { transform: translate(-50%, -50%); }
         }
-        .message {
-            font-size: 1.5rem;
-            color: #00ffcc;
-            animation: glitch 1s infinite;
-        }
-        .surprise {
-            font-size: 1rem;
-            margin-top: 20px;
-            color: #ffffff;
-            animation: glitch 1s infinite;
-        }
-        @keyframes glitch {
-            0% {
-                text-shadow: 2px 2px #ff0066, -2px -2px #00ffcc;
-            }
-            25% {
-                text-shadow: -2px 2px #ff0066, 2px -2px #00ffcc;
-            }
-            50% {
-                text-shadow: 2px -2px #ff0066, -2px 2px #00ffcc;
-            }
-            75% {
-                text-shadow: -2px -2px #ff0066, 2px 2px #00ffcc;
-            }
-            100% {
-                text-shadow: 2px 2px #ff0066, -2px -2px #00ffcc;
-            }
-        }
-        @keyframes background {
-            0% {
-                background: #1a1a1d;
-            }
-            50% {
-                background: #000000;
-            }
-            100% {
-                background: #1a1a1d;
-            }
-        }
-        body::before {
-            content: '';
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://i.imgur.com/4HJbzEq.jpg') center/cover no-repeat;
-            opacity: 0.1;
-            z-index: -1;
-            animation: background 3s infinite;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00c8;
+            background: #00ffea;
+            clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00ffea;
+            background: #ff00c8;
+            clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="title">404</div>
-        <div class="message">Page Not Found</div>
-        <div class="surprise">You've entered the glitch zone. Navigate back to <a href="/" style="color: #ff0066; text-decoration: none;">Home</a>.</div>
-    </div>
+    <div class="glitch" data-text="404 Error">404 Error</div>
+    <p style="margin-top: 150px; font-size: 24px;">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+    <p style="margin-top: 20px; font-size: 20px;">Let's return to <a href="/">home</a> and try from there.</p>
+    <p style="margin-top: 50px; font-size: 14px;">But before you go, here's a surprise: <span style="color: #ff00c8;">&#x1F4A9;</span></p>
 </body>
 </html>
