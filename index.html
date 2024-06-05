@@ -74,7 +74,7 @@
             for (let i = 0; i < 5; i++) {
                 const artwork = document.createElement('img');
                 artwork.classList.add('artwork');
-                artwork.src = `https://source.unsplash.com/random/800x600/?vaporwave`;
+                artwork.src = `https://source.unsplash.com/random/800x600/?vaporwave&t=${Date.now()}`;
                 artwork.alt = 'Vaporwave Artwork';
                 artworkContainer.appendChild(artwork);
             }
