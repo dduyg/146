@@ -6,112 +6,124 @@
     <title>Glitched Corridors</title>
     <style>
         body {
-            background-color: #0f0c29;
-            background-image: linear-gradient(315deg, #0f0c29 0%, #302b63 74%);
             font-family: 'Courier New', Courier, monospace;
-            color: #ffffff;
+            background: #0f0c29; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            color: #fff;
             margin: 0;
             padding: 0;
         }
+
         .container {
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            font-size: 4em;
-            color: #8a2be2;
-            text-shadow: 2px 2px #ff00ff;
-            margin-bottom: 0;
-        }
-        h2 {
-            font-size: 2em;
-            color: #ff00ff;
-            margin-top: 0;
-        }
-        .glitch {
-            position: relative;
-            display: inline-block;
-        }
-        .glitch:before, .glitch:after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0f0c29;
+            width: 80%;
+            margin: auto;
             overflow: hidden;
         }
-        .glitch:before {
-            left: 2px;
-            text-shadow: -2px 0 #ff00ff;
-            animation: glitch 1.5s infinite linear alternate-reverse;
+
+        header {
+            background: #240b36;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #3d1e6d 3px solid;
         }
-        .glitch:after {
-            left: -2px;
-            text-shadow: -2px 0 #8a2be2;
-            animation: glitch 1.5s infinite linear alternate-reverse;
+
+        header h1 {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0;
+            font-size: 2.5em;
         }
-        @keyframes glitch {
-            0% {
-                clip: rect(42px, 9999px, 44px, 0);
-            }
-            20% {
-                clip: rect(12px, 9999px, 77px, 0);
-            }
-            40% {
-                clip: rect(15px, 9999px, 60px, 0);
-            }
-            60% {
-                clip: rect(40px, 9999px, 97px, 0);
-            }
-            80% {
-                clip: rect(60px, 9999px, 17px, 0);
-            }
-            100% {
-                clip: rect(21px, 9999px, 33px, 0);
-            }
+
+        .main-content {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
         }
-        .projects {
-            margin-top: 50px;
+
+        .glitch {
+            position: relative;
+            font-size: 2em;
+            color: #fff;
+            animation: glitch-animation 2s infinite;
         }
+
+        @keyframes glitch-animation {
+            0% { text-shadow: 2px 2px #ff00c1; }
+            20% { text-shadow: -2px -2px #00fff6; }
+            40% { text-shadow: 2px -2px #ff00c1; }
+            60% { text-shadow: -2px 2px #00fff6; }
+            80% { text-shadow: 2px 2px #ff00c1; }
+            100% { text-shadow: -2px -2px #00fff6; }
+        }
+
+        .showcase {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
         .project {
-            margin-bottom: 30px;
+            background: #302b63;
+            padding: 20px;
+            margin: 10px;
+            flex-basis: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
         }
-        .project h3 {
-            color: #ff00ff;
+
+        .project:hover {
+            transform: scale(1.05);
         }
-        .project p {
-            color: #ffffff;
-        }
+
         footer {
-            margin-top: 50px;
-            color: #ffffff;
+            background: #240b36;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1 class="glitch">Glitched Corridors</h1>
+        </div>
+    </header>
+
     <div class="container">
-        <h1 class="glitch" data-text="Glitched Corridors">Glitched Corridors</h1>
-        <h2>Welcome to My Personal Space</h2>
-        <div class="projects">
+        <div class="main-content">
+            <h2>About Me</h2>
+            <p>Welcome to Glitched Corridors, where the world of coding meets the aesthetics of vaporwave and glitch art. Here, I showcase my coding projects and share my journey in the world of software development.</p>
+        </div>
+
+        <div class="main-content">
             <h2>Coding Works</h2>
-            <div class="project">
-                <h3>Project 1: Awesome Website</h3>
-                <p>Details about this project and what it showcases.</p>
-            </div>
-            <div class="project">
-                <h3>Project 2: Cool App</h3>
-                <p>Details about this project and what it showcases.</p>
-            </div>
-            <div class="project">
-                <h3>Project 3: Interesting Script</h3>
-                <p>Details about this project and what it showcases.</p>
+            <div class="showcase">
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <p>Description of the first coding project.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 2</h3>
+                    <p>Description of the second coding project.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 3</h3>
+                    <p>Description of the third coding project.</p>
+                </div>
+                <!-- Add more projects as needed -->
             </div>
         </div>
     </div>
+
     <footer>
-        &copy; 2024 Glitched Corridors. All rights reserved.
+        <p>&copy; 2024 Glitched Corridors. All rights reserved.</p>
     </footer>
 </body>
 </html>
