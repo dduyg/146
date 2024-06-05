@@ -6,200 +6,98 @@
     <title>Glitched Corridors</title>
     <style>
         body {
-            background-color: #0f0e17;
-            color: #a7a9be;
+            background-color: #2e1a47;
+            color: #e0e0e0;
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
         }
-        .container {
+        .header {
+            background: linear-gradient(45deg, #ff00cc, #3333ff);
             text-align: center;
-            border: 1px solid #a7a9be;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        h1 {
-            color: #ff79c6;
-            text-shadow: 0 0 5px #ff79c6;
-        }
-        .glitch {
-            position: relative;
-            display: inline-block;
-            font-size: 48px;
-            color: #fff;
-            font-weight: bold;
-        }
-        .glitch::before,
-        .glitch::after {
-            content: 'Glitched Corridors';
-            position: absolute;
-            left: 0;
-            right: 0;
-            color: #ff79c6;
-            background: rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            clip: rect(0, 900px, 0, 0);
-            animation: glitch 2.5s infinite;
-        }
-        .glitch::before {
-            top: -2px;
-            text-shadow: -2px 0 #ff79c6;
-            animation: glitchTop 2.5s infinite;
-        }
-        .glitch::after {
-            top: 2px;
-            text-shadow: -2px 0 #8affea;
-            animation: glitchBottom 2.5s infinite;
+            padding: 2rem;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            animation: glitch 1.5s infinite;
         }
         @keyframes glitch {
             0% {
-                clip: rect(42px, 9999px, 44px, 0);
-                transform: skew(0.3deg);
-            }
-            5% {
-                clip: rect(50px, 9999px, 56px, 0);
-                transform: skew(0.6deg);
-            }
-            10% {
-                clip: rect(22px, 9999px, 24px, 0);
-                transform: skew(0.1deg);
-            }
-            15% {
-                clip: rect(82px, 9999px, 86px, 0);
-                transform: skew(0.4deg);
-            }
-            20% {
-                clip: rect(58px, 9999px, 60px, 0);
-                transform: skew(0.3deg);
+                text-shadow: 2px 2px 0 #ff00cc, -2px -2px 0 #3333ff;
             }
             25% {
-                clip: rect(18px, 9999px, 20px, 0);
-                transform: skew(0.2deg);
-            }
-            30% {
-                clip: rect(98px, 9999px, 100px, 0);
-                transform: skew(0.1deg);
-            }
-            35% {
-                clip: rect(74px, 9999px, 76px, 0);
-                transform: skew(0.3deg);
-            }
-            40% {
-                clip: rect(38px, 9999px, 40px, 0);
-                transform: skew(0.5deg);
-            }
-            45% {
-                clip: rect(88px, 9999px, 90px, 0);
-                transform: skew(0.4deg);
+                text-shadow: -2px -2px 0 #ff00cc, 2px 2px 0 #3333ff;
             }
             50% {
-                clip: rect(10px, 9999px, 12px, 0);
-                transform: skew(0.3deg);
-            }
-            55% {
-                clip: rect(66px, 9999px, 68px, 0);
-                transform: skew(0.2deg);
-            }
-            60% {
-                clip: rect(28px, 9999px, 30px, 0);
-                transform: skew(0.1deg);
-            }
-            65% {
-                clip: rect(54px, 9999px, 56px, 0);
-                transform: skew(0.3deg);
-            }
-            70% {
-                clip: rect(98px, 9999px, 100px, 0);
-                transform: skew(0.4deg);
+                text-shadow: 2px 2px 0 #ff00cc, -2px -2px 0 #3333ff;
             }
             75% {
-                clip: rect(38px, 9999px, 40px, 0);
-                transform: skew(0.1deg);
-            }
-            80% {
-                clip: rect(82px, 9999px, 84px, 0);
-                transform: skew(0.5deg);
-            }
-            85% {
-                clip: rect(16px, 9999px, 18px, 0);
-                transform: skew(0.2deg);
-            }
-            90% {
-                clip: rect(74px, 9999px, 76px, 0);
-                transform: skew(0.4deg);
-            }
-            95% {
-                clip: rect(50px, 9999px, 52px, 0);
-                transform: skew(0.1deg);
+                text-shadow: -2px -2px 0 #ff00cc, 2px 2px 0 #3333ff;
             }
             100% {
-                clip: rect(20px, 9999px, 22px, 0);
-                transform: skew(0.3deg);
+                text-shadow: 2px 2px 0 #ff00cc, -2px -2px 0 #3333ff;
             }
         }
-        @keyframes glitchTop {
-            0% {
-                clip: rect(0, 900px, 0, 0);
-                transform: translate(-20px, -10px);
-            }
-            100% {
-                clip: rect(0, 900px, 0, 0);
-                transform: translate(20px, 10px);
-            }
+        .content {
+            padding: 2rem;
         }
-        @keyframes glitchBottom {
-            0% {
-                clip: rect(0, 900px, 0, 0);
-                transform: translate(20px, 10px);
-            }
-            100% {
-                clip: rect(0, 900px, 0, 0);
-                transform: translate(-20px, -10px);
-            }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        .coding-works {
-            margin-top: 20px;
-            text-align: left;
+        .project {
+            background-color: #3e2a57;
+            margin: 1rem;
+            padding: 1rem;
+            width: calc(33% - 2rem);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
         }
-        .coding-works h2 {
-            color: #8affea;
-            text-shadow: 0 0 5px #8affea;
+        .project:hover {
+            transform: scale(1.05);
         }
-        .coding-works ul {
-            list-style-type: none;
-            padding: 0;
+        .project h3 {
+            margin-top: 0;
+            color: #ff00cc;
         }
-        .coding-works li {
-            background: rgba(0, 0, 0, 0.7);
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #a7a9be;
+        .project p {
+            color: #cccccc;
         }
-        .coding-works a {
-            color: #ff79c6;
-            text-decoration: none;
-        }
-        .coding-works a:hover {
-            text-decoration: underline;
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #1a0f2a;
+            color: #e0e0e0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="glitch">Glitched Corridors</div>
-        <div class="coding-works">
-            <h2>My Coding Works</h2>
-            <ul>
-                <li><a href="https://example.com/project1">Project 1</a> - Description of project 1.</li>
-                <li><a href="https://example.com/project2">Project 2</a> - Description of project 2.</li>
-                <li><a href="https://example.com/project3">Project 3</a> - Description of project 3.</li>
-            </ul>
+    <div class="header">
+        Glitched Corridors
+    </div>
+    <div class="content">
+        <h2>Welcome to My Coding Showcase</h2>
+        <p>Explore my latest coding projects below. I specialize in creating unique and innovative solutions using modern technologies.</p>
+        <div class="projects">
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>Description of project 1...</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>Description of project 2...</p>
+            </div>
+            <div class="project">
+                <h3>Project 3</h3>
+                <p>Description of project 3...</p>
+            </div>
+            <!-- Add more projects as needed -->
         </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 Glitched Corridors
     </div>
 </body>
 </html>
