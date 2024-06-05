@@ -3,101 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../fonts.css">
+    <title>Vaporwave Glitch Art</title>
     <style>
         body {
-            font-family: 'Lucida Console', monospace;
-            background-color: #1a1a2e;
-            color: #ddd;
-            line-height: 1.4;
             margin: 0;
-            padding: 0;
+            overflow: hidden;
+            background: #0f0c29;
+            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ff0075;
         }
-        main {
-            padding: 1.25em;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+
+        #glitch {
+            font-size: 5rem;
+            position: relative;
+            animation: glitch 1s infinite;
+        }
+
+        #glitch::before,
+        #glitch::after {
+            content: 'VAPORWAVE';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
-            box-sizing: border-box;
-            max-width: 600px;
+            background: inherit;
         }
-        header, h1 {
-            text-align: center;
-            color: #ff0;
+
+        #glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #00ffea;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch 2s infinite linear alternate-reverse;
         }
-        section {
-            overflow-y: auto;
-            background-color: #27293d;
-            margin-bottom: 1.25em;
-            padding: 1.25em;
-            border-radius: 0.625em;
-            max-height: 35vh;
-            box-sizing: border-box;
+
+        #glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #ff0075, 2px 2px #00ffea;
+            clip: rect(85px, 9999px, 140px, 0);
+            animation: glitch 3s infinite linear alternate-reverse;
         }
-        section h3 {
-            margin-top: 0;
-            padding-top: 0;
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(-2px, -2px);
+            }
+            60% {
+                transform: translate(2px, 2px);
+            }
+            80% {
+                transform: translate(2px, -2px);
+            }
+            100% {
+                transform: translate(0);
+            }
         }
-        nav a {
-            display: inline-block;
-            margin: 0.4em;
-            padding: 1em;
-            background-color: #ddd;
-            color: #27293d;
-            text-decoration: none;
-            text-align: center;
-            border-radius: 100%;   
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s;
-            cursor: pointer;
-        }
-        nav a:hover {
-            background-color: #ff0;
-            color: #1a1a2e;
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);       
-        }
-        footer {
-            margin-top: 1em;
-            padding: 0.625em;
-            text-align: center;
-            color: #ff0;
-            font-size: 0.8em;
+
+        @keyframes glitch {
+            0% {
+                clip: rect(24px, 550px, 90px, 0);
+            }
+            20% {
+                clip: rect(85px, 550px, 140px, 0);
+            }
+            40% {
+                clip: rect(24px, 550px, 90px, 0);
+            }
+            60% {
+                clip: rect(85px, 550px, 140px, 0);
+            }
+            80% {
+                clip: rect(24px, 550px, 90px, 0);
+            }
+            100% {
+                clip: rect(85px, 550px, 140px, 0);
+            }
         }
     </style>
 </head>
 <body>
-    <main>
-        <header>
-            <h1>Echoes of Nara</h1>
-        </header>
-        <section>
-            <p>In the mystical realm of Nara, where ancient spirits and mythical creatures coexist, a forbidden love blossoms between Sae-ri, a talented young sorceress with a mysterious past, and Han-gyeol, a guardian spirit tasked with maintaining the balance between the human and spirit worlds. As they navigate the challenges of their star-crossed romance, a dark force emerges, threatening to shatter the fragile harmony between the realms. Sae-ri must unlock her hidden powers and confront her destiny, while Han-gyeol grapples with the sacrifices required to protect the ones he loves. Together, they embark on a perilous journey, guided by the whispers of the moon, to save their world from impending doom and discover the true meaning of sacrifice, love, and destiny.</p>
-        </section>
-        <section>
-            <h3>/cherry blossoms</h3>
-            <nav>
-                <a href="#">dq5</a>
-                <a href="#">4sW</a>
-                <a href="#">fg1</a>
-                <a href="#">o67</a>
-                <a href="#">n8r</a>
-                <a href="#">6ej</a>
-                <a href="#">p0w</a>
-                <a href="#">ye5</a>
-            </nav>
-        </section>
-        <footer>
-            <p>—A deserted work that does rogue things, xo, <i>Duygu</i></p>
-        </footer>
-    </main>
+    <div id="glitch">VAPORWAVE</div>
+    <script>
+        const glitch = document.getElementById('glitch');
+
+        function randomizeGlitch() {
+            glitch.style.animationDuration = `${Math.random() * 2 + 1}s`;
+            glitch.querySelectorAll('::before, ::after').forEach(el => {
+                el.style.animationDuration = `${Math.random() * 2 + 1}s`;
+            });
+        }
+
+        setInterval(randomizeGlitch, 2000);
+    </script>
 </body>
 </html>
