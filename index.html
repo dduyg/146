@@ -6,76 +6,65 @@
     <title>Glitched Corridors</title>
     <style>
         body {
-            background: #2B2B2B;
-            color: #FFFFFF;
+            background-color: #0f0f0f;
+            color: #ffffff;
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
         header {
-            background: linear-gradient(90deg, #ff00cc 0%, #333399 100%);
+            background: linear-gradient(135deg, #ff00ff 0%, #00ffff 100%);
+            width: 100%;
             text-align: center;
             padding: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 100;
         }
-        h1 {
+        header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3rem;
             animation: glitch 1s infinite;
         }
         @keyframes glitch {
-            0% { text-shadow: 2px 2px #ff00cc; }
-            20% { text-shadow: -2px -2px #333399; }
-            40% { text-shadow: 2px 2px #ff00cc; }
-            60% { text-shadow: -2px -2px #333399; }
-            80% { text-shadow: 2px 2px #ff00cc; }
-            100% { text-shadow: -2px -2px #333399; }
-        }
-        nav {
-            background: #1a1a1a;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: #ff00cc;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
+            0% { text-shadow: 1px 1px #ff00ff, -1px -1px #00ffff; }
+            50% { text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff; }
+            100% { text-shadow: 1px 1px #ff00ff, -1px -1px #00ffff; }
         }
         .content {
             padding: 20px;
             max-width: 800px;
-            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 10px #ff00ff;
         }
         .content h2 {
-            color: #ff00cc;
-            border-bottom: 2px solid #333399;
-            padding-bottom: 10px;
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
-        .project {
-            background: #333333;
-            margin: 20px 0;
-            padding: 15px;
-            border-radius: 8px;
+        .code-works {
+            list-style-type: none;
+            padding: 0;
         }
-        .project h3 {
-            color: #ff00cc;
-        }
-        .project p {
-            color: #CCCCCC;
+        .code-works li {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #00ffff;
+            box-shadow: 0 0 5px #ff00ff;
         }
         footer {
-            background: #1a1a1a;
-            text-align: center;
+            margin-top: 20px;
             padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        footer p {
-            margin: 0;
-            color: #CCCCCC;
+            background: #0f0f0f;
+            text-align: center;
+            color: #00ffff;
         }
     </style>
 </head>
@@ -83,33 +72,16 @@
     <header>
         <h1>Glitched Corridors</h1>
     </header>
-    <nav>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
     <div class="content">
-        <section id="projects">
-            <h2>My Coding Works</h2>
-            <div class="project">
-                <h3>Project 1</h3>
-                <p>Description of the first coding project. Include details about the technologies used and the purpose of the project.</p>
-            </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>Description of the second coding project. Include details about the technologies used and the purpose of the project.</p>
-            </div>
-            <div class="project">
-                <h3>Project 3</h3>
-                <p>Description of the third coding project. Include details about the technologies used and the purpose of the project.</p>
-            </div>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>If you would like to get in touch, please email me at <a href="mailto:glitched.corridors@example.com">glitched.corridors@example.com</a>.</p>
-        </section>
+        <h2>Coding Works</h2>
+        <ul class="code-works">
+            <li><strong>Project 1:</strong> Description of the first coding project.</li>
+            <li><strong>Project 2:</strong> Description of the second coding project.</li>
+            <li><strong>Project 3:</strong> Description of the third coding project.</li>
+        </ul>
     </div>
     <footer>
-        <p>&copy; 2024 Glitched Corridors. All rights reserved.</p>
+        &copy; 2024 Glitched Corridors
     </footer>
 </body>
 </html>
