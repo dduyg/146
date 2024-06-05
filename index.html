@@ -31,6 +31,7 @@
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 30px;
+            text-align: left;
         }
 
         .artwork {
@@ -40,12 +41,28 @@
             margin: 0 auto 20px;
             border-radius: 10px;
         }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Vaporwave Art Gallery</h1>
-        <p>Welcome to our vaporwave art gallery! Immerse yourself in the nostalgic, surreal world of vaporwave with our curated collection of aesthetic artwork. Each piece captures the essence of the vaporwave culture, blending elements of nostalgia, retro-futurism, and dreamy landscapes. Take a journey through our gallery and let the vibes of the digital age wash over you.</p>
+        <p>This Vaporwave Art Gallery is a web application that dynamically generates and displays vaporwave-style artwork using the Unsplash API. The frontend is built using HTML, CSS, and JavaScript. The artwork is generated dynamically by making requests to the Unsplash API, fetching random images tagged with 'vaporwave'. The generated artwork is displayed in the gallery section below. You can click the "Generate Artwork" button to fetch new artwork and add it to the gallery.</p>
+        <button onclick="generateArtwork()">Generate Artwork</button>
         <div id="artwork-container"></div>
     </div>
 
@@ -53,16 +70,14 @@
         const artworkContainer = document.getElementById('artwork-container');
 
         function generateArtwork() {
-            const artwork = document.createElement('img');
-            artwork.classList.add('artwork');
-            artwork.src = `https://source.unsplash.com/random/800x600/?vaporwave`;
-            artwork.alt = 'Vaporwave Artwork';
-            artworkContainer.appendChild(artwork);
-        }
-
-        // Generate 5 pieces of artwork
-        for (let i = 0; i < 5; i++) {
-            generateArtwork();
+            artworkContainer.innerHTML = ''; // Clear previous artwork
+            for (let i = 0; i < 5; i++) {
+                const artwork = document.createElement('img');
+                artwork.classList.add('artwork');
+                artwork.src = `https://source.unsplash.com/random/800x600/?vaporwave`;
+                artwork.alt = 'Vaporwave Artwork';
+                artworkContainer.appendChild(artwork);
+            }
         }
     </script>
 </body>
