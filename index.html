@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glitched Corridors' Portfolio</title>
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <style>
         body {
             background: linear-gradient(135deg, #2b5876, #4e4376);
             color: #fff;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: "Poppins", sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -62,7 +63,7 @@
             90% { clip: rect(22px, 9999px, 14px, 0); }
             100% { clip: rect(12px, 9999px, 54px, 0); }
         }
-
+   
         .container {
             padding: 20px;
             max-width: 800px;
@@ -71,32 +72,33 @@
             border-radius: 10px;
         }
 
-        .projects {
+        main {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
 
-        .project {
+        article {
             background: rgba(0, 0, 0, 0.7);
             padding: 15px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s;
         }
 
-        .project:hover {
+        article:hover {
             transform: scale(1.05);
         }
 
-        .project h2 {
+        article h2 {
             margin: 0 0 10px;
         }
 
-        .project p {
+        article p {
             margin: 0;
         }
 
-        .footer {
+        footer {
             margin-top: 20px;
             font-size: 0.8em;
         }
@@ -106,23 +108,23 @@
     <div class="container">
         <h1 class="glitch" data-text="Glitched Corridors">Glitched Corridors</h1>
         <p>Welcome to my personal webpage where I showcase my coding works.</p>
-        <div class="projects">
-            <div class="project">
+        <main>
+            <article>
                 <h2>Project 1: Interactive Portfolio</h2>
                 <p>This project demonstrates a responsive and interactive portfolio webpage using HTML, CSS, and JavaScript.</p>
-            </div>
-            <div class="project">
+            <article>
+            <article>
                 <h2>Project 2: Machine Learning Model</h2>
                 <p>A machine learning model developed to predict housing prices using Python and Scikit-learn.</p>
-            </div>
-            <div class="project">
+            </article>
+            <article>
                 <h2>Project 3: Mobile App</h2>
                 <p>A mobile application built with React Native for tracking personal fitness goals.</p>
-            </div>
-        </div>
-        <div class="footer">
-            <p>&copy; 2024 Glitched Corridors. All rights reserved.</p>
-        </div>
+            </article>
+        </main>
+        <footer>
+            <p>&copy;2024 Glitched Corridors.</p>
+        </footer>
     </div>
 </body>
 </html>
