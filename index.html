@@ -3,68 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaporwave Art Gallery</title>
+    <title>Vaporwave Gallery</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
             margin: 0;
             padding: 0;
         }
 
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+        .container {
+            max-width: 90%;
+            margin: 0 auto;
+            text-align: center;
             padding: 20px;
         }
 
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 48px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
         .artwork {
-            position: relative;
-            margin: 10px;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .artwork:hover {
-            transform: scale(1.05);
-        }
-
-        .artwork img {
             width: 100%;
+            max-width: 800px;
             height: auto;
-            display: block;
+            margin: 0 auto 20px;
+            border-radius: 10px;
         }
 
-        .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
+        button {
             font-size: 16px;
-            text-align: center;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <div class="gallery">
-        <div class="artwork">
-            <img src="https://via.placeholder.com/300" alt="Vaporwave Artwork 1">
-            <div class="overlay">Artwork Title 1</div>
-        </div>
-        <div class="artwork">
-            <img src="https://via.placeholder.com/300" alt="Vaporwave Artwork 2">
-            <div class="overlay">Artwork Title 2</div>
-        </div>
-        <div class="artwork">
-            <img src="https://via.placeholder.com/300" alt="Vaporwave Artwork 3">
-            <div class="overlay">Artwork Title 3</div>
-        </div>
-        <!-- Add more artwork divs as needed -->
+    <div class="container">
+        <h1>Vaporwave Art Gallery</h1>
+        <p>This is a web application that dynamically generates and displays vaporwave-style artwork using the Unsplash API. The frontend is built using HTML, CSS, and JavaScript. The artwork is generated dynamically by making requests to the Unsplash API, fetching random images tagged with 'vaporwave'. The generated artwork is displayed in the gallery section below. You can click the "Generate Artwork" button to fetch new artwork and add it to the gallery.</p>
+        <button onclick="generateArtwork()">Generate Artwork</button>
+        <div id="artwork-container"></div>
     </div>
+
+    <script>
+        const artworkContainer = document.getElementById('artwork-container');
+
+        function generateArtwork() {
+            artworkContainer.innerHTML = ''; // Clear previous artwork
+            for (let i = 0; i < 5; i++) {
+                const artwork = document.createElement('img');
+                artwork.classList.add('artwork');
+                const randomNum = Math.floor(Math.random() * 1000); // Generate a random number
+                const timestamp = Date.now(); // Get the current timestamp
+                artwork.src = `https://source.unsplash.com/random/800x600/?vaporwave&t=${timestamp}${randomNum}`;
+                artwork.alt = 'Vaporwave Artwork';
+                artworkContainer.appendChild(artwork);
+            }
+        }
+    </script>
 </body>
 </html>
