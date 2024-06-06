@@ -26,9 +26,15 @@
             color: #ff9900;
         }
 
-        main .content {
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .content {
+            width: 50%;
             font-size: 1.2em;
-            margin-bottom: 20px;
+            margin-right: 20px;
         }
 
         .highlight {
@@ -36,13 +42,15 @@
         }
 
         .images {
+            width: 50%;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             gap: 20px;
         }
 
         .images img {
-            width: 300px;
+            width: 100%;
             height: auto;
         }
     </style>
@@ -57,7 +65,7 @@
                 <span>Con</span>
             </div>
         </header>
-        <main>
+        <div class="main-content">
             <div class="content">
                 <p>Salman Jaberi is a New York City-based multidisciplinary Creative Media Specialist with expertise in Brand Design, Experiential Production and Storytelling Concepts. Salman's diverse specialties led him to paint a colourful career landscape by collaborating and working with leading brands in the industry such as Dr. Jart +, Six Flags Theme Park and KAYAK.</p>
                 <p>Additionally, Salman is the brainchild and founder of <span class="highlight">Rave Scout Cookies</span>, a plucky but emerging dance music multimedia platform devoted to the endorsement of marginalised...</p>
@@ -66,8 +74,7 @@
                 <img src="dialing_progress.png" alt="Dialing Progress">
                 <img src="space_cadet.png" alt="3D Pinball Space Cadet">
             </div>
-        </main>
+        </div>
     </div>
 </body>
 </html>
-
