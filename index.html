@@ -6,46 +6,60 @@
     <title>LiminalLoop</title>
     <style>
         body {
-            background-color: #d6e0e2;
-            font-family: Arial, sans-serif;
-            color: #333;
-        }
+    background-color: #d6e0e2;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
 
-        .container {
-            text-align: center;
-            margin-top: 50px;
-        }
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
 
-        li {
-            position: relative; 
-            color: #4F4F4F; 
-            padding-left: 16px;
-            margin-top: 24px;
-            line-height: 20px;
-        }
+ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-          li::before {
-              content: '';
-              display: block;
-              height: 42px;
-              width: 42px;
-              border-radius: 50%;
-              border: 2px solid #ddd;
-              position: absolute;
-              top: -12px;
-              left: -46px;
-          }
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.circle {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #000;
+    position: relative;
+}
+
+.circle::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
     </style>
 </head>
 <body>
     <div class="container">
         <ul>
-            <li>PIANO ENTHUSIAST</li>
-            <li>PLANT LOVER</li>
-            <li>ANALOG-FILM WASTER</li>
-            <li>RETRO PATTERNS SPOTTER</li>
-            <li>AVID TRAVELER</li>
-            <li>MUSIC NOMAD</li>
+            <li><span class="circle"></span>PIANO ENTHUSIAST</li>
+            <li><span class="circle"></span>PLANT LOVER</li>
+            <li><span class="circle"></span>ANALOG-FILM WASTER</li>
+            <li><span class="circle"></span>RETRO PATTERNS SPOTTER</li>
+            <li><span class="circle"></span>AVID TRAVELER</li>
+            <li><span class="circle"></span>MUSIC NOMAD</li>
         </ul>
     </div>
 </body>
