@@ -4,11 +4,83 @@
   <meta charset="UTF-8">
   <title>CodePen - Click/Tap Image Gallery</title>
   <link href="https://fonts.googleapis.com/css?family=Oswald:500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./style.css">
+  <style>
+    :root {
+  --img_size: 22rem;
+  --img_padding: 3rem;
+  --font_size: 2rem;
+}
+@media screen and (max-width: 48em) {
+  :root {
+    --img_size: 12.5rem;
+    --img_padding: 1.5rem;
+    --font_size: 1.5rem;
+  }
+}
 
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.gallery {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  background-image: radial-gradient(#1A237E 23%, transparent 0), radial-gradient(#1A237E 23%, transparent 0);
+  background-size: 0.8rem 0.8rem;
+  background-position: 0 0, 0.4rem 0.4rem;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.gallery__item {
+  min-height: calc(var(--img_size) / 2);
+  width: var(--img_size);
+  height: auto;
+  background-color: #fff;
+  border: 5px solid #1A237E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: var(--img_padding);
+  position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: all 0.15s linear;
+}
+.gallery__item.is-hidden {
+  visibility: hidden;
+}
+.gallery__item:nth-child(odd).is-hidden {
+  transform: translate(100%, 100%);
+}
+.gallery__item:nth-child(even).is-hidden {
+  transform: translate(-100%, -100%);
+}
+.gallery__item__img {
+  width: 90%;
+  height: 90%;
+}
+
+.click-tap {
+  min-height: auto;
+  background-color: #1A237E;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: var(--font_size);
+  padding: calc(var(--img_padding) / 2);
+  text-align: center;
+}    
+  </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
 <div class="gallery" id="js-gallery">
   <figure class="gallery__item" id="js-item-01"><img class="gallery__item__img" src="https://images.pexels.com/photos/2272874/pexels-photo-2272874.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Cactus in pot with colorful stones" loading="lazy"/></figure>
   <figure class="gallery__item" id="js-item-02"><img class="gallery__item__img" src="https://images.pexels.com/photos/2431830/pexels-photo-2431830.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Several plants in pots" loading="lazy"/></figure>
@@ -18,8 +90,7 @@
   <div class="click-tap gallery__item" id="js-item-signal">CLICK / TAP</div>
 </div>
 <!-- I applied the property "loading='lazy'" to all images for when one of these days this native lazy loading of images is here: https://addyosmani.com/blog/lazy-loading/-->
-<!-- partial -->
-  <script  src="./script.js"></script>
 
+  <script  src="./script.js"></script>
 </body>
 </html>
