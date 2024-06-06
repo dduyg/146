@@ -7,8 +7,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: rgb(82,81,79);
-            background: radial-gradient(circle, rgba(82,81,79,1) 0%, rgba(36,35,33,1) 32%, rgba(0,0,0,1) 100%);
+            background-color: #1a1a1a;
             color: #ffffff;
             margin: 0;
             padding: 0;
@@ -75,8 +74,8 @@
             for (let i = 0; i < 5; i++) {
                 const artwork = document.createElement('img');
                 artwork.classList.add('artwork');
-                const timestamp = Date.now(); // Generate a unique timestamp
-                artwork.src = `https://source.unsplash.com/random/800x600/?vaporwave&t=${timestamp}`;
+                const randomNumber = Math.floor(Math.random() * 1000000); // Generate a random number
+                artwork.src = `https://source.unsplash.com/random/800x600/?vaporwave&r=${randomNumber}`;
                 artwork.alt = 'Vaporwave Artwork';
                 artworkContainer.appendChild(artwork);
             }
