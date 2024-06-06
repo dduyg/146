@@ -6,72 +6,51 @@
     <title>Elixi - Data-Focused Developer</title>
     <style>
         body {
-            background-color: #330033; /* Dark purple */
-            color: #ffcc00; /* Yellow */
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #000033;
+            color: #FFD700;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
             text-align: center;
         }
-
-        header {
-            padding: 20px;
-        }
-
-        h1, h2 {
-            font-family: 'Courier New', monospace;
-            font-weight: normal;
-        }
-
         h1 {
-            font-size: 36px;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-family: 'Press Start 2P', cursive;
         }
-
-        h2 {
-            font-size: 24px;
-        }
-
         p {
-            font-size: 18px;
+            font-size: 1.2rem;
             line-height: 1.6;
         }
-
-        .portfolio-item {
-            margin: 40px auto;
-            max-width: 600px;
+        .code {
+            font-family: monospace;
+            background-color: #800080;
+            color: #00FF00;
             padding: 20px;
-            background-color: #660066; /* Dark purple */
-            border: 2px solid #ffcc00; /* Yellow */
+            margin-top: 30px;
             border-radius: 10px;
-        }
-
-        footer {
-            background-color: #ffcc00; /* Yellow */
-            color: #330033; /* Dark purple */
-            padding: 20px;
+            overflow-x: auto;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Elixi - Data-Focused Developer</h1>
-</header>
-
-<section class="portfolio-item">
-    <h2>Portfolio</h2>
-    <p>Welcome to my portfolio showcasing my data-focused development projects.</p>
-    <h3>Project 1: Data Visualization Dashboard</h3>
-    <p>This project involved creating an interactive dashboard to visualize complex datasets using Elixir and D3.js.</p>
-    <h3>Project 2: Machine Learning Model Deployment</h3>
-    <p>I developed a scalable system for deploying machine learning models in production environments, leveraging Elixir's concurrency features.</p>
-    <h3>Project 3: Real-Time Data Processing Pipeline</h3>
-    <p>For this project, I built a real-time data processing pipeline using Elixir and Apache Kafka, enabling efficient analysis of streaming data.</p>
-</section>
-
-<footer>
-    <p>Contact: elixi@datadeveloper.com</p>
-</footer>
-
+    <div class="container">
+        <h1>Elixi</h1>
+        <p>A data-focused developer with a passion for Elixir.</p>
+        <div class="code">
+            <p>#elixir</p>
+            <p>defmodule DataFocused do</p>
+            <p>&nbsp;&nbsp;def hello do</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;IO.puts "Hello, world!"</p>
+            <p>&nbsp;&nbsp;end</p>
+            <p>end</p>
+        </div>
+    </div>
 </body>
 </html>
