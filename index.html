@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 404 - Page Not Found</title>
-    <style>
-        body {
-            background-color: #2a004f;
-            color: #ff6ac1;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 24px;
-            margin-bottom: 40px;
-        }
-        .geometrics {
-            display: flex;
-            justify-content: center;
-            margin-top: 50px;
-        }
-        .geometric-shape {
-            width: 100px;
-            height: 100px;
-            background-color: #ff6ac1;
-            border-radius: 50%;
-            margin: 0 20px;
-            animation: rotate 5s linear infinite;
-        }
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error 404 - Page Not Found</title>
+  <style>
+    body {
+      background-color: #240046;
+      color: #FF007F;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    h1 {
+      font-size: 72px;
+    }
+    p {
+      font-size: 24px;
+    }
+    .glitch {
+      font-family: monospace;
+      color: #FF007F;
+      position: relative;
+      animation: glitch-animation 2s infinite linear alternate-reverse;
+    }
+    @keyframes glitch-animation {
+      0% {
+        transform: translate(0);
+      }
+      25% {
+        transform: translate(-5px, 5px);
+      }
+      50% {
+        transform: translate(5px, -5px);
+      }
+      75% {
+        transform: translate(-5px, 5px);
+      }
+      100% {
+        transform: translate(0);
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Not Found</h1>
-    <div class="geometrics">
-        <div class="geometric-shape"></div>
-        <div class="geometric-shape"></div>
-        <div class="geometric-shape"></div>
-    </div>
-    <p>Sorry, the page you are looking for is lost in the digital abyss...</p>
+  <h1 class="glitch">ERROR 404</h1>
+  <p class="glitch">Page Not Found</p>
+  <p>Sorry, the page you are looking for is lost in the digital void.</p>
+  <p>Let's try to <a href="javascript:history.back()">go back</a> or <a href="/">return to homepage</a>.</p>
 </body>
 </html>
