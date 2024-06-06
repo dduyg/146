@@ -1,73 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elixi - Data-Focused Developer</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
+            background-color: #330033; /* Dark purple */
+            color: #ffcc00; /* Yellow */
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            text-align: center;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        header {
             padding: 20px;
         }
 
         h1, h2 {
-            color: #ff66ff;
+            font-family: 'Courier New', monospace;
+            font-weight: normal;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
         }
 
         .portfolio-item {
-            margin-bottom: 40px;
+            margin: 40px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #660066; /* Dark purple */
+            border: 2px solid #ffcc00; /* Yellow */
+            border-radius: 10px;
         }
 
-        .portfolio-item img {
-            max-width: 100%;
-            height: auto;
+        footer {
+            background-color: #ffcc00; /* Yellow */
+            color: #330033; /* Dark purple */
+            padding: 20px;
         }
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <header>
-            <h1>Elixi</h1>
-            <h2>Data-Focused Developer</h2>
-        </header>
-        
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Welcome to my vaporwave cyberpunk-themed portfolio! I'm Elixi, a data-focused developer passionate about creating innovative solutions using data-driven insights.</p>
-            <p>With a background in computer science and a knack for analytics, I specialize in transforming complex data into actionable strategies that drive business growth and efficiency.</p>
-        </section>
 
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            <div class="portfolio-item">
-                <h3>Project 1</h3>
-                <p>Description of Project 1...</p>
-                <img src="project1.jpg" alt="Project 1 Screenshot">
-            </div>
-            <div class="portfolio-item">
-                <h3>Project 2</h3>
-                <p>Description of Project 2...</p>
-                <img src="project2.jpg" alt="Project 2 Screenshot">
-            </div>
-            <!-- Add more portfolio items as needed -->
-        </section>
+<header>
+    <h1>Elixi - Data-Focused Developer</h1>
+</header>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out to me via email at <a href="mailto:elixi@example.com">elixi@example.com</a>.</p>
-        </section>
-    </div>
+<section class="portfolio-item">
+    <h2>Portfolio</h2>
+    <p>Welcome to my portfolio showcasing my data-focused development projects.</p>
+    <h3>Project 1: Data Visualization Dashboard</h3>
+    <p>This project involved creating an interactive dashboard to visualize complex datasets using Elixir and D3.js.</p>
+    <h3>Project 2: Machine Learning Model Deployment</h3>
+    <p>I developed a scalable system for deploying machine learning models in production environments, leveraging Elixir's concurrency features.</p>
+    <h3>Project 3: Real-Time Data Processing Pipeline</h3>
+    <p>For this project, I built a real-time data processing pipeline using Elixir and Apache Kafka, enabling efficient analysis of streaming data.</p>
+</section>
+
+<footer>
+    <p>Contact: elixi@datadeveloper.com</p>
+</footer>
+
 </body>
-
 </html>
