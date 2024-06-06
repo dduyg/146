@@ -61,7 +61,7 @@
 <body>
     <div class="container">
         <h1>Vaporwave Art Gallery</h1>
-        <p>This Vaporwave Art Gallery is a web application that dynamically generates and displays vaporwave-style artwork using the Unsplash API. The frontend is built using HTML, CSS, and JavaScript. The artwork is generated dynamically by making requests to the Unsplash API, fetching random images tagged with 'vaporwave'. The generated artwork is displayed in the gallery section below. You can click the "Generate Artwork" button to fetch new artwork and add it to the gallery.</p>
+        <p>This Vaporwave Art Gallery is a web application that dynamically generates and displays vaporwave-style artwork using the Unsplash API. The frontend is built using HTML, CSS, and JavaScript. The artwork is generated dynamically by making requests to the Unsplash API, fetching random images tagged with 'vaporwave' and 'aesthetic'. The generated artwork is displayed in the gallery section below. You can click the "Generate Artwork" button to fetch new artwork and add it to the gallery.</p>
         <button onclick="generateArtwork()">Generate Artwork</button>
         <div id="artwork-container"></div>
     </div>
@@ -75,7 +75,7 @@
                 const artwork = document.createElement('img');
                 artwork.classList.add('artwork');
                 const randomNumber = Math.floor(Math.random() * 1000000); // Generate a random number
-                artwork.src = `https://source.unsplash.com/random/800x600/?vaporwave&r=${randomNumber}`;
+                artwork.src = `https://source.unsplash.com/random/800x600/?vaporwave,aesthetic&r=${randomNumber}`;
                 artwork.alt = 'Vaporwave Artwork';
                 artworkContainer.appendChild(artwork);
             }
