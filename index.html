@@ -3,59 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 404 - Not Found</title>
+    <title>Error 404 - Page Not Found</title>
     <style>
         body {
-            background-color: #000;
-            color: #fff;
+            background-color: #2a004f;
+            color: #ff6ac1;
             font-family: 'Arial', sans-serif;
             text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #ff6dff;
-            padding: 20px;
+            padding: 50px;
         }
         h1 {
-            font-size: 4rem;
-            margin-top: 100px;
+            font-size: 48px;
+            margin-bottom: 20px;
         }
         p {
-            font-size: 1.5rem;
-            margin-bottom: 50px;
+            font-size: 24px;
+            margin-bottom: 40px;
         }
         .glitch {
-            font-size: 3rem;
-            color: #ff6dff;
-            text-transform: uppercase;
-            animation: glitch 1s linear infinite alternate;
+            font-size: 120px;
+            font-weight: bold;
+            color: #00ff9c;
+            text-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c, 0 0 30px #00ff9c, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+            animation: glitch 1s linear infinite;
         }
         @keyframes glitch {
+            2%, 64% {
+                transform: translateY(2px) skew(0.5deg);
+            }
+            4%, 60% {
+                transform: translateY(-2px) skew(-0.5deg);
+            }
+            62% {
+                transform: translateY(0);
+            }
+        }
+        .geometrics {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .geometric-shape {
+            width: 100px;
+            height: 100px;
+            background-color: #ff6ac1;
+            border-radius: 50%;
+            margin: 0 20px;
+            animation: rotate 5s linear infinite;
+        }
+        @keyframes rotate {
             0% {
-                transform: translate(0);
-            }
-            25% {
-                transform: translate(-5px, 5px);
-            }
-            50% {
-                transform: translate(5px, -5px);
-            }
-            75% {
-                transform: translate(-5px, 5px);
+                transform: rotate(0deg);
             }
             100% {
-                transform: translate(5px, -5px);
+                transform: rotate(360deg);
             }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Oops! Error 404</h1>
-        <p>The vaporwave dimension couldn't be found...</p>
-        <div class="glitch">dduyg</div>
+    <h1 class="glitch">Error 404</h1>
+    <p>Page Not Found</p>
+    <div class="geometrics">
+        <div class="geometric-shape"></div>
+        <div class="geometric-shape"></div>
+        <div class="geometric-shape"></div>
     </div>
-    <img src="https://media.giphy.com/media/26DN9HFu01W6PIEDm/giphy.gif" alt="Vaporwave Glitch">
+    <p class="glitch">Sorry, the page you are looking for is lost in the digital abyss...</p>
+    <p><a href="/">Return to Home</a></p>
 </body>
 </html>
