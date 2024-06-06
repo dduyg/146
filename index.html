@@ -7,50 +7,68 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #000033;
-            color: #FFD700;
+            background-color: #3a0088;
+            color: #ffffff;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
-        .container {
+        header {
             text-align: center;
+            padding: 50px 0;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 3em;
             margin-bottom: 20px;
-            font-family: 'Press Start 2P', cursive;
         }
         p {
-            font-size: 1.2rem;
-            line-height: 1.6;
+            font-size: 1.2em;
+            margin-bottom: 30px;
         }
-        .code {
-            font-family: monospace;
-            background-color: #800080;
-            color: #00FF00;
+        .works {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
             padding: 20px;
-            margin-top: 30px;
+        }
+        .work {
+            background-color: #7f00ff;
+            color: #ffffff;
+            padding: 20px;
             border-radius: 10px;
-            overflow-x: auto;
+            width: 300px;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Elixi</h1>
-        <p>A data-focused developer with a passion for Elixir.</p>
-        <div class="code">
-            <p>#elixir</p>
-            <p>defmodule DataFocused do</p>
-            <p>&nbsp;&nbsp;def hello do</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;IO.puts "Hello, world!"</p>
-            <p>&nbsp;&nbsp;end</p>
-            <p>end</p>
+        <p>Data-Focused Developer</p>
+    </header>
+
+    <div class="works">
+        <div class="work">
+            <h2>Project 1</h2>
+            <p>Description of Project 1</p>
         </div>
+        <div class="work">
+            <h2>Project 2</h2>
+            <p>Description of Project 2</p>
+        </div>
+        <div class="work">
+            <h2>Project 3</h2>
+            <p>Description of Project 3</p>
+        </div>
+        <!-- Add more projects as needed -->
     </div>
+
+    <footer>
+        <p>Contact: your.email@example.com</p>
+    </footer>
 </body>
 </html>
