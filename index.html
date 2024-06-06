@@ -28,11 +28,12 @@
 
         .main-content {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
         }
 
         .content {
-            width: 50%;
+            flex: 1 1 50%;
             font-size: 1.2em;
             margin-right: 20px;
         }
@@ -42,7 +43,7 @@
         }
 
         .images {
-            width: 50%;
+            flex: 1 1 50%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -52,6 +53,17 @@
         .images img {
             width: 100%;
             height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .content, .images {
+                flex: 1 1 100%;
+                margin-right: 0;
+            }
+
+            .images img {
+                width: 100%;
+            }
         }
     </style>
 </head>
