@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,42 +8,66 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #111;
+            background-color: #000;
             color: #fff;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
-        header {
-            background-image: url('vaporwave_cyberpunk_background.jpg');
-            background-size: cover;
-            padding: 100px 0;
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+
+        h1, h2 {
+            color: #ff66ff;
         }
-        p {
-            font-size: 1.2rem;
+
+        .portfolio-item {
             margin-bottom: 40px;
         }
-        .container {
-            padding: 20px;
+
+        .portfolio-item img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1>Welcome to Elixi's World</h1>
-            <p>Data-Focused Developer | Vaporwave Cyberpunk Enthusiast</p>
-        </div>
-    </header>
     <div class="container">
+        <header>
+            <h1>Elixi</h1>
+            <h2>Data-Focused Developer</h2>
+        </header>
+        
         <section id="about">
             <h2>About Me</h2>
-            <p>Elixi is a data-focused developer with a passion for vaporwave cyberpunk aesthetics. With a keen eye for detail and a love for all things futuristic, Elixi creates innovative solutions that merge data-driven insights with cutting-edge design.</p>
+            <p>Welcome to my vaporwave cyberpunk-themed portfolio! I'm Elixi, a data-focused developer passionate about creating innovative solutions using data-driven insights.</p>
+            <p>With a background in computer science and a knack for analytics, I specialize in transforming complex data into actionable strategies that drive business growth and efficiency.</p>
+        </section>
+
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio-item">
+                <h3>Project 1</h3>
+                <p>Description of Project 1...</p>
+                <img src="project1.jpg" alt="Project 1 Screenshot">
+            </div>
+            <div class="portfolio-item">
+                <h3>Project 2</h3>
+                <p>Description of Project 2...</p>
+                <img src="project2.jpg" alt="Project 2 Screenshot">
+            </div>
+            <!-- Add more portfolio items as needed -->
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out to me via email at <a href="mailto:elixi@example.com">elixi@example.com</a>.</p>
         </section>
     </div>
 </body>
+
 </html>
