@@ -3,63 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiminalLoop</title>
+    <title>Ninno Space</title>
     <style>
         body {
-    background-color: #d6e0e2;
-    font-family: Arial, sans-serif;
-    color: #333;
-}
+            background-color: #d6e0e2;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
 
-.container {
-    text-align: center;
-    margin-top: 50px;
-}
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2em;
-    margin: 10px 0;
-}
+        li {
+            position: relative;
+            font-size: 1.2em;
+            margin: 20px 0;
+            padding-left: 40px;
+        }
 
-.circle {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin-right: 10px;
-    border-radius: 50%;
-    background-color: #000;
-    position: relative;
-}
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+            border: 2px solid #000;
+        }
 
-.circle::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #000;
-    border-radius: 50%;
-}
+        li::after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <ul>
-            <li><span class="circle"></span>PIANO ENTHUSIAST</li>
-            <li><span class="circle"></span>PLANT LOVER</li>
-            <li><span class="circle"></span>ANALOG-FILM WASTER</li>
-            <li><span class="circle"></span>RETRO PATTERNS SPOTTER</li>
-            <li><span class="circle"></span>AVID TRAVELER</li>
-            <li><span class="circle"></span>MUSIC NOMAD</li>
+            <li>PIANO ENTHUSIAST</li>
+            <li>PLANT LOVER</li>
+            <li>ANALOG-FILM WASTER</li>
+            <li>RETRO PATTERNS SPOTTER</li>
+            <li>AVID TRAVELER</li>
+            <li>MUSIC NOMAD</li>
         </ul>
     </div>
 </body>
