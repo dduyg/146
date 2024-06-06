@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ninno Space</title>
+    <title>LiminalLoop</title>
     <style>
         body {
             background-color: #d6e0e2;
@@ -16,42 +16,25 @@
             margin-top: 50px;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
         li {
-            position: relative;
-            font-size: 1.2em;
-            margin: 20px 0;
-            padding-left: 40px;
+            position: relative; 
+            color: #4F4F4F; 
+            padding-left: 16px;
+            margin-top: 24px;
+            line-height: 20px;
         }
 
-        li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 10px;
-            height: 10px;
-            background-color: #000;
-            border-radius: 50%;
-            border: 2px solid #000;
-        }
-
-        li::after {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            border: 2px solid #000;
-            border-radius: 50%;
-        }
+          li::before {
+              content: '';
+              display: block;
+              height: 42px;
+              width: 42px;
+              border-radius: 50%;
+              border: 2px solid #ddd;
+              position: absolute;
+              top: -12px;
+              left: -46px;
+          }
     </style>
 </head>
 <body>
