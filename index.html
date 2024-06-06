@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salman Jaberi</title>
+    <title>Liminal Loop</title>
     <style>
         body {
             background-color: #e0b8b8;
@@ -13,26 +13,20 @@
             padding: 0;
         }
 
-        .container {
-            padding: 20px;
-        }
-
         header {
             text-align: center;
             margin-bottom: 20px;
         }
 
-        .subtitle span {
-            color: #ff9900;
-        }
-
-        .main-content {
+        main {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
+            padding: 20px;
         }
 
         .content {
-            width: 50%;
+            flex: 1 1 50%;
             font-size: 1.2em;
             margin-right: 20px;
         }
@@ -42,7 +36,7 @@
         }
 
         .images {
-            width: 50%;
+            flex: 1 1 50%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -53,28 +47,32 @@
             width: 100%;
             height: auto;
         }
+
+        @media (max-width: 768px) {
+            .content, .images {
+                flex: 1 1 100%;
+                margin-right: 0;
+            }
+
+            .images img {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Salman Jaberi</h1>
-            <div class="subtitle">
-                <span>Consultant</span> 🔸 
-                <span>Experiential Producer</span> 🔸 
-                <span>Con</span>
-            </div>
-        </header>
-        <div class="main-content">
-            <div class="content">
-                <p>Salman Jaberi is a New York City-based multidisciplinary Creative Media Specialist with expertise in Brand Design, Experiential Production and Storytelling Concepts. Salman's diverse specialties led him to paint a colourful career landscape by collaborating and working with leading brands in the industry such as Dr. Jart +, Six Flags Theme Park and KAYAK.</p>
-                <p>Additionally, Salman is the brainchild and founder of <span class="highlight">Rave Scout Cookies</span>, a plucky but emerging dance music multimedia platform devoted to the endorsement of marginalised...</p>
-            </div>
-            <div class="images">
-                <img src="dialing_progress.png" alt="Dialing Progress">
-                <img src="space_cadet.png" alt="3D Pinball Space Cadet">
-            </div>
+    <header>
+        <h1>LiminalLoop</h1>
+    </header>
+    <main>
+        <div class="content">
+            <p>Salman Jaberi is a New York City-based multidisciplinary Creative Media Specialist with expertise in Brand Design, Experiential Production and Storytelling Concepts. Salman's diverse specialties led him to paint a colourful career landscape by collaborating and working with leading brands in the industry such as Dr. Jart +, Six Flags Theme Park and KAYAK.</p>
+            <p>Additionally, Salman is the brainchild and founder of <span class="highlight">Rave Scout Cookies</span>, a plucky but emerging dance music multimedia platform devoted to the endorsement of marginalised...</p>
         </div>
-    </div>
+        <div class="images">
+            <img src="dialing_progress.png" alt="Dialing Progress">
+            <img src="space_cadet.png" alt="3D Pinball Space Cadet">
+        </div>
+    </main>
 </body>
 </html>
