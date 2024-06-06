@@ -3,99 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error - PurpleBixi</title>
+    <title>Error 404 - Not Found</title>
     <style>
         body {
             background-color: #000;
             color: #fff;
             font-family: 'Arial', sans-serif;
             text-align: center;
-            padding: 50px;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #ff6dff;
+            padding: 20px;
         }
         h1 {
-            font-size: 5em;
-            margin-bottom: 20px;
+            font-size: 4rem;
+            margin-top: 100px;
         }
         p {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-        img {
-            width: 200px;
-            height: auto;
-            margin-top: 50px;
+            font-size: 1.5rem;
+            margin-bottom: 50px;
         }
         .glitch {
-            color: #ff00ff;
-            position: relative;
-            display: inline-block;
+            font-size: 3rem;
+            color: #ff6dff;
+            text-transform: uppercase;
+            animation: glitch 1s linear infinite alternate;
         }
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            clip: rect(0, 1000px, 0, 0);
-        }
-        .glitch::before {
-            left: -2px;
-            text-shadow: -2px 0 red;
-            animation: glitch-anim 2s infinite linear alternate-reverse;
-        }
-        .glitch::after {
-            left: 2px;
-            text-shadow: 2px 0 blue;
-            animation: glitch-anim2 3s infinite linear alternate-reverse;
-        }
-        @keyframes glitch-anim {
+        @keyframes glitch {
             0% {
-                clip: rect(73px, 9999px, 31px, 0);
+                transform: translate(0);
             }
             25% {
-                clip: rect(90px, 9999px, 56px, 0);
+                transform: translate(-5px, 5px);
             }
             50% {
-                clip: rect(84px, 9999px, 94px, 0);
+                transform: translate(5px, -5px);
             }
             75% {
-                clip: rect(17px, 9999px, 51px, 0);
+                transform: translate(-5px, 5px);
             }
             100% {
-                clip: rect(3px, 9999px, 86px, 0);
-            }
-        }
-        @keyframes glitch-anim2 {
-            0% {
-                clip: rect(84px, 9999px, 21px, 0);
-            }
-            25% {
-                clip: rect(61px, 9999px, 52px, 0);
-            }
-            50% {
-                clip: rect(3px, 9999px, 47px, 0);
-            }
-            75% {
-                clip: rect(48px, 9999px, 99px, 0);
-            }
-            100% {
-                clip: rect(19px, 9999px, 44px, 0);
+                transform: translate(5px, -5px);
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1 class="glitch" data-text="PurpleBixi">PurpleBixi</h1>
-    </header>
-    <main>
-        <h1>404 Error</h1>
-        <p>Oops! Looks like you've stumbled upon a glitch in the matrix.</p>
-        <p>But don't worry, you can still <a href="/">return to safety</a>.</p>
-        <img src="https://via.placeholder.com/200" alt="Glitch Graphic">
-    </main>
+    <div class="header">
+        <h1>Oops! Error 404</h1>
+        <p>The vaporwave dimension couldn't be found...</p>
+        <div class="glitch">dduyg</div>
+    </div>
+    <img src="https://media.giphy.com/media/26DN9HFu01W6PIEDm/giphy.gif" alt="Vaporwave Glitch">
 </body>
 </html>
