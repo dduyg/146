@@ -25,16 +25,13 @@
 
         main {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            max-width: 800px;
+            flex-direction: column;
             padding: 20px;
         }
 
         .content {
-            flex: 1 1 50%;
             font-size: 1.2em;
-            margin-right: 20px;
+            margin-bottom: 20px;
         }
 
         a {
@@ -43,7 +40,6 @@
         }
 
         .images {
-            flex: 1 1 50%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -56,14 +52,23 @@
             height: auto;
         }
 
-        @media (max-width: 768px) {
-            .content, .images {
-                flex: 1 1 100%;
-                margin-right: 0;
+        @media screen and (min-width: 30em) {
+            main {
+                flex-direction: row;
+                justify-content: space-between;
+                max-width: 800px;
+                margin: 0 auto;
             }
 
-            .images img {
-                width: 100%;
+            .content {
+                flex: 1 1 50%;
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+
+            .images {
+                flex: 1 1 50%;
+                margin-top: 0;
             }
         }
     </style>
@@ -83,8 +88,8 @@
             <p>As fate would have it, Ji-Yoon possessed the very book he sought. Passed down through generations in her family, the ancient tome held a powerful enchantment that only she could unlock. Intrigued by her connection to the book, Min-Joon persuaded Ji-Yoon to accompany him on a <a href="#">journey to uncover</a> the truth behind its mysterious origins.</p>
         </div>
         <div class="images">
-           <img src="progress.png">
-           <img src="95_command.png">
+           <img src="progress.png" alt="Progress Image">
+           <img src="95_command.png" alt="Command Image">
         </div>
     </main>
 </body>
