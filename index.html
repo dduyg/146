@@ -31,8 +31,7 @@
     #badge {
       display: table-cell;
       vertical-align: middle;
-      width: 25%;
-      cursor: pointer;
+      width: 75%;
     }
     .title {
       display: inline-block;
@@ -41,11 +40,12 @@
     nav {
       display: table-cell;
       vertical-align: middle;
-      width: 75%;
+      width: 25%;
       text-align: right;
       color: var(--color-light-main);
       letter-spacing: 1px;
       font-family: var(--mono-font);
+      cursor: pointer;
     }
     .dropdown-btn {
       position: relative;
@@ -126,9 +126,9 @@
 </head>
 <body>
   <header>
-    <a id="badge" href="{{ site.baseurl }}/">
+    <div id="badge">
       <div class="title">Vaporized Gallery</div>
-    </a>
+    </div>
     <nav>
       <a href="#" class="dropdown-btn" tabindex="0" aria-haspopup="menu">Subjective</a>
       <div class="dropdown-content">
