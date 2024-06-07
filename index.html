@@ -104,6 +104,14 @@
         elImg.style.top = getImgPosValue(imgHeight, windowH);
     };
 
+    const createImgArray = () => {
+        const galleryImg = document.querySelectorAll(".gallery__item");
+
+        galleryImg.forEach((el) => {
+            setImgPosition(el);
+        });
+    };
+
     const fetchImages = () => {
         const gallery = document.getElementById('js-gallery');
         gallery.innerHTML = ''; // Clear previous images
@@ -134,53 +142,28 @@
         createImgArray();
     };
 
-    const imgArray = [];
-    let currentIndex = 4;
+    let imgArray = [];
 
-    const showImg = (elImg, elClass) => {
-        if (elImg) {
-            elImg.classList.remove(elClass);
-            setImgPosition(elImg);
-        }
-    };
-
-    const hideImg = (elImg, elClass) => {
-        if (elImg) {
-            elImg.classList.add(elClass);
-        }
-    };
-
-    const createImgArray = () => {
-        const galleryImg = document.querySelectorAll(".gallery__item");
-
-        galleryImg.forEach((el) => {
-            const imgId = el.getAttribute("id");
-            imgArray.push(imgId);
-
-            setImgPosition(el);
-        });
-
-        currentIndex = imgArray.length - 2;
+    const initializeGallery = () => {
+        imgArray = Array.from(document.querySelectorAll('.gallery__item'));
+        imgArray.pop(); // Remove signalDiv from array
     };
 
     const toggleImgVisibility = () => {
-        const img = {
-            current: document.querySelector(`#${imgArray[currentIndex]}`),
-            hiddenClass: 'is-hidden'
-        };
-
-        if (currentIndex >= 0) {
-            hideImg(img.current, img.hiddenClass);
-            currentIndex--;
-        } else {
+        if (imgArray.length === 0) {
             fetchImages();
+            initializeGallery();
+            return;
         }
+        const currentImg = imgArray.pop();
+        currentImg.classList.add('is-hidden');
     };
 
     const gallery = document.querySelector("#js-gallery");
     gallery.addEventListener("click", toggleImgVisibility);
 
     fetchImages();
+    initializeGallery();
 </script>
 </body>
 </html>
