@@ -59,9 +59,7 @@
       top: 5rem;
       right: 2rem;
       width: 80%;
-      max-height: 90%;
       visibility: hidden;
-      overflow-y: auto;
       z-index: 11;
     }
     .dropdown-content section {
@@ -76,6 +74,8 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: .5rem 1rem;
       background: red;
+      overflow-y: auto;
+      height: 90%;
     }
     .dropdown-btn:focus + .dropdown-content section {
       left: 0;
