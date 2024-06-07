@@ -35,6 +35,7 @@
             cursor: pointer;
             overflow: hidden;
             position: relative;
+            -webkit-tap-highlight-color: transparent; /* Prevent highlight on mobile */
         }
         .gallery__item {
             min-height: calc(var(--img_size) / 2);
@@ -77,10 +78,16 @@
             padding: calc(var(--img_padding) / 2);
             text-align: center;
         }
+
+        /* Prevent click highlighting */
+        .gallery:focus, .gallery:active {
+            outline: none;
+            -webkit-tap-highlight-color: transparent; /* Prevent highlight on mobile */
+        }
     </style>
 </head>
 <body>
-<div class="gallery" id="js-gallery"></div>
+<div class="gallery" id="js-gallery" tabindex="0"></div>
 <script>
     const getRandomInt = (max) => {
         return Math.floor(Math.random() * Math.floor(max));
