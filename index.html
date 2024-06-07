@@ -133,11 +133,14 @@
             gallery.appendChild(imgElement);
         }
 
-        const signalDiv = document.createElement('div');
-        signalDiv.classList.add('click-tap', 'gallery__item');
-        signalDiv.id = 'js-item-signal';
-        signalDiv.innerText = 'CLICK / TAP';
-        gallery.appendChild(signalDiv);
+        const signalDiv = document.getElementById('js-item-signal');
+        if (signalDiv) signalDiv.remove(); // Remove signalDiv if it exists
+
+        const newSignalDiv = document.createElement('div');
+        newSignalDiv.classList.add('click-tap', 'gallery__item');
+        newSignalDiv.id = 'js-item-signal';
+        newSignalDiv.innerText = 'CLICK / TAP';
+        gallery.appendChild(newSignalDiv);
 
         createImgArray();
     };
@@ -151,14 +154,14 @@
 
     const toggleImgVisibility = () => {
         if (imgArray.length === 0) {
-            const signalDiv = document.getElementById('js-item-signal');
-            if (signalDiv) signalDiv.remove(); // Remove signalDiv if it exists
             fetchImages();
             initializeGallery();
             return;
         }
         const currentImg = imgArray.pop();
         currentImg.classList.add('is-hidden');
+        const signalDiv = document.getElementById('js-item-signal');
+        if (signalDiv) signalDiv.remove(); // Remove signalDiv if it exists
     };
 
     const gallery = document.querySelector("#js-gallery");
