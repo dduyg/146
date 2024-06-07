@@ -19,7 +19,7 @@
     }
 
     /* Navigation */
-    nav {
+    header {
       position: absolute;
       top: 0;
       left: 0;
@@ -28,17 +28,17 @@
       box-sizing: border-box;
       padding: 0.75rem 1rem;
     }
-    .home-badge {
+    #badge {
       display: table-cell;
       vertical-align: middle;
       width: 25%;
       cursor: pointer;
     }
-    #badge {
+    .title {
       display: inline-block;
-      width: 4.5rem;
+      font-size: .875rem;
     }
-    #menu {
+    nav {
       display: table-cell;
       vertical-align: middle;
       width: 75%;
@@ -106,7 +106,7 @@
       background: black;
     }
      @media screen and (min-width: 30em) {
-      nav {
+      header {
         padding-left: 4rem;
         padding-right: 4rem;
       }
@@ -117,45 +117,26 @@
       .dropdown-content {
         right: 6rem;
         width: 60%;
-      } 
+      }
+      .title {
+        font-size: 1.1em;
+       }
      }
-    
-    main {
-      max-width: 800px;
-      margin: 5em 1em;
-      padding-top: 80px;
-    }
-    hr { 
-      background: #E3FEAF;
-      border: 0;
-      height: 1px; 
-      display: block;
-    }
-    details {
-      margin-top: 50px;
-    }
-    details img {
-      max-width: 100%;
-    }
   </style>
 </head>
 <body>
-  <nav>
-    <a class="home-badge" href="{{ site.baseurl }}/">
-      <img id="badge" src="silverpaper.png">
+  <header>
+    <a id="badge" href="{{ site.baseurl }}/">
+      <div class="title">Vaporized Gallery</div>
     </a>
-    <div id="menu">
+    <nav>
       <a href="#" class="dropdown-btn" tabindex="0" aria-haspopup="menu">Subjective</a>
       <div class="dropdown-content">
         <a class="item" style="--delay: 1;" href="{{ site.baseurl}}/">Home</a>        
         <a class="item" style="--delay: 2;" href="{{ site.baseurl }}/posts">Posts</a>
         <a class="item" style="--delay: 3;" href="{{ site.baseurl }}/about">About</a>
       </div>
-    </div>
-  </nav>
-
-  <main>
-    <p>*Operating Hours — (EST)</p>
-  </main>
+    </nav>
+  </header>
 </body>
 </html>
