@@ -104,39 +104,49 @@
         elImg.style.top = getImgPosValue(imgHeight, windowH);
     };
 
-    const imgArray = [];
+    const createImgArray = () => {
+        const galleryImg = document.querySelectorAll(".gallery__item");
 
-    const fetchImages = (count = 1) => {
-        for (let i = 0; i < count; i++) {
+        galleryImg.forEach((el) => {
+            setImgPosition(el);
+        });
+    };
+
+    const fetchImages = () => {
+        const gallery = document.getElementById('js-gallery');
+        gallery.innerHTML = ''; // Clear previous images
+
+        for (let i = 0; i < 5; i++) {
             const imgElement = document.createElement('figure');
             imgElement.classList.add('gallery__item');
+            imgElement.id = `js-item-${i + 1}`;
             
             const img = document.createElement('img');
             img.classList.add('gallery__item__img');
             const randomNum = Math.floor(Math.random() * 1000); // Generate a random number
             const timestamp = Date.now(); // Get the current timestamp
             img.src = `https://source.unsplash.com/random/800x600/?vaporwave&t=${timestamp}${randomNum}`;
-            img.alt = `Vaporwave Artwork`;
+            img.alt = `Vaporwave Artwork ${i + 1}`;
             img.loading = 'lazy';
 
             imgElement.appendChild(img);
-            imgElement.id = `js-item-${imgArray.length + 1}`;
-            imgArray.push(imgElement.id);
-            document.getElementById('js-gallery').appendChild(imgElement);
+            gallery.appendChild(imgElement);
         }
+
+        const signalDiv = document.createElement('div');
+        signalDiv.classList.add('click-tap', 'gallery__item');
+        signalDiv.id = 'js-item-signal';
+        signalDiv.innerText = 'CLICK / TAP';
+        gallery.appendChild(signalDiv);
 
         createImgArray();
     };
 
-    const createImgArray = () => {
-        const galleryImg = document.querySelectorAll(".gallery__item");
-        galleryImg.forEach((el) => {
-            setImgPosition(el);
-        });
-    };
-
+    let imgArray = [];
     let currentIndex = 0;
+
     const showImg = (elImg, elClass) => {
+        currentIndex++;
         if (elImg) {
             elImg.classList.remove(elClass);
             setImgPosition(elImg);
@@ -149,28 +159,39 @@
         }
     };
 
-    function toggleImgVisibility() {
+    const toggleImgVisibility = () => {
+        const gallery = document.getElementById('js-gallery');
         const hasImgsClass = "has-imgs";
         const img = {
             current: document.querySelector(`#${imgArray[currentIndex]}`),
             hiddenClass: 'is-hidden'
         };
 
-        if (currentIndex < imgArray.length) {
+        if (currentIndex === imgArray.length) {
+            fetchImages();
+            imgArray = [];
+            document.querySelectorAll(".gallery__item").forEach((el) => {
+                if (el.id !== 'js-item-signal') {
+                    imgArray.push(el.id);
+                }
+            });
+            currentIndex = 0;
+        } else {
             hideImg(img.current, img.hiddenClass);
             currentIndex++;
-        } else {
-            currentIndex = 0;
-            document.getElementById('js-gallery').innerHTML = '';
-            imgArray.length = 0;
-            fetchImages();
         }
-    }
+    };
 
-    const gallery = document.querySelector("#js-gallery");
-    gallery.addEventListener("click", toggleImgVisibility);
-
-    fetchImages(5);
+    document.addEventListener("DOMContentLoaded", () => {
+        fetchImages();
+        document.querySelectorAll(".gallery__item").forEach((el) => {
+            if (el.id !== 'js-item-signal') {
+                imgArray.push(el.id);
+            }
+        });
+        const gallery = document.querySelector("#js-gallery");
+        gallery.addEventListener("click", toggleImgVisibility);
+    });
 </script>
 </body>
 </html>
