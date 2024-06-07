@@ -150,20 +150,28 @@
     };
 
     let imgArray = [];
+    let signalDiv;
 
     const initializeGallery = () => {
         imgArray = Array.from(document.querySelectorAll('.gallery__item'));
-        imgArray.pop(); // Remove signalDiv from array
+        signalDiv = imgArray.pop(); // Remove signalDiv from array and store it
     };
 
     const toggleImgVisibility = () => {
         if (imgArray.length === 0) {
+            signalDiv.classList.remove('is-hidden');
             fetchImages();
             initializeGallery();
             return;
         }
+        
         const currentImg = imgArray.pop();
         currentImg.classList.add('is-hidden');
+
+        // Remove the signalDiv when the first image is hidden
+        if (imgArray.length === 4) {
+            signalDiv.classList.add('is-hidden');
+        }
     };
 
     const gallery = document.querySelector("#js-gallery");
