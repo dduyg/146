@@ -76,7 +76,6 @@
             font-size: var(--font_size);
             padding: calc(var(--img_padding) / 2);
             text-align: center;
-            display: none; /* Initially hidden */
         }
     </style>
 </head>
@@ -152,13 +151,15 @@
 
     const toggleImgVisibility = () => {
         if (imgArray.length === 0) {
-            document.getElementById('js-item-signal').style.display = 'none'; // Hide signal
             fetchImages();
             initializeGallery();
             return;
         }
         const currentImg = imgArray.pop();
         currentImg.classList.add('is-hidden');
+        if (imgArray.length === 0) {
+            document.getElementById('js-item-signal').classList.remove('is-hidden');
+        }
     };
 
     const gallery = document.querySelector("#js-gallery");
