@@ -157,11 +157,6 @@
         }
         const currentImg = imgArray.pop();
         currentImg.classList.add('is-hidden');
-
-        if (imgArray.length === 0) {
-            const signalDiv = document.getElementById('js-item-signal');
-            signalDiv.classList.remove('is-hidden');
-        }
     };
 
     const gallery = document.querySelector("#js-gallery");
