@@ -29,13 +29,10 @@
       box-sizing: border-box;
       padding: 0.75rem 1rem;
     }
-    #title {
+    .title {
       display: table-cell;
       vertical-align: middle;
       width: 75%;
-    }
-    .title-text {
-      display: inline-block;
       font-size: 1.2em;
       font-family: "Alex Brush", cursive;
     }
@@ -96,7 +93,10 @@
         right: 6rem;
         width: 60%;
       }
-      .title-text {
+      .dropdown-content section {
+        height: 65%;
+       }
+      .title {
         font-size: 1.5em;
        }
      }
@@ -104,9 +104,7 @@
 </head>
 <body>
   <header>
-    <div id="title">
-      <div class="title-text">Vaporized Gallery</div>
-    </div>
+    <div class="title">Vaporized Gallery</div>
     <nav>
       <a href="#" class="dropdown-btn" tabindex="0" aria-haspopup="menu">How It Works</a>
       <div class="dropdown-content">
