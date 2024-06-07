@@ -104,14 +104,6 @@
         elImg.style.top = getImgPosValue(imgHeight, windowH);
     };
 
-    const createImgArray = () => {
-        const galleryImg = document.querySelectorAll(".gallery__item");
-
-        galleryImg.forEach((el) => {
-            setImgPosition(el);
-        });
-    };
-
     const fetchImages = () => {
         const gallery = document.getElementById('js-gallery');
         gallery.innerHTML = ''; // Clear previous images
@@ -133,65 +125,39 @@
             gallery.appendChild(imgElement);
         }
 
-        const signalDiv = document.createElement('div');
-        signalDiv.classList.add('click-tap', 'gallery__item');
-        signalDiv.id = 'js-item-signal';
-        signalDiv.innerText = 'CLICK / TAP';
-        gallery.appendChild(signalDiv);
-
         createImgArray();
     };
 
     let imgArray = [];
-    let currentIndex = 0;
+    let currentIndex = 4;
 
-    const showImg = (elImg, elClass) => {
-        currentIndex++;
-        if (elImg) {
-            elImg.classList.remove(elClass);
-            setImgPosition(elImg);
-        }
-    };
-
-    const hideImg = (elImg, elClass) => {
-        if (elImg) {
-            elImg.classList.add(elClass);
-        }
+    const createImgArray = () => {
+        const galleryImg = document.querySelectorAll(".gallery__item");
+        imgArray = Array.from(galleryImg).map(el => el.id);
+        imgArray.reverse(); // Reverse to make the last added image on top
     };
 
     const toggleImgVisibility = () => {
-        const gallery = document.getElementById('js-gallery');
-        const hasImgsClass = "has-imgs";
         const img = {
             current: document.querySelector(`#${imgArray[currentIndex]}`),
             hiddenClass: 'is-hidden'
         };
 
-        if (currentIndex === imgArray.length) {
-            fetchImages();
-            imgArray = [];
-            document.querySelectorAll(".gallery__item").forEach((el) => {
-                if (el.id !== 'js-item-signal') {
-                    imgArray.push(el.id);
-                }
-            });
-            currentIndex = 0;
+        if (currentIndex >= 0) {
+            if (img.current) {
+                img.current.classList.add(img.hiddenClass);
+            }
+            currentIndex--;
         } else {
-            hideImg(img.current, img.hiddenClass);
-            currentIndex++;
+            fetchImages();
+            currentIndex = 4;
         }
     };
 
-    document.addEventListener("DOMContentLoaded", () => {
-        fetchImages();
-        document.querySelectorAll(".gallery__item").forEach((el) => {
-            if (el.id !== 'js-item-signal') {
-                imgArray.push(el.id);
-            }
-        });
-        const gallery = document.querySelector("#js-gallery");
-        gallery.addEventListener("click", toggleImgVisibility);
-    });
+    const gallery = document.querySelector("#js-gallery");
+    gallery.addEventListener("click", toggleImgVisibility);
+
+    fetchImages();
 </script>
 </body>
 </html>
