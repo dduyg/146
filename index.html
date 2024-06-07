@@ -76,11 +76,20 @@
             font-size: var(--font_size);
             padding: calc(var(--img_padding) / 2);
             text-align: center;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
 <div class="gallery" id="js-gallery"></div>
+<div class="click-tap hidden" id="js-item-signal">CLICK / TAP</div>
 <script>
     const getRandomInt = (max) => {
         return Math.floor(Math.random() * Math.floor(max));
@@ -133,15 +142,7 @@
             gallery.appendChild(imgElement);
         }
 
-        const signalDiv = document.getElementById('js-item-signal');
-        if (signalDiv) signalDiv.remove(); // Remove signalDiv if it exists
-
-        const newSignalDiv = document.createElement('div');
-        newSignalDiv.classList.add('click-tap', 'gallery__item');
-        newSignalDiv.id = 'js-item-signal';
-        newSignalDiv.innerText = 'CLICK / TAP';
-        gallery.appendChild(newSignalDiv);
-
+        document.getElementById('js-item-signal').classList.remove('hidden'); // Show 'CLICK / TAP' signal
         createImgArray();
     };
 
@@ -160,8 +161,9 @@
         }
         const currentImg = imgArray.pop();
         currentImg.classList.add('is-hidden');
-        const signalDiv = document.getElementById('js-item-signal');
-        if (signalDiv) signalDiv.remove(); // Remove signalDiv if it exists
+        if (imgArray.length === 0) {
+            document.getElementById('js-item-signal').classList.add('hidden'); // Hide 'CLICK / TAP' signal
+        }
     };
 
     const gallery = document.querySelector("#js-gallery");
