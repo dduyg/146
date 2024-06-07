@@ -107,7 +107,6 @@
     const fetchImages = () => {
         const gallery = document.getElementById('js-gallery');
         gallery.innerHTML = ''; // Clear previous images
-        imgArray.length = 0; // Clear the imgArray
 
         for (let i = 0; i < 5; i++) {
             const imgElement = document.createElement('figure');
@@ -124,17 +123,21 @@
 
             imgElement.appendChild(img);
             gallery.appendChild(imgElement);
-            imgArray.push(imgElement.id); // Add image to the imgArray
         }
+
+        const signalDiv = document.createElement('div');
+        signalDiv.classList.add('click-tap', 'gallery__item');
+        signalDiv.id = 'js-item-signal';
+        signalDiv.innerText = 'CLICK / TAP';
+        gallery.appendChild(signalDiv);
 
         createImgArray();
     };
 
     const imgArray = [];
-    let currentIndex = 0;
+    let currentIndex = 4;
 
     const showImg = (elImg, elClass) => {
-        currentIndex++;
         if (elImg) {
             elImg.classList.remove(elClass);
             setImgPosition(elImg);
@@ -142,10 +145,22 @@
     };
 
     const hideImg = (elImg, elClass) => {
-        currentIndex--;
         if (elImg) {
             elImg.classList.add(elClass);
         }
+    };
+
+    const createImgArray = () => {
+        const galleryImg = document.querySelectorAll(".gallery__item");
+
+        galleryImg.forEach((el) => {
+            const imgId = el.getAttribute("id");
+            imgArray.push(imgId);
+
+            setImgPosition(el);
+        });
+
+        currentIndex = imgArray.length - 2;
     };
 
     const toggleImgVisibility = () => {
@@ -154,15 +169,11 @@
             hiddenClass: 'is-hidden'
         };
 
-        if (currentIndex < 0) {
-            currentIndex = 0;
-            fetchImages();
-        } else {
+        if (currentIndex >= 0) {
             hideImg(img.current, img.hiddenClass);
-            imgArray.pop();
-            if (imgArray.length === 0) {
-                currentIndex = -1;
-            }
+            currentIndex--;
+        } else {
+            fetchImages();
         }
     };
 
