@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaporwave Art Gallery</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --img_size: 22rem;
+            --img_padding: 3rem;
+            --font_size: 2rem;
+        }
+        @media screen and (max-width: 48em) {
+            :root {
+                --img_size: 12.5rem;
+                --img_padding: 1.5rem;
+                --font_size: 1.5rem;
+            }
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .gallery {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+        .gallery__item {
+            min-height: calc(var(--img_size) / 2);
+            width: var(--img_size);
+            height: auto;
+            background-color: #fff;
+            border: 5px solid #1A237E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: var(--img_padding);
+            position: absolute;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+            transition: all 0.15s linear;
+        }
+        .gallery__item.is-hidden {
+            visibility: hidden;
+        }
+        .gallery__item:nth-child(odd).is-hidden {
+            transform: translate(100%, 100%);
+        }
+        .gallery__item:nth-child(even).is-hidden {
+            transform: translate(-100%, -100%);
+        }
+        .gallery__item__img {
+            width: 90%;
+            height: 90%;
+        }
+
+        .click-tap {
+            min-height: auto;
+            background-color: #1A237E;
+            color: #fff;
+            font-family: "Oswald", sans-serif;
+            font-size: var(--font_size);
+            padding: calc(var(--img_padding) / 2);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="gallery" id="js-gallery"></div>
+<script>
+    const getRandomInt = (max) => {
+        return Math.floor(Math.random() * Math.floor(max));
+    };
+
+    const getImgPosValue = (imgSize, winSize) => {
+        const windowSize = winSize;
+        const totalWidth = windowSize - imgSize;
+        const randomPosVal = getRandomInt(totalWidth);
+
+        return `${randomPosVal}px`;
+    };
+
+    const setImgPosition = (elImg) => {
+        const windowW = window.innerWidth;
+        const windowH = window.innerHeight;
+        const imgWidth = Math.round(elImg.getBoundingClientRect().width);
+        const imgHeight = Math.round(elImg.getBoundingClientRect().height);
+
+        elImg.style.left = getImgPosValue(imgWidth, windowW);
+        elImg.style.top = getImgPosValue(imgHeight, windowH);
+    };
+
+    const createImgArray = () => {
+        const galleryImg = document.querySelectorAll(".gallery__item");
+
+        galleryImg.forEach((el) => {
+            setImgPosition(el);
+        });
+    };
+
+    const fetchImages = () => {
+        const gallery = document.getElementById('js-gallery');
+        gallery.innerHTML = ''; // Clear previous images
+
+        for (let i = 0; i < 5; i++) {
+            const imgElement = document.createElement('figure');
+            imgElement.classList.add('gallery__item');
+            imgElement.id = `js-item-${i + 1}`;
+            
+            const img = document.createElement('img');
+            img.classList.add('gallery__item__img');
+            const randomNum = Math.floor(Math.random() * 1000); // Generate a random number
+            const timestamp = Date.now(); // Get the current timestamp
+            img.src = `https://source.unsplash.com/random/800x600/?vaporwave&t=${timestamp}${randomNum}`;
+            img.alt = `Vaporwave Artwork ${i + 1}`;
+            img.loading = 'lazy';
+
+            imgElement.appendChild(img);
+            gallery.appendChild(imgElement);
+        }
+
+        const signalDiv = document.createElement('div');
+        signalDiv.classList.add('click-tap', 'gallery__item');
+        signalDiv.id = 'js-item-signal';
+        signalDiv.innerText = 'CLICK / TAP';
+        gallery.appendChild(signalDiv);
+
+        createImgArray();
+    };
+
+    const imgArray = [];
+    let currentIndex = 0;
+
+    const showImg = (elImg, elClass) => {
+        currentIndex++;
+        if (elImg) {
+            elImg.classList.remove(elClass);
+            setImgPosition(elImg);
+        }
+    };
+
+    const hideImg = (elImg, elClass) => {
+        currentIndex--;
+        if (elImg) {
+            elImg.classList.add(elClass);
+        }
+        const imgSignalId = "js-item-signal";
+        if (imgArray.includes(imgSignalId)) {
+            imgArray.pop();
+            const imgSignal = document.querySelector(`#${imgSignalId}`);
+            imgSignal.remove();
+        }
+    };
+
+    const toggleImgVisibility = () => {
+        const hasImgsClass = "has-imgs";
+        const img = {
+            first: document.querySelector(`#${imgArray[0]}`),
+            last: document.querySelector(`#${imgArray[imgArray.length - 1]}`),
+            current: document.querySelector(`#${imgArray[currentIndex]}`),
+            hiddenClass: 'is-hidden'
+        };
+
+        if (currentIndex === -1) {
+            showImg(img.first, img.hiddenClass);
+            gallery.classList.add(hasImgsClass);
+        }
+
+        if (currentIndex === imgArray.length) {
+            hideImg(img.last, img.hiddenClass);
+            gallery.classList.remove(hasImgsClass);
+        }
+
+        const hasImgsClassExists = gallery.classList.contains(hasImgsClass);
+
+        return hasImgsClassExists ? showImg(img.current, img.hiddenClass) : hideImg(img.current, img.hiddenClass);
+    };
+
+    const gallery = document.querySelector("#js-gallery");
+    gallery.addEventListener("click", toggleImgVisibility);
+
+    fetchImages();
+</script>
+</body>
+</html>
