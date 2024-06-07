@@ -124,25 +124,45 @@
 
             imgElement.appendChild(img);
             gallery.appendChild(imgElement);
-
-            imgArray.push(imgElement.id);
-            setImgPosition(imgElement);
+            imgArray.push(imgElement.id); // Add image to the imgArray
         }
+
+        createImgArray();
     };
 
     const imgArray = [];
     let currentIndex = 0;
 
+    const showImg = (elImg, elClass) => {
+        currentIndex++;
+        if (elImg) {
+            elImg.classList.remove(elClass);
+            setImgPosition(elImg);
+        }
+    };
+
+    const hideImg = (elImg, elClass) => {
+        currentIndex--;
+        if (elImg) {
+            elImg.classList.add(elClass);
+        }
+    };
+
     const toggleImgVisibility = () => {
-        if (currentIndex < imgArray.length) {
-            const img = document.querySelector(`#${imgArray[currentIndex]}`);
-            if (img) {
-                img.classList.add('is-hidden');
-                currentIndex++;
-            }
-        } else {
+        const img = {
+            current: document.querySelector(`#${imgArray[currentIndex]}`),
+            hiddenClass: 'is-hidden'
+        };
+
+        if (currentIndex < 0) {
             currentIndex = 0;
             fetchImages();
+        } else {
+            hideImg(img.current, img.hiddenClass);
+            imgArray.pop();
+            if (imgArray.length === 0) {
+                currentIndex = -1;
+            }
         }
     };
 
