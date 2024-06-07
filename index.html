@@ -151,6 +151,8 @@
 
     const toggleImgVisibility = () => {
         if (imgArray.length === 0) {
+            const signalDiv = document.getElementById('js-item-signal');
+            if (signalDiv) signalDiv.remove(); // Remove signalDiv if it exists
             fetchImages();
             initializeGallery();
             return;
