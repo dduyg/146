@@ -107,6 +107,7 @@
     const fetchImages = () => {
         const gallery = document.getElementById('js-gallery');
         gallery.innerHTML = ''; // Clear previous images
+        imgArray.length = 0; // Clear the imgArray
 
         for (let i = 0; i < 5; i++) {
             const imgElement = document.createElement('figure');
@@ -123,34 +124,25 @@
 
             imgElement.appendChild(img);
             gallery.appendChild(imgElement);
+
+            imgArray.push(imgElement.id);
+            setImgPosition(imgElement);
         }
-
-        createImgArray();
     };
 
-    let imgArray = [];
-    let currentIndex = 4;
-
-    const createImgArray = () => {
-        const galleryImg = document.querySelectorAll(".gallery__item");
-        imgArray = Array.from(galleryImg).map(el => el.id);
-        imgArray.reverse(); // Reverse to make the last added image on top
-    };
+    const imgArray = [];
+    let currentIndex = 0;
 
     const toggleImgVisibility = () => {
-        const img = {
-            current: document.querySelector(`#${imgArray[currentIndex]}`),
-            hiddenClass: 'is-hidden'
-        };
-
-        if (currentIndex >= 0) {
-            if (img.current) {
-                img.current.classList.add(img.hiddenClass);
+        if (currentIndex < imgArray.length) {
+            const img = document.querySelector(`#${imgArray[currentIndex]}`);
+            if (img) {
+                img.classList.add('is-hidden');
+                currentIndex++;
             }
-            currentIndex--;
         } else {
+            currentIndex = 0;
             fetchImages();
-            currentIndex = 4;
         }
     };
 
