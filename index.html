@@ -172,6 +172,11 @@
         if (imgArray.length === 4) {
             signalDiv.classList.add('is-hidden');
         }
+
+        // Show the signalDiv when all images are hidden
+        if (imgArray.length === 0) {
+            signalDiv.classList.remove('is-hidden');
+        }
     };
 
     const gallery = document.querySelector("#js-gallery");
