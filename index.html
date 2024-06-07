@@ -64,7 +64,7 @@
       overflow: hidden;
       z-index: 11;
     }
-    .dropdown-content .item {
+    .dropdown-content section {
       position: relative;
       left: 100%;
       transition: 0.5s;
@@ -79,13 +79,13 @@
       text-transform: uppercase;
       font-size: 2.475em;
     }
-    .dropdown-btn:focus + .dropdown-content .item {
+    .dropdown-btn:focus + .dropdown-content section {
       left: 0;
     }
     .dropdown-btn:focus + .dropdown-content {
       visibility: visible;
     }
-    .dropdown-content .item:hover {
+    .dropdown-content section:hover {
       color: #E3FEAF;
       background: black;
     }
@@ -116,9 +116,9 @@
     <nav>
       <a href="#" class="dropdown-btn" tabindex="0" aria-haspopup="menu">How It Works</a>
       <div class="dropdown-content">
-        <a class="item" style="--delay: 1;" href="{{ site.baseurl}}/">Home</a>        
-        <a class="item" style="--delay: 2;" href="{{ site.baseurl }}/posts">Posts</a>
-        <a class="item" style="--delay: 3;" href="{{ site.baseurl }}/about">About</a>
+        <section style="--delay: 1;">
+
+        </section> 
       </div>
     </nav>
   </header>
