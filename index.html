@@ -10,6 +10,7 @@
             --img_size: 22rem;
             --img_padding: 3rem;
             --font_size: 2rem;
+            --color_marker: #D1B29D;
         }
         @media screen and (max-width: 48em) {
             :root {
@@ -42,7 +43,7 @@
             width: var(--img_size);
             height: auto;
             background-color: #fff;
-            border: 5px solid #ffdab9;
+            border: 5px solid var(--color_marker);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -71,7 +72,7 @@
 
         .click-tap {
             min-height: auto;
-            background-color: #ffdab9;
+            background-color: var(--color_marker);
             color: #fff;
             font-family: "Oswald", sans-serif;
             font-size: var(--font_size);
