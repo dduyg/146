@@ -10,8 +10,6 @@
     body {
       background-color: red;
       color: black;
-      line-height: 1.5;
-      font-size: 16px;
       margin: 0;
       padding: 0;
       font-family: "Playfair Display", serif;
@@ -71,6 +69,7 @@
       transition-delay: calc(60ms * var(--delay));
       display: block;
       text-align: left;
+      line-height: 1.5;
       background: white;
       border-radius: 0.625em;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -78,8 +77,9 @@
       overflow-y: auto;
       height: 70vh;
     }
-    .message p {
-      padding: 0 auto;
+    .dropdown-content .message p {
+      padding: 0;
+      margin: 0;
     }
     .dropdown-btn:focus + .dropdown-content .message {
       left: 0;
