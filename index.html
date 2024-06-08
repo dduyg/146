@@ -5,14 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liminal Loop</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap" rel="stylesheet">
-  <style>   
+  <style>
+    @font-face {
+    font-family: 'GT Super Display';
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/GT-Super-Display-Light.woff2') format('woff2'),
+         url('fonts/GT-Super-Display-Light.woff') format('woff');
+    }
+    
     body {
       background-color: red;
       color: black;
       margin: 0;
       padding: 0;
-      font-family: "Red Hat Display", sans-serif;
+      font-family: 'GT Super Display', sans-serif;
     }
     a {
       color: inherit;
@@ -48,7 +55,6 @@
       font-size: 2em;
       text-align: right;
       margin-right: 1rem;
-      font-family: "DM Serif Display", serif;
       cursor: pointer;
     }
     .dropdown-content {
