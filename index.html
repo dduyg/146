@@ -11,6 +11,7 @@
             --img_padding: 3rem;
             --font_size: 2rem;
             --color_marker: #A49395;
+            --color_white: #fffeec;
         }
         @media screen and (max-width: 48em) {
             :root {
@@ -27,7 +28,7 @@
         body {
             margin: 0;
             background-color: #1a1a1a;
-            color: #ffffff;
+            color: var(--color_white);
         }
 
         .gallery {
@@ -42,7 +43,7 @@
             min-height: calc(var(--img_size) / 2);
             width: var(--img_size);
             height: auto;
-            background-color: #fff;
+            background-color: var(--color_white);
             border: 5px solid var(--color_marker);
             display: flex;
             align-items: center;
