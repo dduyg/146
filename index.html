@@ -1,65 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glitched Found</title>
-  <style>
-    body {
-      background-color: blue;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      font-size: 3em;
-      animation: glitch 1s infinite;
-    }
-    @keyframes glitch {
-      0% {
-        transform: translate(-2px, -2px);
-      }
-      25% {
-        transform: translate(2px, -2px);
-      }
-      50% {
-        transform: translate(2px, 2px);
-      }
-      75% {
-        transform: translate(-2px, 2px);
-      }
-      100% {
-        transform: translate(-2px, -2px);
-      }
-    }
-    p {
-      font-size: 1.2em;
-    }
-    .buttons {
-      margin-top: 30px;
-    }
-    .button {
-      display: inline-block;
-      background-color: #ff0066;
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.2em;
-      padding: 10px 20px;
-      margin: 0 10px;
-      border-radius: 5px;
-    }
-    .button:hover {
-      background-color: #cc0052;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitched Found</title>
+    <style>
+        body {
+            background-color: blue;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+          0% {
+            transform: translate(-2px, -2px);
+          }
+          25% {
+            transform: translate(2px, -2px);
+          }
+          50% {
+            transform: translate(2px, 2px);
+          }
+          75% {
+            transform: translate(-2px, 2px);
+          }
+          100% {
+            transform: translate(-2px, -2px);
+          }
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        a {
+          display: inline-block;
+          background-color: #ff0066;
+          color: #fff;
+          text-decoration: none;
+          padding: 10px 20px;
+          margin: 0 10px;
+          border-radius: 5px;
+        }
+       a:hover {
+         background-color: #cc0052;
+       }
+    </style>
 </head>
 <body>
-  <h1>404 Error</h1>
-  <p>Oops! It seems like you got lost in the glitched corridors...</p>
-  <div class="buttons">
-    <a href="/" class="button">Back to Home</a>
-    <a href="mailto:youremail@example.com" class="button">Contact Us</a>
-  </div>
+    <main>
+        <h1>Glitched Found</h1>
+        <p>Oops! It seems you've stumbled into the glitched corridors of the internet. Don't worry, you're not alone.</p>
+        <a href="#">Let's return</a>
+    </main>
 </body>
 </html>
