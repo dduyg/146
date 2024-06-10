@@ -86,16 +86,27 @@ const fetchImages = async () => {
         const randomNum = Math.floor(Math.random() * 1000); // Generate a random number
         const timestamp = Date.now(); // Get the current timestamp
         const imgUrl = `https://source.unsplash.com/random/800x600/?vaporwave&t=${timestamp}${randomNum}`;
-        img.src = imgUrl;
         img.alt = `Vaporscape ${i + 1}`;
         img.loading = 'lazy';
 
         // Add error handling for image loading
-        img.onerror = () => {
+        const loader = document.createElement('div');
+        loader.classList.add('loader');
+        imgElement.appendChild(loader);
+
+        const tempImg = new Image();
+        tempImg.src = imgUrl;
+        tempImg.onload = () => {
+            img.src = imgUrl;
+            loader.remove(); // Remove the loader once the image is loaded
+            imgElement.appendChild(img);
+        };
+        tempImg.onerror = () => {
             img.src = getRandomFallbackImage();
+            loader.remove(); // Remove the loader and show fallback image
+            imgElement.appendChild(img);
         };
 
-        imgElement.appendChild(img);
         gallery.appendChild(imgElement);
     }
 
