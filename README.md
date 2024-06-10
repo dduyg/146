@@ -13,8 +13,6 @@ How it works:
 
 <hr>
 
-Sure! Here's a `README.md` file that explains the Vaporscape Gallery application for both general users and beginner coders.
-
 # `README.md`
 This web application dynamically generates a gallery of vaporwave-style images using the Unsplash API. If the API fails or an image can't be loaded, it falls back to a set of local images stored in the "local/" folder. The gallery is interactive and provides a visually appealing, random arrangement of images.
 
