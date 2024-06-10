@@ -4,10 +4,10 @@
  ***** This script dynamically generates a gallery of vaporwave-style images using the Unsplash API.
  *
  * Key functionalities:
- * >>> Randomly position images within the browser window.
- * >>> Load 5 new images each time the previous set is fully clicked away.
- * >>> Handle image load errors by replacing them with local fallback images.
- * >>> Animate the disappearance of images on click/tap.
+ * - Randomly position images within the browser window.
+ * - Load 5 new images each time the previous set is fully clicked away.
+ * - Handle image load errors by replacing them with local fallback images.
+ * - Animate the disappearance of images on click/tap.
  *
  * The script uses:
  * - Asynchronous image fetching for smooth user experience.
