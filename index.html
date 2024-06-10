@@ -1,86 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glitched Found</title>
-    <style>
-        body {
-            background-color: #0a0a0a;
-            color: #fff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-        }
-
-        .glitch {
-            font-size: 2em;
-            color: #ff00ff;
-            text-transform: uppercase;
-            position: relative;
-            display: inline-block;
-            animation: glitch 1.5s infinite;
-        }
-
-        @keyframes glitch {
-            0% {
-                transform: translate(0);
-            }
-            25% {
-                transform: translate(-5px, 5px);
-            }
-            50% {
-                transform: translate(-5px, -5px);
-            }
-            75% {
-                transform: translate(5px, 5px);
-            }
-            100% {
-                transform: translate(5px, -5px);
-            }
-        }
-
-        .btn {
-            padding: 10px 20px;
-            background-color: #ff00ff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 10px;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #ff80ff;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glitched Corridors - 404 Error</title>
+  <style>
+    body {
+      background-color: #4a148c;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+    }
+    .glitch-img {
+      width: 100%;
+      max-width: 600px;
+      margin: 50px auto;
+    }
+    .error-text {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .error-text span {
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% {
+        transform: translate(0);
+      }
+      25% {
+        transform: translate(-5px, 5px);
+      }
+      50% {
+        transform: translate(5px, -5px);
+      }
+      75% {
+        transform: translate(-5px, 5px);
+      }
+      100% {
+        transform: translate(5px, -5px);
+      }
+    }
+    .link-buttons {
+      margin-top: 40px;
+    }
+    .link-button {
+      background-color: #ff6f00;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      margin: 0 10px;
+    }
+    .link-button:hover {
+      background-color: #ff9100;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>404</h1>
-        <p>Oops! Glitched Corridors ahead...</p>
-        <p class="glitch">404 Error</p>
-        <a href="/" class="btn">Back to Home</a>
-        <a href="mailto:youremail@example.com" class="btn">Contact Us</a>
-    </div>
+  <img src="https://cdn.pixabay.com/photo/2018/11/29/21/19/glitch-3841203_960_720.jpg" alt="Glitched Corridors" class="glitch-img">
+  <div class="error-text">404 Error - <span>Page Not Found</span></div>
+  <div class="link-buttons">
+    <a href="your-homepage-url" class="link-button">Go to Homepage</a>
+    <a href="your-contact-url" class="link-button">Contact Us</a>
+  </div>
 </body>
 </html>
