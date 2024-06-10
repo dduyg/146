@@ -30,3 +30,16 @@ The core logic for fetching images, handling errors, positioning images, and man
 - Sets the random position for each image element.
 - Fetches images from Unsplash, handles errors by switching to local images, and adds them to the gallery.
 - Toggles the visibility of images and handles the display of the "CLICK / TAP" signal.
+
+
+<hr>
+
+# Vaporscape Gallery
+Vaporscape Gallery is a dynamic web gallery that displays vaporwave-style images. It fetches random images from the Unsplash API and positions them randomly within the browser window. If the Unsplash API fails, it falls back to using a set of local images stored in the `local/` folder.
+
+## Set Up
+- Randomly positioned images within the browser window.
+- Loads 5 new images each time the previous set is fully clicked away.
+- Handles image load errors by replacing them with local fallback images.
+- Displays a "CLICK / TAP" signal when the gallery is empty and hides it when images are displayed.
+- Animates the disappearance of images on click/tap.
