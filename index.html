@@ -5,10 +5,18 @@
   <title>CodePen - Flying cards tabs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <style>
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
 body {
   background: #E3B23C;
   font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 h1 {
@@ -16,13 +24,6 @@ h1 {
   font-size: 22px;
   line-height: 1;
   color: #423E37;
-}
-
-.page {
-  width: 100vw;
-  height: 100vh;
-  min-height: 700px;
-  overflow: hidden;
 }
 
 .tabs-controls {
@@ -143,8 +144,8 @@ h1 {
   </style>
 </head>
 <body>
-<section class="page">
-	<section>
+<main>
+        <nav>
 		<ul class="tabs-controls">
 			<li class="tabs-controls__item">
 				<a href="#" class="tabs-controls__link tabs-controls__link--active" data-id="1">
@@ -177,7 +178,7 @@ h1 {
 				</a>
 			</li>
 		</ul>
-	</section>
+        </nav>
 	<section class="cards-container">
 		<div class="card card--current" id="1">
 			<h1>A. Lorem ipsum dolor sit amet</h1>
@@ -232,7 +233,7 @@ h1 {
 			</p>
 		</div>
 	</section>
-</section>
+</main>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script>
