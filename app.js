@@ -1,8 +1,7 @@
 /**
- * Vaporscape Gallery Script
+ * VAPORSCAPE GALLERY
  *
  * This script dynamically generates a gallery of vaporwave-style images using the Unsplash API.
- * If the API fails or an image can't be loaded, it falls back to a set of local images stored in the "local/" folder.
  *
  * Key functionalities:
  * 1. Randomly position images within the browser window.
