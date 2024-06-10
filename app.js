@@ -1,7 +1,7 @@
-/**
- * VAPORSCAPE GALLERY
- *
- * This script dynamically generates a gallery of vaporwave-style images using the Unsplash API.
+/********************************************************************************************************************
+ ***** VAPORSCAPE GALLERY
+ *****
+ ***** This script dynamically generates a gallery of vaporwave-style images using the Unsplash API.
  *
  * Key functionalities:
  * 1. Randomly position images within the browser window.
