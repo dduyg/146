@@ -41,7 +41,7 @@ body {
 }
 
 /* Visual styles */
-.accordion {
+main {
   color: var(--theme);
   border: 2px solid;
   border-radius: 0.5rem;
@@ -50,7 +50,7 @@ body {
 .tab__label,
 .tab__close {
   display: flex;
-  color: white;
+  color: var(--back);
   background: var(--theme);
   cursor: pointer;
 }
@@ -104,7 +104,7 @@ body {
 </head>
 <body>
 
-<section class="accordion">
+<main>
   <div class="tab">
     <input type="radio" name="accordion-2" id="rd1" checked>
     <label for="rd1" class="tab__label">Radio</label>
@@ -123,6 +123,6 @@ body {
     <input type="radio" name="accordion-2" id="rd3">
     <label for="rd3" class="tab__close">Close open tab &times;</label>
   </div>
-</section> 
+</main> 
 </body>
 </html>
