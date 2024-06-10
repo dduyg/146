@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitched Found</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: #ff6ac9;
+        }
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        a {
+            color: #ff6ac9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .glitch {
+            font-size: 3em;
+            position: relative;
+            animation: glitch 1s infinite linear alternate-reverse;
+        }
+        @keyframes glitch {
+            2%, 64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+            4%, 60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1><span class="glitch">404</span> Not Found</h1>
+    <p>Oops! Looks like you're lost in glitched corridors.</p>
+    <p>Don't worry, you can <a href="mailto:contact@example.com">contact us</a> to get back on track.</p>
+</body>
+</html>
