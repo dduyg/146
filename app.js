@@ -17,6 +17,7 @@
  * How it works:
  * - On page load, the `fetchImages` function generates 5 image elements with random positions.
  * - If an image from Unsplash fails to load, it is replaced by a randomly chosen fallback image from the "local/" folder.
+ * - The "CLICK / TAP" signal is shown initially and reappears when all images are hidden.
  * - Each click on the gallery hides one image. When all images are hidden, 5 new images are loaded.
  */
 
@@ -81,12 +82,12 @@ const fetchImages = async () => {
         imgElement.id = `js-item-${i + 1}`;
         
         const img = document.createElement('img');
-        img.classList.add('vaporscape__img');
+        img.classList.add('vaporscape-img');
         const randomNum = Math.floor(Math.random() * 1000); // Generate a random number
         const timestamp = Date.now(); // Get the current timestamp
         const imgUrl = `https://source.unsplash.com/random/800x600/?vaporwave&t=${timestamp}${randomNum}`;
         img.src = imgUrl;
-        img.alt = `Vaporwave Artwork ${i + 1}`;
+        img.alt = `Vaporscape ${i + 1}`;
         img.loading = 'lazy';
 
         // Add error handling for image loading
