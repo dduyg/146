@@ -39,7 +39,7 @@ const getRandomFallbackImage = () => {
         fallbackNumber = getRandomInt(90) + 1;
     } while (usedFallbacks.has(fallbackNumber));
     usedFallbacks.add(fallbackNumber);
-    return `local/${fallbackNumber}.png`;
+    return `local/${String(fallbackNumber).padStart(2, '0')}.png`;
 };
 
 const fetchImages = async () => {
