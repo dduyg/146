@@ -80,16 +80,16 @@
             text-align: center;
         }
 
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
         .loader {
             width: 1.5rem;
             height: 1.5rem;
-            background: var(--color_marker);
             border-radius: 50%;
+            background: var(--color_marker);
             animation: rotate 1.5s ease-in-out infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotateX(0deg); }
+            100% { transform: rotateX(360deg); }
         }
 
         /* Prevent click highlighting */
