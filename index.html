@@ -59,6 +59,7 @@
     .tab__label {
       justify-content: space-between;
       padding: 1rem;
+      -webkit-tap-highlight-color: transparent;
     }
     .tab__label::after {
       content: "\276F";
@@ -82,16 +83,7 @@
     }
     /* Arrow animation */
     .tab input:not(:checked) + .tab__label:hover::after {
-      -webkit-animation: bounce .5s infinite;
-              animation: bounce .5s infinite;
-    }
-    @-webkit-keyframes bounce {
-      25% {
-        transform: rotate(90deg) translate(.25rem);
-      }
-      75% {
-        transform: rotate(90deg) translate(-.25rem);
-      }
+      animation: bounce .5s infinite;
     }
     @keyframes bounce {
       25% {
@@ -100,6 +92,15 @@
       75% {
         transform: rotate(90deg) translate(-.25rem);
       }
+    }
+    /* Remove focus outline */
+    .tab input:focus,
+    .tab__label:focus,
+    .tab__close:focus {
+      outline: none;
+    }
+    .tab input:checked:focus + .tab__label {
+      outline: none;
     }
   </style>
 </head>
