@@ -3,149 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Understanding Recursion</title>
+    <title>Recursion Explained</title>
     <style>
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #2b2b2b;
-            color: #f1f1f1;
+            background-color: #8a2387;  /* deep purple */
+            color: #e0b1cb;  /* light pink */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
             margin: 0;
-            padding: 0;
         }
-
+        h1, h2, h3 {
+            color: #f72585;  /* pink */
+        }
+        code {
+            background-color: #f48c06;  /* orange */
+            color: #e5e5e5;  /* light grey */
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
-            text-align: center;
-        }
-
-        h1, h2, h3 {
-            color: #ff6ec7;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-
-        h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        code {
-            display: block;
-            background: #1e1e1e;
-            color: #9cdcfe;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 1.1em;
-            margin: 20px 0;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            background: #1e1e1e;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .footer {
-            margin-top: 50px;
-            font-size: 0.9em;
-            color: #888;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Understanding Recursion</h1>
+        <h1 style="text-align: center;">Recursion Explained</h1>
 
         <h2>What is Recursion?</h2>
-        <p>Recursion is a method of solving problems where a function calls itself as a subroutine. This allows the function to be repeated several times, as it can call itself during its execution.</p>
+        <p>Recursion is a method of solving problems where a function calls itself as a subroutine.</p>
 
         <h2>Key Components of Recursion</h2>
-        <ul>
-            <li><strong>Base Case</strong>: This is the condition under which the recursion ends. Without a base case, the function would call itself indefinitely, leading to a stack overflow.</li>
-            <li><strong>Recursive Case</strong>: This is the part of the function where the recursion happens. The function calls itself with a different set of parameters, moving closer to the base case with each call.</li>
-        </ul>
+        <ol>
+            <li><strong>Base Case:</strong> This is the condition under which the recursion ends.</li>
+            <li><strong>Recursive Case:</strong> This is where the function calls itself with a different set of parameters.</li>
+        </ol>
 
         <h2>How Recursion Works</h2>
-        <p>Imagine you want to solve a problem that can be broken down into smaller, similar problems. Recursion simplifies the solution by having the function handle the small problems itself.</p>
+        <p>Recursion simplifies the solution by allowing the function to handle smaller instances of the same problem.</p>
 
         <h2>Example: Factorial Function</h2>
-        <p>The factorial of a number \( n \) (denoted as \( n! \)) is the product of all positive integers less than or equal to \( n \). For example, \( 5! = 5 \times 4 \times 3 \times 2 \times 1 \).</p>
+        <pre><code class="language-python">
+def factorial(n):
+    # Base case
+    if n == 0 or n == 1:
+        return 1
+    # Recursive case
+    else:
+        return n * factorial(n - 1)
+        </code></pre>
 
-        <code>
-            def factorial(n):<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;# Base case<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;if n == 0 or n == 1:<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;# Recursive case<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;else:<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return n * factorial(n - 1)
-        </code>
-
-        <h2>How It Works</h2>
-        <ul>
-            <li><strong>Initial Call</strong>: `factorial(5)`
-                <ul>
-                    <li>Since `5` is neither `0` nor `1`, it goes to the recursive case: `5 * factorial(4)`</li>
-                </ul>
-            </li>
-            <li><strong>Next Call</strong>: `factorial(4)`
-                <ul>
-                    <li>Again, `4` is neither `0` nor `1`, so it recurses: `4 * factorial(3)`</li>
-                </ul>
-            </li>
-            <li><strong>Continued Calls</strong>: This process continues until `factorial(1)` is reached.</li>
-            <li><strong>Base Case Reached</strong>: `factorial(1)`
-                <ul>
-                    <li>This returns `1`, as it matches the base case condition.</li>
-                </ul>
-            </li>
-            <li><strong>Unwinding the Stack</strong>:
-                <ul>
-                    <li>The return value `1` from `factorial(1)` is multiplied by `2` in the previous call (`factorial(2)`), resulting in `2`.</li>
-                    <li>This `2` is multiplied by `3` in the call before that (`factorial(3)`), and so on.</li>
-                    <li>Eventually, the original call `factorial(5)` resolves to `5 * 24 = 120`.</li>
-                </ul>
-            </li>
-        </ul>
+        <h3>How It Works</h3>
+        <ol>
+            <li><strong>Initial Call:</strong> <code>factorial(5)</code></li>
+            <li><strong>Next Call:</strong> <code>factorial(4)</code></li>
+            <li>Continues until <code>factorial(1)</code> is reached.</li>
+            <li><strong>Base Case Reached:</strong> <code>factorial(1)</code> returns 1.</li>
+            <li>Unwinding the stack to get the final result.</li>
+        </ol>
 
         <h2>Advantages and Disadvantages of Recursion</h2>
-        <p><strong>Advantages</strong>:</p>
+        <h3>Advantages</h3>
         <ul>
-            <li>Simplifies code for problems that can naturally be divided into similar subproblems (e.g., tree traversals, sorting algorithms like quicksort and mergesort).</li>
+            <li>Simplifies code for problems that can be divided into similar subproblems.</li>
         </ul>
-        <p><strong>Disadvantages</strong>:</p>
+        <h3>Disadvantages</h3>
         <ul>
-            <li>Can lead to high memory usage due to deep recursion (stack overflow).</li>
-            <li>Might be less efficient in terms of time and space compared to iterative solutions for some problems.</li>
+            <li>Can lead to high memory usage and stack overflow.</li>
+            <li>May be less efficient compared to iterative solutions.</li>
         </ul>
 
-        <p>Recursion is a powerful concept but must be used judiciously, keeping in mind the problem's nature and the potential overhead in terms of performance.</p>
-        
-        <div class="footer">
-            &copy; 2024 Recursion Explained in Vaporwave
-        </div>
+        <p>Recursion is powerful but should be used judiciously considering its potential drawbacks.</p>
     </div>
 </body>
 </html>
