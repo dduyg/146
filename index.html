@@ -6,35 +6,37 @@
     <title>Understanding Recursion</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0e3ff;
-            color: #4a4a4a;
+            font-family: 'Roboto Mono', monospace;
+            background-color: #2a2a2e;
+            color: #c7c7c7;
             margin: 0;
             padding: 20px;
             line-height: 1.6;
         }
         h1, h2, h3 {
-            color: #7a5cff;
+            color: #f0f0f3;
         }
         h1 {
             text-align: center;
             font-size: 2.5em;
         }
         pre {
-            background-color: #e0d1ff;
+            background-color: #333438;
             padding: 10px;
             border-radius: 5px;
             overflow-x: auto;
+            color: #f0f0f3;
         }
         code {
-            color: #ff7eff;
+            color: #ffb7c5;
+            font-size: 0.9em;
         }
         ul {
             list-style: none;
             padding: 0;
         }
         ul li {
-            background: #d6ccff;
+            background: #4d4d52;
             margin: 5px 0;
             padding: 10px;
             border-radius: 5px;
@@ -69,10 +71,10 @@
     <p>The factorial of a number <em>n</em> (denoted as <em>n!</em>) is the product of all positive integers less than or equal to <em>n</em>. For example, <em>5! = 5 × 4 × 3 × 2 × 1</em>.</p>
     <p>A recursive function to calculate the factorial of a number could look like this:</p>
     <pre><code>def factorial(n):
-    # Base case
+    // Base case
     if n == 0 or n == 1:
         return 1
-    # Recursive case
+    // Recursive case
     else:
         return n * factorial(n - 1)</code></pre>
     
