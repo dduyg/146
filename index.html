@@ -6,7 +6,7 @@
     <title>Understanding Recursion</title>
     <style>
         body {
-            font-family: 'Roboto Mono', monospace;
+            font-family: 'IBM Plex Mono', monospace;
             background-color: #0f0e1d;
             color: #a2a1a6;
             margin: 0;
@@ -17,6 +17,7 @@
             color: #ff78a9;
         }
         h1 {
+            font-style: italic;
             text-align: center;
             font-size: 2.5em;
         }
@@ -39,6 +40,15 @@
             margin: 0.3125em 0;
             padding: 0.625em;
             border-radius: 0.3125em;
+        }
+        a { 
+            color: inherit; 
+        }
+        .glitchButton {
+            position: fixed;
+            z-index: 5;
+            top: 1.25em;
+            right: 1.25em;
         }
     </style>
 </head>
@@ -108,5 +118,8 @@
     </ul>
     
     <p>Recursion is a powerful concept but must be used judiciously, keeping in mind the problem's nature and the potential overhead in terms of performance.</p>
+
+    <div class="glitchButton"></div>
+    <script src="https://button.glitch.me/button.js"></script> 
 </body>
 </html>
