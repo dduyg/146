@@ -14,6 +14,15 @@
             padding: 5em 2em;
             line-height: 1.6;
         }
+        a {
+            color: inherit; 
+        }
+        .glitchButton {
+            position: fixed;
+            z-index: 5;
+            top: 2%;
+            right: 3%;
+        }
         h1, h2, h3 {
             color: #ff78a9;
         }
@@ -43,18 +52,10 @@
             padding: 0.625em;
             border-radius: 0.3125em;
         }
-        a { 
-            color: inherit; 
-        }
-        .glitchButton {
-            position: fixed;
-            z-index: 5;
-            top: 1.25em;
-            right: 1.25em;
-        }
     </style>
 </head>
 <body>
+    <div class="glitchButton"></div>
     <h1>Understanding Recursion</h1>
     <p>Let's delve into the concept of <strong>recursion</strong> in programming.</p>
     
@@ -120,8 +121,7 @@
     </ul>
     
     <p>Recursion is a powerful concept but must be used judiciously, keeping in mind the problem's nature and the potential overhead in terms of performance.</p>
-
-    <div class="glitchButton"></div>
+    
     <script src="https://button.glitch.me/button.js"></script> 
 </body>
 </html>
