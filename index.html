@@ -3,125 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Understanding Recursion</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <title>Understanding Data Structures</title>
     <style>
         body {
-            font-family: 'IBM Plex Mono', monospace;
-            background-color: #0f0e1d;
-            color: #a2a1a6;
+            font-family: 'Arial', sans-serif;
+            background-color: #180033; /* Dark purple background */
+            color: #eaeaea; /* Light gray text */
             margin: 0;
-            padding: 5em 2em;
+            padding: 20px;
             line-height: 1.6;
         }
-        a {
-            color: inherit; 
-        }
-        .glitchButton {
-            position: fixed;
-            z-index: 5;
-            top: 2%;
-            right: 3%;
-        }
         h1, h2, h3 {
-            color: #ff78a9;
+            color: #ff6ac1; /* Pink headings */
         }
         h1 {
-            font-style: italic;
             text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
         pre {
-            background-color: #1b1a2f;
-            padding: 0.625em;
-            border-left: 4px solid #ffb300;
+            background-color: #2a004f; /* Dark blue code blocks */
+            padding: 10px;
+            border-radius: 5px;
             overflow-x: auto;
-            color: #f3f3f3;
-            font-family: 'Courier New', Courier, monospace;
+            color: #f0f6fc; /* Light blue code text */
         }
         code {
-            color: #ffb300;
-            font-family: 'Courier New', Courier, monospace;
+            color: #ff79c6; /* Light pink code text */
         }
         ul {
             list-style: none;
             padding: 0;
         }
         ul li {
-            background: #1f1e34;
-            margin: 0.3125em 0;
-            padding: 0.625em;
-            border-radius: 0.3125em;
+            background: #ff8bf7; /* Light pink list items */
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="glitchButton"></div>
-    <h1>Understanding Recursion</h1>
-    <p>Let's delve into the concept of <strong>recursion</strong> in programming.</p>
+    <h1>Understanding Data Structures</h1>
+    <p>Let's explore the concept of <strong>data structures</strong> in programming with a vaporwave retro office coder theme.</p>
     
-    <h3>What is Recursion?</h3>
-    <p>Recursion is a method of solving problems where a function calls itself as a subroutine. This allows the function to be repeated several times, as it can call itself during its execution.</p>
+    <h3>What are Data Structures?</h3>
+    <p>Data structures are specialized formats for organizing, processing, retrieving, and storing data. They provide a means to manage large amounts of data efficiently for various uses such as large databases, internet indexing services, and large-scale simulations.</p>
     
-    <h3>Key Components of Recursion</h3>
+    <h3>Common Types of Data Structures</h3>
     <ul>
-        <li><strong>Base Case</strong>: This is the condition under which the recursion ends. Without a base case, the function would call itself indefinitely, leading to a stack overflow.</li>
-        <li><strong>Recursive Case</strong>: This is the part of the function where the recursion happens. The function calls itself with a different set of parameters, moving closer to the base case with each call.</li>
+        <li><strong>Arrays</strong>: A collection of elements, typically of the same type, stored in contiguous memory locations. Arrays allow for efficient access to elements using an index but have a fixed size.</li>
+        <li><strong>Linked Lists</strong>: A sequence of elements where each element points to the next, creating a chain. This structure allows for efficient insertion and deletion of elements but has slower access times compared to arrays.</li>
+        <li><strong>Stacks</strong>: A collection of elements that follows the Last-In-First-Out (LIFO) principle. Elements are added (pushed) and removed (popped) from the top of the stack.</li>
+        <li><strong>Queues</strong>: A collection of elements that follows the First-In-First-Out (FIFO) principle. Elements are added at the rear (enqueue) and removed from the front (dequeue).</li>
+        <li><strong>Hash Tables</strong>: A structure that maps keys to values for efficient data retrieval. It uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.</li>
+        <li><strong>Trees</strong>: A hierarchical structure with a root element and sub-elements (children), forming a parent-child relationship. Common types include binary trees, binary search trees, and heaps.</li>
+        <li><strong>Graphs</strong>: A set of nodes (vertices) connected by edges. Graphs can be used to represent networks, such as social networks, transportation systems, or communication networks.</li>
     </ul>
     
-    <h3>How Recursion Works</h3>
-    <p>Imagine you want to solve a problem that can be broken down into smaller, similar problems. Recursion simplifies the solution by having the function handle the small problems itself.</p>
-    
-    <h3>Example: Factorial Function</h3>
-    <p>The factorial of a number <em>n</em> (denoted as <em>n!</em>) is the product of all positive integers less than or equal to <em>n</em>. For example, <em>5! = 5 × 4 × 3 × 2 × 1</em>.</p>
-    <p>A recursive function to calculate the factorial of a number could look like this:</p>
-    <pre><code>def factorial(n):
-    # Base case
-    if n == 0 or n == 1:
-        return 1
-    # Recursive case
-    else:
-        return n * factorial(n - 1)</code></pre>
-    
-    <h3>How It Works</h3>
+    <h3>Why Data Structures Matter</h3>
+    <p>Data structures are essential for several reasons:</p>
     <ul>
-        <li><strong>Initial Call</strong>: <code>factorial(5)</code>
-            <ul>
-                <li>Since <code>5</code> is neither <code>0</code> nor <code>1</code>, it goes to the recursive case: <code>5 * factorial(4)</code></li>
-            </ul>
-        </li>
-        <li><strong>Next Call</strong>: <code>factorial(4)</code>
-            <ul>
-                <li>Again, <code>4</code> is neither <code>0</code> nor <code>1</code>, so it recurses: <code>4 * factorial(3)</code></li>
-            </ul>
-        </li>
-        <li><strong>Continued Calls</strong>: This process continues until <code>factorial(1)</code> is reached.</li>
-        <li><strong>Base Case Reached</strong>: <code>factorial(1)</code>
-            <ul>
-                <li>This returns <code>1</code>, as it matches the base case condition.</li>
-            </ul>
-        </li>
-        <li><strong>Unwinding the Stack</strong>:
-            <ul>
-                <li>The return value <code>1</code> from <code>factorial(1)</code> is multiplied by <code>2</code> in the previous call (<code>factorial(2)</code>), resulting in <code>2</code>.</li>
-                <li>This <code>2</code> is multiplied by <code>3</code> in the call before that (<code>factorial(3)</code>), and so on.</li>
-                <li>Eventually, the original call <code>factorial(5)</code> resolves to <code>5 * 24 = 120</code>.</li>
-            </ul>
-        </li>
+        <li><strong>Efficiency</strong>: Choosing the right data structure can dramatically improve the efficiency of algorithms. For example, searching for an element in an unsorted array is <code>O(n)</code>, but using a hash table can reduce it to <code>O(1)</code>.</li>
+        <li><strong>Scalability</strong>: Efficient data structures help in managing large datasets by optimizing space and time complexities, making the system scalable.</li>
+        <li><strong>Maintainability</strong>: Proper use of data structures can make code more readable, reusable, and easier to maintain.</li>
     </ul>
     
-    <h3>Advantages and Disadvantages of Recursion</h3>
-    <p><strong>Advantages</strong>:</p>
-    <ul>
-        <li>Simplifies code for problems that can naturally be divided into similar subproblems (e.g., tree traversals, sorting algorithms like quicksort and mergesort).</li>
-    </ul>
-    <p><strong>Disadvantages</strong>:</p>
-    <ul>
-        <li>Can lead to high memory usage due to deep recursion (stack overflow).</li>
-        <li>Might be less efficient in terms of time and space compared to iterative solutions for some problems.</li>
-    </ul>
+    <h3>Example: Using a Hash Table</h3>
+    <p>Consider a scenario where you need to store and retrieve student records by their ID numbers efficiently. A hash table would be ideal for this:</p>
+    <pre><code>hash_table = {}
+
+def add_student(student_id, student_record):
+    hash_table[student_id] = student_record
+
+def get_student(student_id):
+    return hash_table.get(student_id, "Student record not found")
+
+add_student("A001", {"name": "John Doe", "age": 20, "major": "Computer Science"})
+add_student("A002", {"name": "Jane Smith", "age": 22, "major": "Mathematics"})
+
+print(get_student("A001"))</code></pre>
     
-    <p>Recursion is a powerful concept but must be used judiciously, keeping in mind the problem's nature and the potential overhead in terms of performance.</p>
-    
-    <script src="https://button.glitch.me/button.js"></script> 
+    <h3>Conclusion</h3>
+    <p>Understanding and utilizing data structures is crucial for developing high-performance applications. They enable programmers to handle data efficiently, leading to better resource management and faster execution times. Mastery of data structures also lays the groundwork for tackling more complex programming challenges.</p>
 </body>
 </html>
