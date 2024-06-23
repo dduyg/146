@@ -13,26 +13,32 @@
             padding: 20px;
             line-height: 1.6;
         }
-        a { 
-            color: inherit;
+        a {
+            color: #B3A3A4;
         }
-        .glitchButton { 
-            position: fixed;
-            z-index: 5;
-            top: 2%;
-            right: 3%;
+        .glitchButton {
+            position: fixed !important;
+            z-index: 5 !important;
+            top: 2% !important;
+            right: 3% !important;
+            outline: none;
+          -webkit-tap-highlight-color: transparent;
+        }
+        .glitchButton:focus, .glitchButton:active {
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
         h1, h2, h3 {
             color: #8f00ff;
         }
         h1 {
             text-align: center;
-            font-size: 2.5em;
+            font-style: italic;
         }
         pre {
             background-color: #e0e0e0;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 0.625em;
+            border-left: 4px solid #ff4081;
             overflow-x: auto;
         }
         code {
