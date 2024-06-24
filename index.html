@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaporscape Gallery</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --img_size: 22rem;
+            --img_padding: 3rem;
+            --font_size: 2rem;
+            --color_marker: #A49395;
+            --color_white: #FFFFF4;
+        }
+        @media screen and (max-width: 48em) {
+            :root {
+                --img_size: 12.5rem;
+                --img_padding: 1.5rem;
+                --font_size: 1.5rem;
+            }
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background-color: #1a1a1a;
+            color: var(--color_white);
+        }
+
+        .gallery {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            -webkit-tap-highlight-color: transparent; /* Prevent highlight on mobile */
+        }
+        .vaporscape {
+            min-height: calc(var(--img_size) / 2);
+            width: var(--img_size);
+            height: auto;
+            background-color: var(--color_white);
+            border: 5px solid var(--color_marker);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: var(--img_padding);
+            position: absolute;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+            transition: all 0.15s linear;
+        }
+        .vaporscape.is-hidden {
+            visibility: hidden;
+        }
+        .vaporscape:nth-child(odd).is-hidden {
+            transform: translate(100%, 100%);
+        }
+        .vaporscape:nth-child(even).is-hidden {
+            transform: translate(-100%, -100%);
+        }
+        .vaporscape-img {
+            width: 90%;
+            height: 90%;
+        }
+
+        .click-tap {
+            min-height: auto;
+            background-color: var(--color_marker);
+            font-family: "Oswald", sans-serif;
+            font-size: var(--font_size);
+            padding: calc(var(--img_padding) / 2);
+            text-align: center;
+        }
+
+        .loader {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background: var(--color_marker);
+            animation: rotate 1s ease-in-out infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotateX(0deg); }
+            100% { transform: rotateX(360deg); }
+        }
+
+        /* Prevent click highlighting */
+        .gallery:focus, .gallery:active {
+            outline: none;
+            -webkit-tap-highlight-color: transparent; /* Prevent highlight on mobile */
+        }
+    </style>
+</head>
+<body>
+<div class="gallery" id="js-gallery" tabindex="0"></div>
+<script src="app.js"></script>
+</body>
+</html>
