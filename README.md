@@ -3,17 +3,17 @@ This interactive web application generates and displays vaporwave-style images u
 
 Vaporscape Gallery is a dynamic web gallery that provides a smooth, engaging experience that continually refreshes its visual content.
 
-> - Handle image load errors by replacing them with local fallback images.
 
--  and falls back to locally stored images if the API fails or an image can't be loaded, ensuring a continuous and engaging visual experience.
+-  , ensuring a continuous and engaging visual experience.
 
 <hr>
 
 ## How it works:
 - On page load, the `fetchImages` function generates 5 image elements with random positions.
 - If an image from Unsplash fails to load, it is replaced by a randomly chosen fallback image from the "local/" folder.
-1. **Loading Images**: On page load, the application fetches 5 random vaporwave images from Unsplash. If an image fails to load, a local fallback image is used.
-2. **Random Positioning**: The images are positioned randomly within the browser window, giving a unique look every time.
+  
+1. On page load, the application fetches 5 random vaporwave images from Unsplash. If an image fails to load, a local fallback image is used.
+2. The images are positioned randomly within the browser window, giving a unique look every time.
 
 ## Technical Background
 The core logic for fetching images, handling errors, positioning images, and managing interactions is contained in `app.js`.
@@ -25,10 +25,9 @@ The core logic for fetching images, handling errors, positioning images, and man
 - Toggles the visibility of images and handles the display of the "CLICK / TAP" signal.
 
 ## Set Up
-- Randomly positioned images within the browser window.
-- Loads 5 new images each time the previous set is fully clicked away.
-- Handles image load errors by replacing them with local fallback images.
-- Displays a "CLICK / TAP" signal when the gallery is empty and hides it when images are displayed.
+> - Handles image load errors by replacing them with local fallback images.
+> - Handle image load errors by replacing them with local fallback images.
+> - and falls back to locally stored images if the API fails or an image can't be loaded
 
 <hr>
 
