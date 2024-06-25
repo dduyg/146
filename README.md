@@ -15,7 +15,7 @@ Vaporscape Gallery is a dynamic web gallery that provides a smooth, engaging exp
 1. On page load, the application fetches 5 random vaporwave images from Unsplash. If an image fails to load, a local fallback image is used.
 2. The images are positioned randomly within the browser window, giving a unique look every time.
 
-## Technical Background
+## Set Up
 The core logic for fetching images, handling errors, positioning images, and managing interactions is contained in `app.js`.
 
 - Generates a random integer between 0 and the specified maximum value.
@@ -24,7 +24,7 @@ The core logic for fetching images, handling errors, positioning images, and man
 - Fetches images from Unsplash, handles errors by switching to local images, and adds them to the gallery.
 - Toggles the visibility of images and handles the display of the "CLICK / TAP" signal.
 
-## Set Up
+
 > - Handles image load errors by replacing them with local fallback images.
 > - Handle image load errors by replacing them with local fallback images.
 > - and falls back to locally stored images if the API fails or an image can't be loaded
