@@ -12,14 +12,8 @@ Vaporscape Gallery is a dynamic web gallery that provides a smooth, engaging exp
 ## How it works:
 - On page load, the `fetchImages` function generates 5 image elements with random positions.
 - If an image from Unsplash fails to load, it is replaced by a randomly chosen fallback image from the "local/" folder.
-- Each click on the gallery hides one image. When all images are hidden, 5 new images are loaded
-
-
-## How It Works
 1. **Loading Images**: On page load, the application fetches 5 random vaporwave images from Unsplash. If an image fails to load, a local fallback image is used.
 2. **Random Positioning**: The images are positioned randomly within the browser window, giving a unique look every time.
-3. **Interactive Gallery**: Users can click or tap anywhere on the gallery to hide one image at a time. When all images are hidden, a new set of 5 images is loaded.
-4. **Click/Tap Signal**: A "CLICK / TAP" signal is shown when the gallery is empty and hides as soon as the first image appears. It reappears when all images are hidden, indicating that a new set of images can be loaded.
 
 ## Technical Background
 The core logic for fetching images, handling errors, positioning images, and managing interactions is contained in `app.js`.
@@ -35,7 +29,6 @@ The core logic for fetching images, handling errors, positioning images, and man
 - Loads 5 new images each time the previous set is fully clicked away.
 - Handles image load errors by replacing them with local fallback images.
 - Displays a "CLICK / TAP" signal when the gallery is empty and hides it when images are displayed.
-- Animates the disappearance of images on click/tap.
 
 <hr>
 
