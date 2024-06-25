@@ -3,16 +3,16 @@
 >
 > --------------------------------
 
-`VAPORSCAPE GALLERY` is dynamic gallery, generating and displaying vaporwave-style images using the Unsplash API. The images are generated dynamically by making requests to the Unsplash API, fetching random images tagged with 'vaporwave'.
+The images are generated dynamically by making requests to the Unsplash API, fetching random images tagged with 'vaporwave'.
 
 This web application dynamically generates a gallery of vaporwave-style images using the Unsplash API. If the API fails or an image can't be loaded, it falls back to a set of local images stored in the "local/" folder. The gallery is interactive and provides a visually appealing, random arrangement of images.
 
 # Vaporscape Gallery
-Vaporscape Gallery is a dynamic web gallery that displays vaporwave-style images. It fetches random images from the Unsplash API and positions them randomly within the browser window. If the Unsplash API fails, it falls back to using a set of local images stored in the `local/` folder.
+Vaporscape Gallery is a dynamic web gallery that displays vaporwave-style images. It fetches random images from the Unsplash API and positions them randomly within the gallery. If the Unsplash API fails, it falls back to using a set of local images stored in the `local/` folder.
 
 Vaporscape Gallery provides a smooth, engaging experience that continually refreshes its visual content.
 
-**Vaporscape Gallery** is an interactive web application that dynamically displays a gallery of vaporwave-style images. Each time the gallery is clicked, the displayed images vanish one by one, revealing new ones when all images are hidden. This application fetches images from the Unsplash API and falls back to locally stored images if the API fails or an image can't be loaded, ensuring a continuous and engaging visual experience.
+*Vaporscape Gallery* is an interactive web application that dynamically displays a gallery of vaporwave-style images. This application fetches images from the Unsplash API and falls back to locally stored images if the API fails or an image can't be loaded, ensuring a continuous and engaging visual experience.
 
 <hr>
 
