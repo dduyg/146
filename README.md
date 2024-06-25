@@ -4,15 +4,16 @@
 > --------------------------------
 
 # Vaporscape Gallery
-The images are generated dynamically by making requests to the Unsplash API, fetching random images tagged with 'vaporwave'.
+- This web application dynamically generates a gallery of vaporwave-style images using the Unsplash API. The gallery is interactive and provides a visually appealing, random arrangement of images.
 
-This web application dynamically generates a gallery of vaporwave-style images using the Unsplash API. The gallery is interactive and provides a visually appealing, random arrangement of images.
+- Vaporscape Gallery is a dynamic web gallery that displays vaporwave-style images. It fetches random images from the Unsplash API and positions them randomly within the browser.
 
-Vaporscape Gallery is a dynamic web gallery that displays vaporwave-style images. It fetches random images from the Unsplash API and positions them randomly within the browser.
+- Vaporscape Gallery provides a smooth, engaging experience that continually refreshes its visual content.
 
-Vaporscape Gallery provides a smooth, engaging experience that continually refreshes its visual content.
+*Vaporscape Gallery* is an interactive web application that generates and displays vaporwave-style images using the Unsplash API. The images are generated dynamically by making requests to the Unsplash API, fetching random images tagged with 'vaporwave'.
 
-*Vaporscape Gallery* is an interactive web application that dynamically displays a gallery of vaporwave-style images. This application fetches images from the Unsplash API and falls back to locally stored images if the API fails or an image can't be loaded, ensuring a continuous and engaging visual experience.
+
+-  and falls back to locally stored images if the API fails or an image can't be loaded, ensuring a continuous and engaging visual experience.
 
 <hr>
 
