@@ -3,7 +3,7 @@ This interactive web application generates and displays vaporwave-style images u
 
 Vaporscape Gallery is a dynamic web gallery that provides a smooth, engaging experience that continually refreshes its visual content.
 
-
+-  for a unique viewing experience
 -  , ensuring a continuous and engaging visual experience.
 
 <hr>
@@ -33,7 +33,6 @@ The core logic for fetching images, handling errors, positioning images, and man
 
 # *****************
 #  Welcome to the Vaporscape Gallery!
-Explore a collection of vaporwave-style artworks dynamically generated from Unsplash for a unique viewing experience.
 
 ## Here's how it works:
 1. Click or tap anywhere on the screen to begin.
