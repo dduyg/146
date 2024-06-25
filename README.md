@@ -1,15 +1,9 @@
-> Key:
-> - Handle image load errors by replacing them with local fallback images.
->
-> --------------------------------
-
 # Vaporscape Gallery
-- This web application dynamically generates a gallery of vaporwave-style images using the Unsplash API. The gallery is interactive and provides a visually appealing, random arrangement of images.
+This interactive web application generates and displays vaporwave-style images using the Unsplash API. The images are generated dynamically by making requests to the Unsplash API, fetching random images tagged with 'vaporwave'.
 
-- Vaporscape Gallery is a dynamic web gallery that provides a smooth, engaging experience that continually refreshes its visual content.
+Vaporscape Gallery is a dynamic web gallery that provides a smooth, engaging experience that continually refreshes its visual content.
 
-*Vaporscape Gallery* is an interactive web application that generates and displays vaporwave-style images using the Unsplash API. The images are generated dynamically by making requests to the Unsplash API, fetching random images tagged with 'vaporwave'.
-
+> - Handle image load errors by replacing them with local fallback images.
 
 -  and falls back to locally stored images if the API fails or an image can't be loaded, ensuring a continuous and engaging visual experience.
 
