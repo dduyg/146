@@ -35,15 +35,13 @@ The core logic for fetching images, handling errors, positioning images, and man
 #  Welcome to the Vaporscape Gallery!
 Explore a collection of vaporwave-style artworks dynamically generated from Unsplash for a unique viewing experience.
 
-## How to Use:
-- Simply click or tap anywhere on the gallery to interact and reveal new random images.
-- Images will animate away when clicked, triggering new ones to appear for continuous exploration.
-
-
 ## Here's how it works:
 1. Click or tap anywhere on the screen to begin.
 2. Keep clicking or tapping to uncover unique vaporwave images one by one.
 3. Once all images in a set are revealed, click or tap again to load a fresh set of images.
+
+- Simply click or tap anywhere on the gallery to interact and reveal new random images.
+- Images will animate away when clicked, triggering new ones to appear for continuous exploration.
 
 #### How it works
 1. On initialization, the application fetches a set of five random vaporwave images from the Unsplash API. If an image fails to load, a fallback image from a local directory is used.
